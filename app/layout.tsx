@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import './globals-premium.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: 'swap',
+  variable: '--font-inter'
+})
 
 export const metadata: Metadata = {
   title: 'Rent My Event | Event Rental Equipment & Event Organizers in Delhi NCR',
@@ -66,7 +69,7 @@ export default function RootLayout({
             gtag('config', 'G-XET17X6WE6');
           `
         }} />
-        
+
         {/* Structured Data Schema */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -83,7 +86,7 @@ export default function RootLayout({
           })
         }} />
       </head>
-      <body className={`font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

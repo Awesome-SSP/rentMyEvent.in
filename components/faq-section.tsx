@@ -1,10 +1,29 @@
 "use client"
 
-import { useState } from "react"
-import { ChevronDown } from "lucide-react"
+import { useState, useEffect, useRef } from "react"
+import { ChevronDown, HelpCircle, MessageCircle, Clock, Award } from "lucide-react"
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(-1)
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.2 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   const faqs = [
     {
@@ -86,9 +105,8 @@ export default function FAQSection() {
               >
                 <span className="font-semibold text-gray-900 text-left text-sm md:text-base">{faq.question}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-[#5a3a7a] transition-transform flex-shrink-0 ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
+                  className={`w-5 h-5 text-[#5a3a7a] transition-transform flex-shrink-0 ${openIndex === index ? "rotate-180" : ""
+                    }`}
                 />
               </button>
               {openIndex === index && (

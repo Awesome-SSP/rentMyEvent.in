@@ -1,82 +1,189 @@
 "use client"
 
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/98 backdrop-blur-sm border-b border-gray-200/60 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center gap-4">
+    <nav className={`navbar-premium ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="premium-container">
+        <div className="navbar-content">
+          {/* Premium Brand Section */}
+          <a href="#" className="navbar-brand">
             <img
-              src={encodeURI("/new logo.png")}
+              src="/new logo.png"
               alt="Rent My Event"
-              className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-md object-contain"
+              className="navbar-logo"
             />
-            <div className="hidden sm:block">
-              <h1 className="text-base font-semibold text-[#1a1a1a] tracking-tight">RENT MY EVENT</h1>
-              <p className="text-xs text-gray-500 font-medium">Event Rental Solutions</p>
+            <div>
+              <div className="navbar-title">RENT MY EVENT</div>
+              <div className="navbar-subtitle">Premium Event Solutions</div>
             </div>
-          </div>
+          </a>
 
-          <div className="hidden md:flex items-center gap-8">
-            {["HOME", "ABOUT", "SERVICES", "BLOG", "CONTACT"].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-gray-700 hover:text-[#5a3a7a] font-medium text-sm transition-colors duration-200"
-              >
-                {item}
+          {/* Desktop Navigation */}
+          <div className="navbar-nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+
+            {/* Premium Dropdown */}
+            <div style={{ position: 'relative', display: 'inline-block' }} className="group">
+              <a href="#" style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px',
+                position: 'relative'
+              }}>
+                Locations
+                <ChevronDown size={16} />
               </a>
-            ))}
-            <div className="relative group">
-              <button className="text-gray-700 hover:text-[#5a3a7a] font-medium text-sm transition-colors duration-200">
-                LOCATIONS
-              </button>
-              <div className="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-200/50">
-                {["Delhi", "NCR", "Gurgaon"].map((loc) => (
+              <div style={{
+                position: 'absolute',
+                top: '100%',
+                left: 0,
+                backgroundColor: 'var(--white)',
+                minWidth: '180px',
+                borderRadius: 'var(--radius-lg)',
+                boxShadow: 'var(--shadow-premium)',
+                border: '1px solid var(--gray-200)',
+                marginTop: 'var(--space-xs)',
+                opacity: 0,
+                visibility: 'hidden',
+                transform: 'translateY(-10px)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                zIndex: 1000,
+                overflow: 'hidden'
+              }} className="group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+                {["Delhi", "Noida", "Gurgaon", "Faridabad"].map((loc, index) => (
                   <a
                     key={loc}
                     href="#"
-                    className="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 text-sm transition-colors first:rounded-t-md last:rounded-b-md"
+                    style={{
+                      display: 'block',
+                      padding: '12px 20px',
+                      color: 'var(--gray-700)',
+                      textDecoration: 'none',
+                      borderBottom: index < 3 ? '1px solid var(--gray-100)' : 'none',
+                      transition: 'all 0.3s ease',
+                      fontSize: 'var(--text-sm)',
+                      fontWeight: '500'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'var(--gray-50)'
+                      e.currentTarget.style.color = 'var(--primary-blue)'
+                      e.currentTarget.style.paddingLeft = '24px'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent'
+                      e.currentTarget.style.color = 'var(--gray-700)'
+                      e.currentTarget.style.paddingLeft = '20px'
+                    }}
                   >
                     {loc}
                   </a>
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* responsive button: prevent overflow by limiting width, truncating and reducing padding on smaller viewports */}
-          <div className="hidden md:flex items-center md:ml-4">
-            <Button
-              className="flex-shrink-0 bg-[#5a3a7a] hover:bg-[#4a2a6a] text-white font-semibold text-sm px-3 md:px-6 py-1.5 rounded-md transition-all duration-200 max-w-[160px] truncate"
-            >
-              <span className="inline-block w-full text-center truncate">WE ARE HIRING</span>
-            </Button>
+            <a href="#">Contact</a>
+            <button className="btn btn-primary">Get Quote</button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X className="w-6 h-6 text-gray-700" /> : <Menu className="w-6 h-6 text-gray-700" />}
+          <button
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+            style={{
+              background: 'none',
+              border: 'none',
+              padding: 'var(--space-xs)',
+              color: 'var(--primary-blue)',
+              borderRadius: 'var(--radius-sm)',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--gray-100)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent'
+            }}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
+        {/* Premium Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pb-4 space-y-1 animate-in fade-in slide-in-from-top-2">
-            {["HOME", "ABOUT", "SERVICES", "BLOG", "LOCATIONS", "CONTACT"].map((item) => (
-              <a key={item} href="#" className="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 text-sm rounded-md">
+          <div style={{
+            marginTop: 'var(--space-md)',
+            background: 'var(--white)',
+            borderRadius: 'var(--radius-xl)',
+            boxShadow: 'var(--shadow-premium)',
+            border: '1px solid var(--gray-200)',
+            overflow: 'hidden',
+            animation: 'slideDown 0.3s ease-out'
+          }}>
+            {["Home", "About", "Services", "Portfolio", "Locations", "Contact"].map((item, index) => (
+              <a
+                key={item}
+                href="#"
+                style={{
+                  display: 'block',
+                  padding: '16px 24px',
+                  color: 'var(--gray-700)',
+                  textDecoration: 'none',
+                  borderBottom: index < 5 ? '1px solid var(--gray-100)' : 'none',
+                  transition: 'all 0.3s ease',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: '500'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'var(--gray-50)'
+                  e.currentTarget.style.color = 'var(--primary-blue)'
+                  e.currentTarget.style.paddingLeft = '32px'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent'
+                  e.currentTarget.style.color = 'var(--gray-700)'
+                  e.currentTarget.style.paddingLeft = '24px'
+                }}
+              >
                 {item}
               </a>
             ))}
-            <Button className="w-full bg-[#5a3a7a] hover:bg-[#4a2a6a] text-white font-semibold mt-3">WE ARE HIRING</Button>
+            <div style={{ padding: 'var(--space-lg)' }}>
+              <button className="btn btn-primary" style={{ width: '100%' }}>Get Quote</button>
+            </div>
           </div>
         )}
       </div>
+
+      <style jsx>{`
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </nav>
   )
 }

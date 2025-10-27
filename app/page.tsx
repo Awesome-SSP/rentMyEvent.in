@@ -8,7 +8,7 @@ import ServicesSection from "@/components/services-section"
 import ServicesGrid from "@/components/services-grid"
 import FAQSection from "@/components/faq-section"
 import WhyChooseUs from "@/components/why-choose-us"
-import Footer from "@/components/footer"
+import FooterPremium from "@/components/footer-premium"
 import ApproachSection from "@/components/approach-section"
 import ContactSection from "@/components/contact-section"
 
@@ -30,7 +30,7 @@ export default function Home() {
 
       <ApproachSection />
       <ContactSection />
-      <Footer />
+      <FooterPremium />
     </>
   )
 }

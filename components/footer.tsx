@@ -1,118 +1,109 @@
+"use client"
+
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 overflow-hidden box-border">
-      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+    <footer className="footer">
+      <div className="site-container">
+        <div className="footer-content">
           {/* Company Info */}
-          <div className="min-w-0">
-            <h3 className="text-white font-bold text-lg mb-4">RENT MY EVENT</h3>
-            <p className="text-sm mb-4">Your one-stop event rental and management company in Delhi NCR.</p>
-            <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                <span>+91 XXXX XXXX XX</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                <span>info@rentmyevent.com</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                <span>Delhi NCR, India</span>
-              </div>
+          <div className="footer-section">
+            <h4>Rent My Event</h4>
+            <p style={{ color: 'var(--gray-400)', marginBottom: 'var(--spacing-lg)' }}>
+              Professional event rental and management services in Delhi NCR. Creating memorable experiences with premium equipment and expert planning.
+            </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-xs)', marginBottom: 'var(--spacing-sm)' }}>
+              <Phone size={16} />
+              <span>+91 XXXX-XXXX-XX</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-xs)', marginBottom: 'var(--spacing-sm)' }}>
+              <Mail size={16} />
+              <span>info@rentmyevent.in</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-xs)' }}>
+              <MapPin size={16} />
+              <span>Delhi NCR, India</span>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="min-w-0">
-            <h4 className="text-white font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="hover:text-white transition break-words">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition break-words">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition break-words">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition break-words">
-                  Contact
-                </a>
-              </li>
+          {/* Equipment Rental */}
+          <div className="footer-section">
+            <h4>Equipment Rental</h4>
+            <ul>
+              <li><a href="#">LED Wall Rental</a></li>
+              <li><a href="#">Projector on Rent</a></li>
+              <li><a href="#">Audio Systems</a></li>
+              <li><a href="#">Video Conference Setup</a></li>
+              <li><a href="#">Lighting Equipment</a></li>
+              <li><a href="#">Staging Solutions</a></li>
             </ul>
           </div>
 
-          {/* Services */}
-          <div className="min-w-0">
-            <h4 className="text-white font-bold mb-4">Services</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="hover:text-white transition break-words">
-                  Equipment Rental
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition break-words">
-                  Event Management
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition break-words">
-                  Technical Support
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition break-words">
-                  Consultation
-                </a>
-              </li>
+          {/* Event Services */}
+          <div className="footer-section">
+            <h4>Event Services</h4>
+            <ul>
+              <li><a href="#">Corporate Events</a></li>
+              <li><a href="#">Wedding Planning</a></li>
+              <li><a href="#">Conference Management</a></li>
+              <li><a href="#">Exhibition Services</a></li>
+              <li><a href="#">Product Launches</a></li>
+              <li><a href="#">Technical Support</a></li>
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div className="min-w-0">
-            <h4 className="text-white font-bold mb-4">Newsletter</h4>
-            <p className="text-sm mb-4">Subscribe for updates and special offers</p>
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 min-w-0 px-3 py-2 bg-gray-800 text-white text-sm rounded-l"
-              />
-              <button className="bg-purple-600 hover:bg-purple-700 px-4 py-2 text-white text-sm rounded-r transition">
-                Subscribe
-              </button>
-            </div>
+          {/* Company */}
+          <div className="footer-section">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Portfolio</a></li>
+              <li><a href="#">Client Testimonials</a></li>
+              <li><a href="#">Career Opportunities</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Get Quote</a></li>
+            </ul>
           </div>
         </div>
 
-        {/* Social Links */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex gap-4 mb-4 md:mb-0">
-            <a href="#" className="hover:text-white transition">
-              <Facebook className="w-5 h-5" />
-            </a>
-            <a href="#" className="hover:text-white transition">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" className="hover:text-white transition">
-              <Instagram className="w-5 h-5" />
-            </a>
-            <a href="#" className="hover:text-white transition">
-              <Linkedin className="w-5 h-5" />
-            </a>
+        <div className="footer-bottom">
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--spacing-md)', marginBottom: 'var(--spacing-md)' }}>
+            {[
+              { icon: Facebook, label: "Facebook" },
+              { icon: Twitter, label: "Twitter" },
+              { icon: Instagram, label: "Instagram" },
+              { icon: Linkedin, label: "LinkedIn" }
+            ].map(({ icon: Icon, label }) => (
+              <a
+                key={label}
+                href="#"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '40px',
+                  height: '40px',
+                  backgroundColor: 'var(--primary-blue)',
+                  color: 'var(--white)',
+                  borderRadius: '50%',
+                  transition: 'all 0.3s ease'
+                }}
+                aria-label={label}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'var(--secondary-blue)'
+                  e.currentTarget.style.transform = 'translateY(-2px)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'var(--primary-blue)'
+                  e.currentTarget.style.transform = 'translateY(0)'
+                }}
+              >
+                <Icon size={20} />
+              </a>
+            ))}
           </div>
-          <p className="text-sm text-gray-500">© 2025 Rent My Event. All rights reserved.</p>
+          <p>© 2025 Rent My Event. All Rights Reserved. Professional Event Solutions in Delhi NCR.</p>
         </div>
       </div>
     </footer>

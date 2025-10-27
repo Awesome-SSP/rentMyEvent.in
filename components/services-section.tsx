@@ -1,110 +1,160 @@
 "use client"
 
-import React, { useRef, useEffect, useState } from "react"
-import { Zap, Projector, Mic2, Video, Monitor, Speaker } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Monitor, Volume2, Lightbulb, Camera, Users, Settings } from "lucide-react"
 
 export default function ServicesSection() {
   const services = [
     {
-      icon: Zap,
-      title: "LED Wall Rentals",
-      description: "High-resolution LED displays for impactful visual presentations",
-    },
-    {
-      icon: Projector,
-      title: "Projector Solutions",
-      description: "Professional-grade projectors for conferences and events",
-    },
-    {
-      icon: Mic2,
-      title: "Conference Systems",
-      description: "Advanced audio and conferencing equipment for seamless communication",
-    },
-    {
-      icon: Video,
-      title: "Video Conference",
-      description: "Complete video conferencing solutions for hybrid events",
-    },
-    {
       icon: Monitor,
-      title: "Plasma TV on Rent",
-      description: "High-definition plasma/LED displays suitable for exhibitions, lobbies and VIP areas",
+      title: "Audio Visual Equipment",
+      description: "Professional LED walls, projectors, screens, and display solutions for impactful presentations and entertainment.",
+      features: ["4K LED Walls", "High-End Projectors", "Professional Screens", "Video Mapping"]
     },
     {
-      icon: Speaker,
-      title: "Audio Visual Equipment",
-      description: "Full AV setups including mixers, speakers, mics and cabling for any event scale",
+      icon: Volume2,
+      title: "Sound Systems",
+      description: "Crystal-clear audio solutions including microphones, speakers, and complete PA systems for any venue size.",
+      features: ["Wireless Microphones", "Line Array Speakers", "Mixing Consoles", "Background Music"]
     },
+    {
+      icon: Lightbulb,
+      title: "Stage Lighting",
+      description: "Dynamic lighting setups including stage lights, ambient lighting, and special effects to create the perfect atmosphere.",
+      features: ["LED Stage Lights", "Moving Head Lights", "Laser Shows", "Ambient Lighting"]
+    },
+    {
+      icon: Camera,
+      title: "Live Streaming",
+      description: "Professional live streaming and recording services with multi-camera setups and real-time broadcasting.",
+      features: ["Multi-Camera Setup", "Live Broadcasting", "Recording Services", "Streaming Platforms"]
+    },
+    {
+      icon: Users,
+      title: "Event Management",
+      description: "Complete event planning and coordination services from concept to execution with dedicated project managers.",
+      features: ["Event Planning", "Venue Coordination", "Timeline Management", "Staff Support"]
+    },
+    {
+      icon: Settings,
+      title: "Technical Support",
+      description: "On-site technical support and equipment management with certified technicians throughout your event.",
+      features: ["24/7 Support", "Setup & Testing", "Live Monitoring", "Emergency Response"]
+    }
   ]
 
-  const ref = useRef<HTMLElement | null>(null)
-  const [inView, setInView] = useState(false)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true)
-          obs.disconnect()
-        }
-      },
-      { threshold: 0.12 }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [])
-
-  // animation settings (inline so no global CSS changes needed)
-  const DURATION = 1200 // ms
-  const EASING = "cubic-bezier(.2,.8,.25,1)"
-  const STAGGER = 160 // ms
-
   return (
-    <section
-      ref={ref}
-      className={"diagonal-bg-purple py-16 md:py-28 services-animate" + (inView ? " in-view" : "")}
-      aria-label="Our Rental Services"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1a1a1a]">Our Rental Services</h2>
-        <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto text-lg">
-          Comprehensive equipment rental solutions designed for professional events
-        </p>
+    <section className="section-premium">
+      <div className="premium-container">
+        <div className="text-center mb-xl">
+          <h2 className="heading-section">
+            Comprehensive Event Solutions
+          </h2>
+          <p className="text-lead">
+            From cutting-edge technology to expert coordination, we provide everything you need
+            to make your event unforgettable and professionally executed.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {services.map((service, idx) => {
-            const Icon = service.icon
-            const delay = idx * STAGGER
-            const cardStyle: React.CSSProperties = {
-              // start hidden; when inView -> visible with transform reset
-              opacity: inView ? 1 : 0,
-              transform: inView ? "translateY(0) scale(1)" : "translateY(28px) scale(0.985)",
-              transition: `opacity ${DURATION}ms ${EASING} ${delay}ms, transform ${DURATION}ms ${EASING} ${delay}ms`,
-              // expose stagger as a CSS var in case you want to style from CSS later
-              ["--k" as any]: idx,
-            }
-
-            return (
-              <div
-                key={service.title}
-                className="service-card bg-white border border-gray-200/60 rounded-lg p-6 hover:shadow-lg transition-all hover:border-[#5a3a7a]/30"
-                style={cardStyle}
-                aria-hidden={!inView}
-              >
-                <div className="bg-[#5a3a7a]/10 w-12 h-12 rounded-md flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-[#5a3a7a]" />
-                </div>
-                <h3 className="text-lg font-semibold text-[#1a1a1a] mb-3">{service.title}</h3>
-                <p className="text-gray-600 text-sm mb-6 leading-relaxed">{service.description}</p>
-                <Button className="w-full bg-[#5a3a7a] hover:bg-[#4a2a6a] text-white font-medium text-sm">
-                  Learn More
-                </Button>
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <div key={index} className="service-card">
+              <div className="service-icon">
+                <service.icon size={28} style={{ color: 'white' }} />
               </div>
-            )
-          })}
+
+              <h3 className="heading-card">{service.title}</h3>
+              <p className="text-body mb-lg">{service.description}</p>
+
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 'var(--space-xs)'
+              }}>
+                {service.features.map((feature, idx) => (
+                  <li key={idx} style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 'var(--space-xs)',
+                    fontSize: 'var(--text-sm)',
+                    color: 'var(--gray-600)'
+                  }}>
+                    <div style={{
+                      width: '6px',
+                      height: '6px',
+                      borderRadius: '50%',
+                      background: 'var(--secondary-gradient)',
+                      flexShrink: 0
+                    }}></div>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <div style={{ marginTop: 'var(--space-lg)' }}>
+                <button className="btn btn-secondary" style={{ width: '100%' }}>
+                  Learn More
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{
+          textAlign: 'center',
+          marginTop: 'var(--space-3xl)',
+          padding: 'var(--space-2xl)',
+          background: 'var(--primary-gradient)',
+          borderRadius: 'var(--radius-2xl)',
+          color: 'var(--white)',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%)',
+            pointerEvents: 'none'
+          }}></div>
+
+          <div style={{ position: 'relative', zIndex: 2 }}>
+            <h3 style={{
+              fontSize: 'var(--text-3xl)',
+              fontWeight: '700',
+              marginBottom: 'var(--space-md)',
+              color: 'var(--white)'
+            }}>
+              Ready to Plan Your Event?
+            </h3>
+            <p style={{
+              fontSize: 'var(--text-lg)',
+              marginBottom: 'var(--space-xl)',
+              color: 'rgba(255, 255, 255, 0.9)',
+              maxWidth: '600px',
+              margin: '0 auto var(--space-xl)'
+            }}>
+              Get a personalized quote for your event requirements. Our experts will help you
+              choose the perfect combination of services and equipment.
+            </p>
+            <div style={{
+              display: 'flex',
+              gap: 'var(--space-lg)',
+              justifyContent: 'center',
+              flexWrap: 'wrap'
+            }}>
+              <button className="btn btn-glass">
+                Get Free Quote
+              </button>
+              <button className="btn btn-secondary">
+                Schedule Consultation
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

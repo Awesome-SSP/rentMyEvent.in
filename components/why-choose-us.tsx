@@ -1,142 +1,231 @@
-import { Award, Package, Users, Clock, DollarSign, CheckCircle, Info } from "lucide-react"
+"use client"
+
+import { Shield, Clock, Award, Users, Headphones, Zap } from "lucide-react"
 
 export default function WhyChooseUs() {
-  const highlights = [
+  const features = [
     {
-      title: "Rent My Event Agency Near Me",
-      content:
-        "THE BEST Rent My Event COMPANY IN GURGAON — Rent My Event Services tailored to make your events reminisce. We assist you in orchestrating smooth and spectacular events with high‑standard rental equipment and expert event management.",
-      icon: Info,
+      icon: Shield,
+      title: "Reliable & Professional",
+      description: "Trusted by 500+ clients with 100% delivery guarantee and professional-grade equipment",
+      color: "var(--accent-orange)"
     },
     {
-      title: "Transparent & Reputable",
-      content:
-        "We uphold absolute openness—no surprise charges, no unpleasant surprises—only evident, professional service for your events.",
-      icon: CheckCircle,
-    },
-    {
-      title: "Award‑Winning Solutions",
-      content:
-        "We are a group of event management and rental professionals, producing flawless events with a decade of experience. Reliable in Gurgaon for making every event extraordinary.",
-      icon: Award,
-    },
-    {
-      title: "Goal‑Oriented Execution",
-      content:
-        "Being a top event rental and management company in Gurgaon, we offer end‑to‑end event solutions. We don't promise overnight miracles — we deliver events that run like clockwork and leave a lasting impression.",
       icon: Clock,
+      title: "24/7 Support",
+      description: "Round-the-clock technical support and emergency response for uninterrupted events",
+      color: "var(--accent-cyan)"
     },
-  ]
-
-  // replaced benefits with provided content (formatted as card items)
-  const benefits = [
+    {
+      icon: Award,
+      title: "Premium Quality",
+      description: "Latest equipment from top brands ensuring exceptional performance and crystal-clear output",
+      color: "var(--primary-blue)"
+    },
     {
       icon: Users,
-      title: "Your Event, Our Priority",
-      description: "We make your event our priority — dedicated planning and execution focused on your objectives.",
+      title: "Expert Team",
+      description: "Certified technicians and event coordinators with 10+ years of industry experience",
+      color: "var(--secondary-gradient)"
     },
     {
-      icon: Clock,
-      title: "Easy Event Planning",
-      description: "Easy event planning from conception to completion — clear timelines and coordinated delivery.",
+      icon: Headphones,
+      title: "Full Service",
+      description: "Complete end-to-end solutions from planning to execution with dedicated project management",
+      color: "var(--accent-orange)"
     },
     {
-      icon: DollarSign,
-      title: "Competitive Packages",
-      description: "Competitive rental packages to suit all budgets — transparent pricing and flexible options.",
-    },
-    {
-      icon: Package,
-      title: "High‑Quality Equipment",
-      description: "High-quality selection of event equipment — premium AV, lighting and staging for memorable experiences.",
-    },
-    {
-      icon: CheckCircle,
-      title: "Professional On‑site Assistance",
-      description: "Professional on‑site assistance & speedy setup — technicians who ensure flawless execution.",
-    },
-    {
-      icon: Package,
-      title: "Tailored Solutions",
-      description: "Tailored solutions for corporate and social functions — custom packages to meet event goals.",
-    },
-
-    // "What You Gain with Our Services"
-    // {
-    //   icon: Users,
-    //   title: "Save Time",
-    //   description: "Gain time using a one‑stop event partner — planning, logistics and execution handled for you.",
-    // },
-    // {
-    //   icon: CheckCircle,
-    //   title: "Stress‑Free Coordination",
-    //   description: "Eliminate stress with effortless coordination — single point of contact and proactive communication.",
-    // },
-    // {
-    //   icon: Award,
-    //   title: "Impress Guests",
-    //   description: "Impress guests with world‑class AV & rental equipment — polished presentation and impactful visuals.",
-    // },
-    // {
-    //   icon: Clock,
-    //   title: "Peace of Mind",
-    //   description: "Relish peace of mind knowing details are managed by professionals — reliable teams and tested processes.",
-    // },
-    
+      icon: Zap,
+      title: "Quick Setup",
+      description: "Rapid deployment and installation with pre-tested equipment and streamlined processes",
+      color: "var(--accent-cyan)"
+    }
   ]
 
   return (
-    <section className="section-diag section-diag--a py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <header className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#1a1a1a]">Why Choose Rent My Event</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Services & management you can trust — transparent pricing, award‑winning execution and goal‑oriented planning.
+    <section className="section-gradient">
+      <div className="premium-container">
+        <div className="text-center mb-xl">
+          <h2 className="heading-section" style={{ color: 'var(--white)' }}>
+            Why Choose Rent My Event?
+          </h2>
+          <p className="text-lead" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+            Experience the difference with our professional approach, premium equipment,
+            and unmatched customer service that sets us apart from the competition.
           </p>
-        </header>
-
-        {/* Highlight cards (marketing copy as cards) */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-10">
-          {highlights.map((h) => {
-            const Icon = h.icon
-            return (
-              <article
-                key={h.title}
-                className="group bg-white/6 dark:bg-black/20 backdrop-blur-sm border border-white/8 dark:border-white/6 rounded-2xl p-6 hover:scale-[1.01] transition-transform duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-none w-16 h-16 rounded-lg bg-[#5a3a7a]/12 flex items-center justify-center text-[#5a3a7a]">
-                    <Icon className="w-8 h-8" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-[#111827] dark:text-white">{h.title}</h3>
-                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{h.content}</p>
-                  </div>
-                </div>
-              </article>
-            )
-          })}
         </div>
 
-        {/* Benefits grid (updated) */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit) => {
-            const Icon = benefit.icon
-            return (
-              <div
-                key={benefit.title}
-                className="flex items-start gap-4 bg-white/5 dark:bg-black/16 backdrop-blur-sm border border-white/6 rounded-lg p-6"
-              >
-                <div className="flex-none w-20 h-20 rounded-lg bg-[#5a3a7a]/12 flex items-center justify-center">
-                  <Icon className="w-10 h-10 text-[#5a3a7a]" />
-                </div>
-                <div>
-                  <h4 className="text-md font-semibold text-[#111827] dark:text-white">{benefit.title}</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{benefit.description}</p>
-                </div>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: 'var(--space-xl)',
+          marginBottom: 'var(--space-3xl)'
+        }}>
+          {features.map((feature, index) => (
+            <div key={index} style={{
+              background: 'rgba(255, 255, 255, 0.1)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: 'var(--radius-xl)',
+              padding: 'var(--space-xl)',
+              backdropFilter: 'blur(20px)',
+              transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+              className="group"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)'
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)'
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)'
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)'
+              }}>
+              {/* Decorative Element */}
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                width: '100px',
+                height: '100px',
+                background: `radial-gradient(circle, ${feature.color}20, transparent)`,
+                borderRadius: '50%',
+                transform: 'translate(30px, -30px)'
+              }}></div>
+
+              <div style={{
+                width: '64px',
+                height: '64px',
+                background: feature.color,
+                borderRadius: 'var(--radius-lg)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: 'var(--space-lg)',
+                boxShadow: `0 8px 25px ${feature.color}40`,
+                position: 'relative',
+                zIndex: 2
+              }}>
+                <feature.icon size={28} style={{ color: 'white' }} />
               </div>
-            )
-          })}
+
+              <h3 style={{
+                fontSize: 'var(--text-xl)',
+                fontWeight: '600',
+                color: 'var(--white)',
+                marginBottom: 'var(--space-sm)',
+                position: 'relative',
+                zIndex: 2
+              }}>
+                {feature.title}
+              </h3>
+
+              <p style={{
+                color: 'rgba(255, 255, 255, 0.8)',
+                lineHeight: '1.6',
+                fontSize: 'var(--text-base)',
+                position: 'relative',
+                zIndex: 2
+              }}>
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Stats Banner */}
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.1)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          borderRadius: 'var(--radius-2xl)',
+          padding: 'var(--space-2xl)',
+          backdropFilter: 'blur(20px)',
+          textAlign: 'center'
+        }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+            gap: 'var(--space-xl)',
+            alignItems: 'center'
+          }}>
+            <div>
+              <div style={{
+                fontSize: 'var(--text-4xl)',
+                fontWeight: '800',
+                color: 'var(--white)',
+                marginBottom: 'var(--space-xs)'
+              }}>
+                10+
+              </div>
+              <div style={{
+                fontSize: 'var(--text-sm)',
+                color: 'rgba(255, 255, 255, 0.8)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Years Experience
+              </div>
+            </div>
+
+            <div>
+              <div style={{
+                fontSize: 'var(--text-4xl)',
+                fontWeight: '800',
+                color: 'var(--white)',
+                marginBottom: 'var(--space-xs)'
+              }}>
+                500+
+              </div>
+              <div style={{
+                fontSize: 'var(--text-sm)',
+                color: 'rgba(255, 255, 255, 0.8)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Happy Clients
+              </div>
+            </div>
+
+            <div>
+              <div style={{
+                fontSize: 'var(--text-4xl)',
+                fontWeight: '800',
+                color: 'var(--white)',
+                marginBottom: 'var(--space-xs)'
+              }}>
+                1000+
+              </div>
+              <div style={{
+                fontSize: 'var(--text-sm)',
+                color: 'rgba(255, 255, 255, 0.8)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Events Completed
+              </div>
+            </div>
+
+            <div>
+              <div style={{
+                fontSize: 'var(--text-4xl)',
+                fontWeight: '800',
+                color: 'var(--white)',
+                marginBottom: 'var(--space-xs)'
+              }}>
+                4.9★
+              </div>
+              <div style={{
+                fontSize: 'var(--text-sm)',
+                color: 'rgba(255, 255, 255, 0.8)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Client Rating
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
