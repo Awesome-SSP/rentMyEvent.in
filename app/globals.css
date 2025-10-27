@@ -1,0 +1,969 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.15 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.35 0.12 280);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.95 0 0);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.92 0 0);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: oklch(0.45 0.15 200);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.92 0 0);
+  --input: oklch(0.95 0 0);
+  --ring: oklch(0.35 0.12 280);
+  --chart-1: oklch(0.45 0.15 200);
+  --chart-2: oklch(0.35 0.12 280);
+  --chart-3: oklch(0.5 0.1 250);
+  --chart-4: oklch(0.4 0.12 290);
+  --chart-5: oklch(0.55 0.12 210);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.98 0 0);
+  --sidebar-foreground: oklch(0.15 0 0);
+  --sidebar-primary: oklch(0.2 0 0);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.92 0 0);
+  --sidebar-accent-foreground: oklch(0.2 0 0);
+  --sidebar-border: oklch(0.92 0 0);
+  --sidebar-ring: oklch(0.35 0.12 280);
+  /* Global background & card colors switched to light-blue / light-green / light-orange palette */
+  --section-bg: #e6f9ff;
+  /* light blue */
+  --card-bg: #fffaf5;
+  /* very light orange/peach for subtle warmth */
+  --muted: #6b7280;
+  --max-width: 1200px;
+  --logo-speed: 24s;
+  /* slower carousel for calmer motion */
+  --logo-speed-reverse: 20s;
+  /* slower reverse row */
+  /* section base colors: assign light blue / light green / light orange */
+  --section-bg-dark-base: #fff2ef;
+  /* light orange/peach */
+  --section-bg-teal-base: #e8fff2;
+  /* light green */
+  --section-bg-purple-base: #e6f9ff;
+  /* light blue */
+  --diag-accent-purple: 90, 58, 122;
+  /* rgb for reuse */
+  --diag-accent-teal: 42, 138, 153;
+  --diag-accent-purple-2: 124, 58, 160;
+  /* new easing token for smoother animations */
+  --anim-ease-smooth: cubic-bezier(.16, .84, .24, 1);
+}
+
+/* Section palette (coordinated so adjacent sections blend naturally) */
+:root {
+  --diag-angle-1: 135deg;
+  --diag-angle-2: 35deg;
+  /* change section bases to use requested palettes:
+      section-a → light blue, section-b → light green, section-c → light orange */
+  --section-a-base: #e6f9ff;
+  /* light blue */
+  --section-b-base: #e8fff2;
+  /* light green */
+  --section-c-base: #fff5ec;
+  /* light orange */
+  --accent-a: 255, 45, 45;
+  /* red accent (rgb) */
+  --accent-b: 255, 151, 0;
+  /* orange accent (rgb) */
+  --accent-c: 0, 200, 83;
+  /* green accent (rgb) */
+  --diag-opacity-strong: 0.22;
+  --diag-opacity-subtle: 0.10;
+}
+
+.dark {
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.15 0 0);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.15 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.65 0.15 280);
+  --primary-foreground: oklch(0.12 0 0);
+  --secondary: oklch(0.25 0 0);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.25 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.65 0.15 200);
+  --accent-foreground: oklch(0.12 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.95 0 0);
+  --border: oklch(0.25 0 0);
+  --input: oklch(0.25 0 0);
+  --ring: oklch(0.65 0.15 280);
+  --chart-1: oklch(0.65 0.15 200);
+  --chart-2: oklch(0.65 0.15 280);
+  --chart-3: oklch(0.6 0.12 250);
+  --chart-4: oklch(0.65 0.12 290);
+  --chart-5: oklch(0.7 0.12 210);
+  --sidebar: oklch(0.15 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.65 0.15 280);
+  --sidebar-primary-foreground: oklch(0.12 0 0);
+  --sidebar-accent: oklch(0.25 0 0);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.25 0 0);
+  --sidebar-ring: oklch(0.65 0.15 280);
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+
+  /* ensure predictable sizing */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    @apply border-border outline-ring/50;
+  }
+
+  /* keep natural body scrolling (no global overflow-x hidden) */
+  html,
+  body,
+  #__next {
+    width: 100%;
+  }
+
+  body {
+    @apply text-foreground bg-background;
+  }
+
+  /* constrain media and vector elements so they never force horizontal scroll */
+  img,
+  picture,
+  video,
+  canvas,
+  svg,
+  iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* small utility to apply at the app root to clip any accidental overflow */
+.site-wrapper {
+  max-width: 100vw;
+  /* never exceed viewport width */
+  overflow-x: hidden;
+  /* clip accidental overflow inside the wrapper only */
+  position: relative;
+}
+
+/* Professional elegant diagonal backgrounds with refined colors */
+.diagonal-bg-dark {
+  background:
+    linear-gradient(135deg, rgba(var(--diag-accent-purple), 0.18) 0%, rgba(var(--diag-accent-purple), 0.18) 30%, transparent 30%),
+    linear-gradient(35deg, transparent 30%, rgba(var(--diag-accent-teal), 0.12) 20% 100%),
+    var(--section-bg-dark-base);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.diagonal-bg-teal {
+  background:
+    linear-gradient(135deg, rgba(var(--diag-accent-teal), 0.18) 0%, rgba(var(--diag-accent-teal), 0.18) 30%, transparent 30%),
+    linear-gradient(35deg, transparent 30%, rgba(var(--diag-accent-purple), 0.10) 20% 100%),
+    var(--section-bg-teal-base);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.diagonal-bg-purple {
+  background:
+    linear-gradient(135deg, rgba(var(--diag-accent-purple-2), 0.18) 0%, rgba(var(--diag-accent-purple-2), 0.18) 30%, transparent 30%),
+    linear-gradient(35deg, transparent 30%, rgba(var(--diag-accent-teal), 0.10) 20% 100%),
+    var(--section-bg-purple-base);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+/* Optional: solid-tint helpers if you want plain darker bands */
+.section-bg-dark {
+  background-color: rgba(var(--diag-accent-purple), 0.06);
+}
+
+.section-bg-teal {
+  background-color: rgba(var(--diag-accent-teal), 0.06);
+}
+
+.section-bg-purple {
+  background-color: rgba(var(--diag-accent-purple-2), 0.06);
+}
+
+/* Ensure diagonal background is applied when logos-section includes the diagonal class.
+   Higher specificity prevents other .logos-section rules from accidentally overriding it. */
+.logos-section.diagonal-bg-dark,
+.diagonal-bg-dark.logos-section {
+  background: linear-gradient(135deg, rgba(90, 58, 122, 0.08) 0%, rgba(90, 58, 122, 0.08) 30%, transparent 30%),
+    linear-gradient(35deg, transparent 30%, rgba(42, 138, 153, 0.06) 20% 100%),
+    #f8f9fa;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+/* Smooth animations for professional transitions */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation: slideInUp 0.4s ease-out;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.slide-in-from-top-2 {
+  animation: slideInUp 0.4s ease-out;
+}
+
+/* logos/carousel styles (add below other styles) */
+
+/* container */
+.logos-section {
+  padding: 8px 12px;
+  margin-top: 0;
+  text-align: center;
+  /* do NOT set a background here — allow .diagonal-bg-dark to provide the pattern/color */
+  background: transparent;
+}
+
+/* title */
+.logos-title {
+  margin: 0 0 6px;
+  font-size: 1.125rem;
+  color: #111827;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* carousel container */
+.logos-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+/* each row viewport */
+.logos-row {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 2px 0;
+}
+
+/* soft fade overlays */
+.logos-row::before,
+.logos-row::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* fade to the app background so overlays match page background */
+.logos-row::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--color-background) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.logos-row::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--color-background) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* track */
+.track {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  animation: scroll-left var(--logo-speed) linear infinite;
+  padding: 6px 0;
+}
+
+/* reverse row */
+.track.reverse {
+  animation: scroll-right var(--logo-speed-reverse) linear infinite;
+}
+
+/* REMOVE hover-to-pause rule so animation never pauses on hover */
+/* .logos-section:hover .track,
+   .logos-section:hover .track.reverse {
+     animation-play-state: paused;
+   } */
+
+/* respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+
+  .track,
+  .track.reverse {
+    animation: none;
+  }
+}
+
+/* logo card */
+.logo-card {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 72px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 10px 14px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  transition: transform 240ms cubic-bezier(.2, .9, .2, 1), box-shadow 240ms;
+}
+
+.logo-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.logo-card img {
+  max-width: 100%;
+  max-height: 48px;
+  object-fit: contain;
+  display: block;
+  filter: saturate(0.98) contrast(0.98);
+  opacity: 0.96;
+  pointer-events: none;
+}
+
+.track .logo-card:nth-child(n + 7) {
+  transform: scale(0.98);
+  opacity: 0.98;
+}
+
+/* keyframes */
+@keyframes scroll-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50.01%, 0, 0);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translate3d(-50.01%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+  .logos-container {
+    gap: 10px;
+  }
+
+  .track {
+    gap: 18px;
+    animation-duration: 30s;
+  }
+
+  .track.reverse {
+    animation-duration: 30s;
+  }
+
+  .logo-card {
+    width: 130px;
+    height: 62px;
+    padding: 8px 12px;
+  }
+
+  .logo-card img {
+    max-height: 44px;
+  }
+
+  .logos-row::before,
+  .logos-row::after {
+    width: 12%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logos-section {
+    padding: 24px 8px;
+  }
+
+  .logos-title {
+    font-size: 1rem;
+  }
+
+  .track {
+    gap: 14px;
+    animation-duration: 14s;
+  }
+
+  .track.reverse {
+    animation-duration: 12s;
+  }
+
+  .logo-card {
+    width: 110px;
+    height: 56px;
+    padding: 6px 10px;
+  }
+
+  .logo-card img {
+    max-height: 36px;
+  }
+
+  .logos-row::before,
+  .logos-row::after {
+    width: 16%;
+  }
+}
+
+/* Add after existing diagonal-bg-* rules and keyframes */
+
+/* Section palette (coordinated so adjacent sections blend naturally) */
+:root {
+  --diag-angle-1: 135deg;
+  --diag-angle-2: 35deg;
+  /* change section bases to use requested palettes:
+      section-a → light blue, section-b → light green, section-c → light orange */
+  --section-a-base: #e6f9ff;
+  /* light blue */
+  --section-b-base: #e8fff2;
+  /* light green */
+  --section-c-base: #fff5ec;
+  /* light orange */
+  --accent-a: 255, 45, 45;
+  /* red accent (rgb) */
+  --accent-b: 255, 151, 0;
+  /* orange accent (rgb) */
+  --accent-c: 0, 200, 83;
+  /* green accent (rgb) */
+  --diag-opacity-strong: 0.22;
+  --diag-opacity-subtle: 0.10;
+}
+
+.section-diag {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: visible;
+}
+
+.section-diag--a {
+  /* blue (base) with green accent */
+  background:
+    linear-gradient(var(--diag-angle-1), rgba(var(--accent-b), var(--diag-opacity-strong)) 0%, rgba(var(--accent-b), var(--diag-opacity-strong)) 28%, transparent 28%),
+    linear-gradient(var(--diag-angle-2), transparent 28%, rgba(var(--accent-c), var(--diag-opacity-subtle)) 18% 100%),
+    var(--section-a-base);
+}
+
+.section-diag--b {
+  /* red/orange themed section */
+  background:
+    linear-gradient(var(--diag-angle-1), rgba(var(--accent-a), var(--diag-opacity-strong)) 0%, rgba(var(--accent-a), var(--diag-opacity-strong)) 28%, transparent 28%),
+    linear-gradient(var(--diag-angle-2), transparent 28%, rgba(var(--accent-b), var(--diag-opacity-subtle)) 18% 100%),
+    var(--section-b-base);
+}
+
+.section-diag--c {
+  /* orange/peach base with red accent */
+  background:
+    linear-gradient(var(--diag-angle-1), rgba(var(--accent-b), var(--diag-opacity-strong)) 0%, rgba(var(--accent-b), var(--diag-opacity-strong)) 28%, transparent 28%),
+    linear-gradient(var(--diag-angle-2), transparent 28%, rgba(var(--accent-a), var(--diag-opacity-subtle)) 18% 100%),
+    var(--section-c-base);
+}
+
+.section-diag::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  /* slight overlap */
+  height: 48px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.35) 100%);
+  mix-blend-mode: normal;
+  opacity: 0.85;
+  transform: translateZ(0);
+}
+
+.dark .section-diag::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
+  opacity: 0.6;
+}
+
+/* ------- Loading animations for brands & welcome ------- */
+
+/* logo entry: each .logo-card uses --i to stagger (set by component) */
+@keyframes logoPop {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+    filter: blur(0.6px);
+  }
+
+  60% {
+    transform: translateY(4px) scale(1.002);
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.logo-card {
+  opacity: 0;
+  transform: translateY(14px) scale(0.985);
+  animation: logoPop 900ms var(--anim-ease-smooth) forwards;
+  /* longer + smoother */
+  animation-delay: calc(var(--i, 0) * 140ms);
+  /* increased stagger */
+}
+
+/* slight staggered scale for later items for visual depth */
+.track .logo-card:nth-child(n + 8) {
+  transform-origin: center;
+}
+
+/* welcome section cards animation */
+@keyframes cardUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(6px) scale(1.002);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.welcome-animate .welcome-card {
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  animation: cardUpFade 900ms var(--anim-ease-smooth) forwards;
+  /* slower + smoother */
+  animation-delay: calc(var(--j, 0) * 160ms);
+  /* larger stagger for clarity */
+}
+
+/* welcome slide-in on scroll (triggered when section gets .in-view) */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-22px) translateZ(0) scale(0.995);
+  }
+
+  60% {
+    transform: translateX(-6px) translateZ(0) scale(1.002);
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) translateZ(0) scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(22px) translateZ(0) scale(0.995);
+  }
+
+  60% {
+    transform: translateX(6px) translateZ(0) scale(1.002);
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) translateZ(0) scale(1);
+  }
+}
+
+/* run animations only when .in-view is added by the component */
+.welcome-animate.in-view .welcome-img {
+  opacity: 0;
+  transform: translateX(-22px);
+  animation: slideInLeft 900ms var(--anim-ease-smooth) both;
+  /* longer and smoother */
+  animation-delay: calc(var(--j, 0) * 160ms);
+}
+
+.welcome-animate.in-view .welcome-text {
+  opacity: 0;
+  transform: translateX(22px);
+  animation: slideInRight 900ms var(--anim-ease-smooth) both;
+  /* longer and smoother */
+  animation-delay: calc(var(--j, 0) * 160ms);
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+
+  .logo-card,
+  .welcome-animate .welcome-card,
+  .welcome-animate.in-view .welcome-img,
+  .welcome-animate.in-view .welcome-text {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ensure these section classes don't inadvertently overflow page */
+.section-diag,
+.section-diag>.max-w-7xl,
+.logos-container {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* end of additions */
+
+/* Override diagonal backgrounds with flat (hard-stop) diagonal color bands.
+   Uses only CSS colors (no SVG). Placed here to override earlier rules. */
+.diagonal-bg-dark {
+  /* bright red -> orange (sharp transition) */
+  background-image: linear-gradient(135deg,
+      #ff2d2d 0%,
+      #ff2d2d 50%,
+      #ff9700 50%,
+      #ff9700 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}
+
+.diagonal-bg-teal,
+.diagonal-bg-blue {
+  /* light blue -> green (sharp transition) */
+  background-image: linear-gradient(135deg,
+      #1da1f2 0%,
+      #1da1f2 50%,
+      #00c853 50%,
+      #00c853 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}
+
+/* section-diag palette — hard (sharp) color bands, no smooth gradients
+   .section-diag--a  => blue / green
+   .section-diag--b  => red / orange
+   .section-diag     => fallback (blue/green)
+*/
+.section-diag {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}
+
+/* blue -> green (sharp split) */
+.section-diag--a {
+  background-image: linear-gradient(135deg,
+      #1da1f2 0%,
+      #1da1f2 50%,
+      #00c853 50%,
+      #00c853 100%);
+}
+
+/* red -> orange (sharp split) */
+.section-diag--b {
+  background-image: linear-gradient(135deg,
+      #ff2d2d 0%,
+      #ff2d2d 50%,
+      #ff9700 50%,
+      #ff9700 100%);
+}
+
+/* optional utility: darker overlay for better contrast (apply by adding .diag-dark-overlay) */
+.diag-dark-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Override all diagonal/section backgrounds with light black + red palette.
+   Placed at end to ensure these rules win over all previous declarations. */
+
+/* Core diagonal backgrounds */
+.diagonal-bg-dark {
+  background-image: linear-gradient(135deg,
+      #2a2a2a 0%,
+      #2a2a2a 50%,
+      #ff4444 50%,
+      #ff4444 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}
+
+.diagonal-bg-teal,
+.diagonal-bg-blue,
+.diagonal-bg-purple {
+  background-image: linear-gradient(135deg,
+      #2a2a2a 0%,
+      #2a2a2a 50%,
+      #ff4444 50%,
+      #ff4444 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}
+
+/* Section diagonal variants */
+.section-diag--a {
+  background-image: linear-gradient(135deg,
+      #2a2a2a 0%,
+      #2a2a2a 50%,
+      #ff4444 50%,
+      #ff4444 100%) !important;
+}
+
+.section-diag--b {
+  background-image: linear-gradient(135deg,
+      #2a2a2a 0%,
+      #2a2a2a 50%,
+      #ff4444 50%,
+      #ff4444 100%) !important;
+}
+
+.section-diag--c {
+  background-image: linear-gradient(135deg,
+      #2a2a2a 0%,
+      #2a2a2a 50%,
+      #ff4444 50%,
+      #ff4444 100%) !important;
+}
+
+/* Override any background properties that use the CSS variables */
+.section-diag {
+  background: linear-gradient(135deg,
+      #2a2a2a 0%,
+      #2a2a2a 50%,
+      #ff4444 50%,
+      #ff4444 100%) !important;
+  color: #fff;
+  position: relative;
+}
+
+/* Update CSS variables to match */
+:root {
+  --section-a-base: #2a2a2a;
+  --section-b-base: #2a2a2a;
+  --section-c-base: #2a2a2a;
+  --accent-a: 255, 68, 68;
+  /* red */
+  --accent-b: 255, 68, 68;
+  /* red */
+  --accent-c: 255, 68, 68;
+  /* red */
+}
+
+/* Override all diagonal/section backgrounds with lighter faded light black + red palette.
+   Placed at end to ensure these rules win over all previous declarations. */
+
+/* Core diagonal backgrounds - lighter/faded version */
+.diagonal-bg-dark {
+  background-image: linear-gradient(135deg,
+      rgba(42, 42, 42, 0.3) 0%,
+      rgba(42, 42, 42, 0.3) 50%,
+      rgba(255, 68, 68, 0.4) 50%,
+      rgba(255, 68, 68, 0.4) 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #333;
+  position: relative;
+}
+
+.diagonal-bg-teal,
+.diagonal-bg-blue,
+.diagonal-bg-purple {
+  background-image: linear-gradient(135deg,
+      rgba(42, 42, 42, 0.25) 0%,
+      rgba(42, 42, 42, 0.25) 50%,
+      rgba(255, 68, 68, 0.35) 50%,
+      rgba(255, 68, 68, 0.35) 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #333;
+  position: relative;
+}
+
+/* Section diagonal variants - much lighter */
+.section-diag--a {
+  background-image: linear-gradient(135deg,
+      rgba(42, 42, 42, 0.15) 0%,
+      rgba(42, 42, 42, 0.15) 50%,
+      rgba(255, 68, 68, 0.25) 50%,
+      rgba(255, 68, 68, 0.25) 100%) !important;
+  color: #333 !important;
+}
+
+.section-diag--b {
+  background-image: linear-gradient(135deg,
+      rgba(42, 42, 42, 0.2) 0%,
+      rgba(42, 42, 42, 0.2) 50%,
+      rgba(255, 68, 68, 0.3) 50%,
+      rgba(255, 68, 68, 0.3) 100%) !important;
+  color: #333 !important;
+}
+
+.section-diag--c {
+  background-image: linear-gradient(135deg,
+      rgba(42, 42, 42, 0.18) 0%,
+      rgba(42, 42, 42, 0.18) 50%,
+      rgba(255, 68, 68, 0.28) 50%,
+      rgba(255, 68, 68, 0.28) 100%) !important;
+  color: #333 !important;
+}
+
+/* Override any background properties that use the CSS variables - lighter */
+.section-diag {
+  background: linear-gradient(135deg,
+      rgba(42, 42, 42, 0.2) 0%,
+      rgba(42, 42, 42, 0.2) 50%,
+      rgba(255, 68, 68, 0.3) 50%,
+      rgba(255, 68, 68, 0.3) 100%) !important;
+  color: #333 !important;
+  position: relative;
+}
+
+/* Update CSS variables to match lighter theme */
+:root {
+  --section-a-base: rgba(248, 249, 250, 0.9);
+  /* very light base */
+  --section-b-base: rgba(248, 249, 250, 0.9);
+  --section-c-base: rgba(248, 249, 250, 0.9);
+  --accent-a: 42, 42, 42;
+  /* dark gray */
+  --accent-b: 255, 68, 68;
+  /* red */
+  --accent-c: 255, 68, 68;
+  /* red */
+}
