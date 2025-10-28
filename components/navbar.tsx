@@ -24,13 +24,19 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center gap-8">
-            {["HOME", "ABOUT", "SERVICES", "BLOG", "CONTACT"].map((item) => (
+            {[
+              { label: "HOME", href: "/" },
+              { label: "ABOUT", href: "/about" },
+              { label: "SERVICES", href: "/services" },
+              { label: "BLOG", href: "/blog" },
+              { label: "CONTACT", href: "/contact" },
+            ].map((item) => (
               <a
-                key={item}
-                href="#"
-                className="text-gray-700 hover:text-[#5a3a7a] font-medium text-sm transition-colors duration-200"
+                key={item.label}
+                href={item.href}
+                className="text-gray-700 hover:text-[#2cc16f] font-medium text-sm transition-colors duration-200"
               >
-                {item}
+                {item.label}
               </a>
             ))}
             <div className="relative group">
@@ -54,9 +60,9 @@ export default function Navbar() {
           {/* responsive button: prevent overflow by limiting width, truncating and reducing padding on smaller viewports */}
           <div className="hidden md:flex items-center md:ml-4">
             <Button
-              className="flex-shrink-0 bg-[#5a3a7a] hover:bg-[#4a2a6a] text-white font-semibold text-sm px-3 md:px-6 py-1.5 rounded-md transition-all duration-200 max-w-[160px] truncate"
+              className="flex-shrink-0 bg-[#2cc16f] hover:bg-[#1fa958] text-white font-semibold text-sm px-3 md:px-6 py-1.5 rounded-md transition-all duration-200 max-w-[160px] truncate"
             >
-              <span className="inline-block w-full text-center truncate">WE ARE HIRING</span>
+              <span className="inline-block w-full text-center truncate">GET QUOTE</span>
             </Button>
           </div>
 
@@ -68,12 +74,18 @@ export default function Navbar() {
 
         {isOpen && (
           <div className="md:hidden pb-4 space-y-1 animate-in fade-in slide-in-from-top-2">
-            {["HOME", "ABOUT", "SERVICES", "BLOG", "LOCATIONS", "CONTACT"].map((item) => (
-              <a key={item} href="#" className="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 text-sm rounded-md">
-                {item}
+            {[
+              { label: "HOME", href: "/" },
+              { label: "ABOUT", href: "/about" },
+              { label: "SERVICES", href: "/services" },
+              { label: "BLOG", href: "/blog" },
+              { label: "CONTACT", href: "/contact" },
+            ].map((item) => (
+              <a key={item.label} href={item.href} className="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 text-sm rounded-md">
+                {item.label}
               </a>
             ))}
-            <Button className="w-full bg-[#5a3a7a] hover:bg-[#4a2a6a] text-white font-semibold mt-3">WE ARE HIRING</Button>
+            <Button className="w-full bg-[#2cc16f] hover:bg-[#1fa958] text-white font-semibold mt-3">GET QUOTE</Button>
           </div>
         )}
       </div>
