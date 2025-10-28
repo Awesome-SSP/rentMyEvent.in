@@ -60,7 +60,7 @@ export default function Navbar() {
           {/* responsive button: prevent overflow by limiting width, truncating and reducing padding on smaller viewports */}
           <div className="hidden md:flex items-center md:ml-4">
             <Button
-              className="flex-shrink-0 bg-[#FF6B9D] hover:bg-[#FF5287] text-white font-semibold text-sm px-3 md:px-6 py-1.5 rounded-md transition-all duration-200 max-w-[160px] truncate"
+              className="flex-shrink-0 btn-premium text-white font-semibold text-sm px-3 md:px-6 py-1.5 rounded-md max-w-[160px] truncate"
             >
               <span className="inline-block w-full text-center truncate">GET QUOTE</span>
             </Button>

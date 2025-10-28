@@ -79,11 +79,11 @@ export default function Blog() {
                 <section className="diagonal-bg-dark py-16 md:py-24 overflow-x-hidden relative">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#1a1a1a] leading-tight animate-fade-in-up">
-                                Event Planning <span className="bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">Insights & Tips</span>
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#6B4E71] leading-tight animate-fade-in-up">
+                                Event Planning <span className="bg-gradient-to-r from-[#FFB3D9] via-[#E6D5FF] to-[#FF6B9D] bg-clip-text text-transparent">Insights & Tips</span>
                             </h1>
-                            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
-                                Expert articles and guides to help you plan <span className="text-[#ff9700] font-semibold">amazing events</span>
+                            <p className="text-xl text-[#6B4E71] mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200 font-medium">
+                                Expert articles and guides to help you plan <span className="text-[#FF6B9D] font-semibold">amazing events</span>
                             </p>
                         </div>
                     </div>
@@ -96,7 +96,7 @@ export default function Blog() {
                             {posts.map((post, idx) => (
                                 <article
                                     key={post.id}
-                                    className="bg-white rounded-lg overflow-hidden border border-gray-200/60 hover:shadow-xl transition-all duration-300 animate-scale-in flex flex-col"
+                                    className="bg-white rounded-lg overflow-hidden border border-pink-200 card-hover-lift shadow-soft flex flex-col"
                                     style={{ animationDelay: `${(idx + 1) * 0.1}s` }}
                                 >
                                     {/* Image */}
@@ -108,7 +108,7 @@ export default function Blog() {
                                             loading="lazy"
                                         />
                                         <div className="absolute top-3 right-3">
-                                            <span className="bg-[#ff9700] text-white px-3 py-1 rounded-full text-xs font-semibold">
+                                            <span className="bg-[#FF6B9D] text-white px-3 py-1 rounded-full text-xs font-semibold">
                                                 {post.category}
                                             </span>
                                         </div>
@@ -116,16 +116,16 @@ export default function Blog() {
 
                                     {/* Content */}
                                     <div className="p-6 flex-1 flex flex-col">
-                                        <h3 className="text-lg font-bold text-[#1a1a1a] mb-2 line-clamp-2">
+                                        <h3 className="text-lg font-bold text-[#6B4E71] mb-2 line-clamp-2">
                                             {post.title}
                                         </h3>
-                                        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                                        <p className="text-[#7B5E81] text-sm mb-4 line-clamp-2 font-medium">
                                             {post.excerpt}
                                         </p>
 
                                         {/* Meta */}
-                                        <div className="mt-auto pt-4 border-t border-gray-100">
-                                            <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
+                                        <div className="mt-auto pt-4 border-t border-pink-100">
+                                            <div className="flex items-center gap-4 text-xs text-[#8B6B8D] mb-4">
                                                 <div className="flex items-center gap-1">
                                                     <Calendar className="w-4 h-4" />
                                                     {post.date}
@@ -138,7 +138,7 @@ export default function Blog() {
 
                                             <a
                                                 href="#"
-                                                className="inline-flex items-center gap-2 text-[#2cc16f] font-semibold hover:text-[#ff9700] transition-colors"
+                                                className="inline-flex items-center gap-2 text-[#FF6B9D] font-semibold hover:text-[#FFB3D9] transition-colors"
                                             >
                                                 Read More <ArrowRight className="w-4 h-4" />
                                             </a>
@@ -153,10 +153,10 @@ export default function Blog() {
                 {/* Newsletter Section */}
                 <section className="section-diag section-diag--b py-16 md:py-24">
                     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1a1a1a] animate-fade-in-down">
-                            Stay Updated with Our <span className="bg-gradient-to-r from-[#2cc16f] to-[#ff9700] bg-clip-text text-transparent">Latest Insights</span>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#6B4E71] animate-fade-in-down">
+                            Stay Updated with Our <span className="bg-gradient-to-r from-[#FFB3D9] to-[#FF6B9D] bg-clip-text text-transparent">Latest Insights</span>
                         </h2>
-                        <p className="text-gray-600 mb-8 animate-fade-in-up animate-delay-200">
+                        <p className="text-[#6B4E71] mb-8 animate-fade-in-up animate-delay-200 font-medium">
                             Subscribe to our newsletter to receive expert tips, industry trends, and exclusive event management insights.
                         </p>
 
@@ -164,11 +164,11 @@ export default function Blog() {
                             <input
                                 type="email"
                                 placeholder="Enter your email address"
-                                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#2cc16f] transition-colors"
+                                className="input-premium flex-1"
                             />
                             <button
                                 type="submit"
-                                className="bg-gradient-to-r from-[#2cc16f] to-[#ff9700] text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                                className="btn-premium px-6 py-3 rounded-lg font-semibold"
                             >
                                 Subscribe
                             </button>
@@ -179,15 +179,15 @@ export default function Blog() {
                 {/* CTA Section */}
                 <section className="diagonal-bg-dark py-16 md:py-24">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#1a1a1a] animate-fade-in-up">
-                            Ready to Plan Your <span className="bg-gradient-to-r from-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">Next Event</span>?
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#6B4E71] animate-fade-in-up">
+                            Ready to Plan Your <span className="bg-gradient-to-r from-[#FFB3D9] to-[#FF6B9D] bg-clip-text text-transparent">Next Event</span>?
                         </h2>
-                        <p className="text-gray-600 mb-8 text-lg animate-fade-in-up animate-delay-200">
+                        <p className="text-[#6B4E71] mb-8 text-lg animate-fade-in-up animate-delay-200 font-medium">
                             Let our team of experts help you create an unforgettable experience.
                         </p>
                         <a
                             href="/contact"
-                            className="inline-block bg-gradient-to-r from-[#2cc16f] to-[#ff9700] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 animate-fade-in-up animate-delay-300"
+                            className="inline-block btn-premium px-8 py-3 rounded-lg font-semibold animate-fade-in-up animate-delay-300"
                         >
                             Get Started
                         </a>

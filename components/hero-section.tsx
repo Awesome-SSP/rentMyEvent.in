@@ -7,6 +7,11 @@ export default function HeroSection() {
 
   return (
     <section className="diagonal-bg-dark py-12 md:py-16 overflow-x-hidden relative">
+      {/* Floating decorative elements */}
+      <div className="absolute top-10 left-5 w-16 h-16 rounded-full bg-gradient-to-br from-[#FFB3D9] to-[#E6D5FF] opacity-20 blur-2xl animate-float pointer-events-none"></div>
+      <div className="absolute top-32 right-10 w-20 h-20 rounded-full bg-gradient-to-br from-[#FF6B9D] to-[#FFB3D9] opacity-15 blur-3xl animate-float pointer-events-none" style={{ animationDelay: "1s" }}></div>
+      <div className="absolute bottom-20 left-1/4 w-24 h-24 rounded-full bg-gradient-to-br from-[#B3F0E8] to-[#E6D5FF] opacity-10 blur-3xl animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 relative z-10">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-[#6B4E71] leading-tight animate-fade-in-up relative inline-block w-full ultra-smooth-reveal">
           <span className="aurora-wave font-extrabold">Premium Event Rental</span> & <span className="text-[#6B4E71] font-bold">Management Solutions</span>
@@ -45,11 +50,11 @@ export default function HeroSection() {
               ]).map((stat, idx) => (
                 <div
                   key={idx}
-                  className="bg-gradient-to-br from-white via-pink-50 to-purple-50 border-2 border-pink-200 rounded-xl p-4 md:p-6 lg:p-8 text-center hover:shadow-2xl transition-all duration-300 shadow-lg backdrop-blur-sm animate-card-hover card-3d-flip neon-glow tilt-3d"
+                  className="bg-gradient-to-br from-white via-pink-50 to-purple-50 border-2 border-pink-200 rounded-xl p-4 md:p-6 lg:p-8 text-center shadow-lg backdrop-blur-sm card-hover-lift shadow-soft-hover aurora-wave"
                   style={{ animationDelay: `${(idx + 1) * 0.1}s` }}
                 >
-                  <p className="bg-gradient-to-r from-[#FFB3D9] via-[#E6D5FF] to-[#B3F0E8] bg-clip-text text-transparent text-xl md:text-2xl lg:text-3xl font-black mb-1 aurora-wave">{stat.value}</p>
-                  <p className="text-[#6B4E71] font-bold text-xs md:text-sm bg-gradient-to-r from-[#FFB3D9] to-[#E6D5FF] bg-clip-text text-transparent">{stat.label}</p>
+                  <p className="gradient-pink-lavender text-xl md:text-2xl lg:text-3xl font-black mb-1">{stat.value}</p>
+                  <p className="text-[#6B4E71] font-bold text-xs md:text-sm">{stat.label}</p>
                 </div>
               ))}
             </div>

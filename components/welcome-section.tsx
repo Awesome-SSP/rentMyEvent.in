@@ -26,13 +26,16 @@ export default function WelcomeSection() {
     <section
       ref={ref}
       className={
-        "section-diag section-diag--a py-16 md:py-28 welcome-animate" + (inView ? " in-view" : "")
+        "section-diag section-diag--a py-16 md:py-28 welcome-animate relative" + (inView ? " in-view" : "")
       }
       style={{
         backgroundImage:
           "linear-gradient(135deg, #FFB3D9 0%, #FFB3D9 50%, #E6D5FF 50%, #E6D5FF 100%)",
       }}
     >
+      {/* Floating decorative elements */}
+      <div className="absolute top-20 left-10 w-16 h-16 rounded-full bg-white opacity-5 blur-2xl animate-float pointer-events-none"></div>
+      <div className="absolute bottom-20 right-5 w-20 h-20 rounded-full bg-white opacity-5 blur-3xl animate-float pointer-events-none" style={{ animationDelay: "1s" }}></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* image - slides in from left */}
@@ -41,7 +44,7 @@ export default function WelcomeSection() {
             <img
               src="/professional-event-setup-with-modern-equipment.jpg"
               alt="Professional event setup"
-              className="relative rounded-lg shadow-lg border border-gray-200/50 block"
+              className="relative rounded-lg shadow-soft-lg border border-gray-200/50 block card-hover-lift"
               loading="lazy"
             />
           </div>

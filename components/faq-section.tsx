@@ -70,7 +70,11 @@ export default function FAQSection() {
   ]
 
   return (
-    <section className="diagonal-bg-dark py-16 md:py-28">
+    <section className="diagonal-bg-dark py-16 md:py-28 relative">
+      {/* Floating decorative elements */}
+      <div className="absolute top-20 left-5 w-16 h-16 rounded-full bg-gradient-to-br from-[#FFB3D9] to-[#E6D5FF] opacity-15 blur-2xl animate-float pointer-events-none"></div>
+      <div className="absolute bottom-20 right-10 w-20 h-20 rounded-full bg-gradient-to-br from-[#B3F0E8] to-[#FFB3D9] opacity-10 blur-3xl animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-[#6B4E71] animate-fade-in-down">
           <span className="text-[#FF6B9D]">Frequently </span>
@@ -82,7 +86,7 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`border border-pink-200 rounded-lg overflow-hidden hover:border-pink-300 transition-colors animate-fade-in-up animate-delay-${(index + 1) * 100} bg-white shadow-sm`}
+              className={`border border-pink-200 rounded-lg overflow-hidden shadow-soft animate-fade-in-up animate-delay-${(index + 1) * 100} bg-white hover:shadow-soft-hover transition-all`}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}

@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: oklch(0.98 0 0);
   --foreground: oklch(0.15 0 0);
@@ -2065,4 +2069,450 @@ span[class*="bg-gradient"]:hover {
 .ultra-smooth-reveal {
   animation: ultraSmoothReveal 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
   perspective: 1200px;
+}
+
+/* PREMIUM DESIGN UTILITIES FOR FEMININE AESTHETIC */
+
+/* Soft shadows for elegant depth */
+.shadow-soft {
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.1);
+}
+
+.shadow-soft-lg {
+  box-shadow: 0 8px 30px rgba(255, 107, 157, 0.15);
+}
+
+.shadow-soft-hover {
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shadow-soft-hover:hover {
+  box-shadow: 0 12px 40px rgba(255, 107, 157, 0.2);
+}
+
+/* Gradient text utilities */
+.gradient-pink-lavender {
+  background: linear-gradient(135deg, #FF6B9D, #E6D5FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-lavender-mint {
+  background: linear-gradient(135deg, #E6D5FF, #B3F0E8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-peach-pink {
+  background: linear-gradient(135deg, #FFD9B3, #FFB3D9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effects */
+.card-hover-lift {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(255, 107, 157, 0.2);
+}
+
+/* Smooth gradient borders */
+.gradient-border {
+  border: 2px solid transparent;
+  background-image:
+    linear-gradient(white, white),
+    linear-gradient(135deg, #FFB3D9, #E6D5FF);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Button premium styles */
+.btn-premium {
+  background: linear-gradient(135deg, #FF6B9D, #FFB3D9);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: left 0.3s ease;
+}
+
+.btn-premium:hover::before {
+  left: 100%;
+}
+
+.btn-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+}
+
+/* Smooth text transitions */
+.text-premium {
+  color: #6B4E71;
+  font-weight: 500;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-premium:hover {
+  color: #FF6B9D;
+}
+
+/* Decorative elements */
+.dot-accent {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #FF6B9D, #FFB3D9);
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+/* Smooth dividers */
+.divider-gradient {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #FFB3D9, transparent);
+  margin: 24px 0;
+}
+
+/* Enhanced section backgrounds */
+.section-light-feminine {
+  background: linear-gradient(135deg, rgba(255, 179, 217, 0.1), rgba(230, 213, 255, 0.1));
+  backdrop-filter: blur(10px);
+}
+
+/* Input field premium styling */
+.input-premium {
+  border: 2px solid #FFB3D9;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #6B4E71;
+}
+
+.input-premium:focus {
+  outline: none;
+  border-color: #FF6B9D;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.1);
+}
+
+.input-premium::placeholder {
+  color: #C699C0;
+}
+
+/* Floating animation */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Glow effect */
+@keyframes glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(255, 107, 157, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(255, 107, 157, 0.6);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Smooth page transitions */
+.page-fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Bounce animation */
+@keyframes bounce-soft {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-bounce-soft {
+  animation: bounce-soft 1.5s ease-in-out infinite;
+}
+
+/* Pulse glow animation */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(255, 107, 157, 0.4);
+  }
+
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 0 8px rgba(255, 107, 157, 0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1200px 0;
+  }
+
+  100% {
+    background-position: 1200px 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #FEF9F3, #FFB3D9, #E6D5FF, #FEF9F3);
+  background-size: 1200px 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* Slide up animation */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth scale animation */
+@keyframes scale-smooth {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-smooth {
+  animation: scale-smooth 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Gradient shift animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* Fade in down animation */
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fade in up animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Stagger delay classes */
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animate-delay-600 {
+  animation-delay: 600ms;
+}
+
+/* Premium text shadow effects */
+.text-shadow-soft {
+  text-shadow: 0 2px 4px rgba(255, 107, 157, 0.1);
+}
+
+.text-shadow-medium {
+  text-shadow: 0 4px 8px rgba(255, 107, 157, 0.15);
+}
+
+.text-shadow-strong {
+  text-shadow: 0 8px 16px rgba(255, 107, 157, 0.2);
+}
+
+/* Glow text effect */
+.text-glow {
+  color: #FF6B9D;
+  text-shadow: 0 0 10px rgba(255, 107, 157, 0.3),
+    0 0 20px rgba(255, 107, 157, 0.2);
+}
+
+/* Smooth link hover effects */
+a {
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button group smooth transitions */
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth form transitions */
+input,
+textarea,
+select {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Premium section backgrounds */
+.premium-bg {
+  background: linear-gradient(135deg, rgba(255, 179, 217, 0.05), rgba(230, 213, 255, 0.05));
+  backdrop-filter: blur(8px);
+}
+
+/* Smooth hover underline effect */
+.underline-hover {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline-hover::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(90deg, #FF6B9D, #FFB3D9);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.underline-hover:hover::after {
+  width: 100%;
+}
+
+/* Smooth paragraph transitions */
+p {
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Heading smooth effects */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    text-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

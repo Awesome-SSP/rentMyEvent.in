@@ -65,12 +65,15 @@ export default function ServicesSection() {
   return (
     <section
       ref={ref}
-      className={"diagonal-bg-purple py-16 md:py-28 services-animate" + (inView ? " in-view" : "")}
+      className={"py-16 md:py-28 services-animate relative" + (inView ? " in-view" : "")}
       aria-label="Our Rental Services"
     >
+      {/* Floating decorative elements */}
+      <div className="absolute top-10 right-5 w-16 h-16 rounded-full bg-gradient-to-br from-[#FFB3D9] to-[#E6D5FF] opacity-15 blur-2xl animate-float pointer-events-none"></div>
+      <div className="absolute bottom-32 left-10 w-20 h-20 rounded-full bg-gradient-to-br from-[#FF6B9D] to-[#B3F0E8] opacity-10 blur-3xl animate-float pointer-events-none" style={{ animationDelay: "1.5s" }}></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#6B4E71]">Our Rental Services</h2>
-        <p className="text-center text-[#8B6B8D] mb-16 max-w-2xl mx-auto text-lg font-medium">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#6B4E71] animate-fade-in-down">Our Rental Services</h2>
+        <p className="text-center text-[#8B6B8D] mb-16 max-w-2xl mx-auto text-lg font-medium animate-fade-in-up animate-delay-200">
           Comprehensive equipment rental solutions designed for professional events
         </p>
 
@@ -90,16 +93,16 @@ export default function ServicesSection() {
             return (
               <div
                 key={service.title}
-                className="service-card bg-white border border-purple-200 rounded-lg p-6 hover:shadow-xl transition-all hover:border-pink-300 hover:bg-pink-50"
-                style={cardStyle}
+                className="service-card bg-white border-2 border-pink-200 rounded-lg p-6 card-hover-lift shadow-soft animate-slide-up"
+                style={{ ...cardStyle, animationDelay: `${idx * 100}ms` }}
                 aria-hidden={!inView}
               >
-                <div className="bg-pink-100 w-12 h-12 rounded-md flex items-center justify-center mb-4">
+                <div className="bg-gradient-to-br from-[#FFB3D9] to-[#E6D5FF] w-12 h-12 rounded-md flex items-center justify-center mb-4 shadow-soft">
                   <Icon className="w-6 h-6 text-[#FF6B9D]" />
                 </div>
                 <h3 className="text-lg font-semibold text-[#6B4E71] mb-3">{service.title}</h3>
                 <p className="text-[#8B6B8D] text-sm mb-6 leading-relaxed font-medium">{service.description}</p>
-                <Button className="w-full bg-[#FF6B9D] hover:bg-[#FF5287] text-white font-semibold text-sm transition-colors">
+                <Button className="w-full btn-premium text-white font-semibold text-sm">
                   Learn More
                 </Button>
               </div>

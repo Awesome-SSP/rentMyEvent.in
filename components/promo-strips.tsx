@@ -17,8 +17,8 @@ export default function PromoStrips() {
   ]
 
   return (
-    <div className="bg-gradient-to-r from-[#f1040c] via-[#f31212ee] to-[#e30a0a] text-gray-100 overflow-hidden">
-      <div className="py-2 px-4 relative overflow-hidden border-b border-gray-700/30">
+    <div className="bg-gradient-to-r from-[#FFB3D9] via-[#FFB3D9]/90 to-[#E6D5FF] text-gray-100 overflow-hidden">
+      <div className="py-2 px-4 relative overflow-hidden border-b border-pink-300/30">
         <div
           className="flex gap-16 whitespace-nowrap transition-transform duration-200 ease-linear"
           style={{
@@ -26,14 +26,14 @@ export default function PromoStrips() {
           }}
         >
           {[...messages, ...messages].map((msg, idx) => (
-            <span key={idx} className="text-xs md:text-sm font-medium flex-shrink-0 tracking-wide text-gray-300">
+            <span key={idx} className="text-xs md:text-sm font-semibold flex-shrink-0 tracking-wide text-[#6B4E71]">
               {msg}
             </span>
           ))}
         </div>
       </div>
 
-      <div className="py-2 px-4 bg-gradient-to-r from-[#1a1a1a] via-[#2d3748] to-[#1a1a1a] relative overflow-hidden border-b border-gray-700/30">
+      <div className="py-2 px-4 bg-gradient-to-r from-[#FEF9F3] via-[#FFE6F0] to-[#FEF9F3] relative overflow-hidden border-b border-pink-200/30">
         <div
           className="flex gap-16 whitespace-nowrap transition-transform duration-200 ease-linear"
           style={{
@@ -41,7 +41,7 @@ export default function PromoStrips() {
           }}
         >
           {[...messages.reverse(), ...messages.reverse()].map((msg, idx) => (
-            <span key={idx} className="text-xs md:text-sm font-medium flex-shrink-0 tracking-wide text-gray-400">
+            <span key={idx} className="text-xs md:text-sm font-semibold flex-shrink-0 tracking-wide text-[#6B4E71]">
               • {msg}
             </span>
           ))}

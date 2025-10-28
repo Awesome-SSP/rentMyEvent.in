@@ -67,13 +67,17 @@ export default function ServicesGrid() {
   const STAGGER = 160 // ms
 
   return (
-    <section ref={ref} className="diagonal-bg-dark py-16 md:py-24" aria-label="Services & Equipment">
+    <section ref={ref} className="py-16 md:py-24 relative" aria-label="Services & Equipment">
+      {/* Floating decorative elements */}
+      <div className="absolute top-20 right-10 w-16 h-16 rounded-full bg-gradient-to-br from-[#FFB3D9] to-[#E6D5FF] opacity-15 blur-2xl animate-float pointer-events-none"></div>
+      <div className="absolute bottom-32 left-5 w-20 h-20 rounded-full bg-gradient-to-br from-[#B3F0E8] to-[#FFD9B3] opacity-10 blur-3xl animate-float pointer-events-none" style={{ animationDelay: "1.5s" }}></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-[#1a1a1a] animate-fade-in-down">
-          <span className="bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">Services & Equipment</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-[#6B4E71] animate-fade-in-down">
+          <span className="bg-gradient-to-r from-[#FFB3D9] to-[#FF6B9D] bg-clip-text text-transparent">Services & Equipment</span>
         </h2>
-        <p className="text-center text-gray-600 mb-12 text-lg animate-fade-in-up animate-delay-200">
-          <span className="bg-gradient-to-r from-[#2cc16f] to-[#dc5f5f] bg-clip-text text-transparent font-semibold">Comprehensive rental solutions</span> for every event type
+        <p className="text-center text-[#6B4E71] mb-12 text-lg animate-fade-in-up animate-delay-200 font-medium">
+          <span className="bg-gradient-to-r from-[#FFB3D9] to-[#E6D5FF] bg-clip-text text-transparent font-semibold">Comprehensive rental solutions</span> for every event type
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -94,7 +98,7 @@ export default function ServicesGrid() {
             return (
               <div
                 key={service.title}
-                className="relative group overflow-hidden rounded-lg aspect-square cursor-pointer service-card animate-card-hover animate-pop-in animate-delay-300"
+                className="relative group overflow-hidden rounded-lg aspect-square cursor-pointer service-card animate-card-hover animate-pop-in animate-delay-300 border-2 border-pink-200 shadow-soft card-hover-lift"
                 style={cardStyle}
                 aria-hidden={!inView}
               >
@@ -105,8 +109,8 @@ export default function ServicesGrid() {
                   style={imgStyle}
                   className="w-full h-full object-cover block"
                 />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all flex items-center justify-center">
-                  <p className="text-white font-semibold text-center px-4 text-sm md:text-base">{service.title}</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-black/50 group-hover:from-black/50 group-hover:to-black/60 transition-all flex items-center justify-center backdrop-blur-sm">
+                  <p className="text-white font-bold text-center px-4 text-sm md:text-base drop-shadow-lg">{service.title}</p>
                 </div>
               </div>
             )

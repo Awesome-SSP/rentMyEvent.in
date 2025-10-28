@@ -20,11 +20,11 @@ export default function BrandsCarousel() {
     <section className="diagonal-bg-dark py-12 md:py-16 logos-section overflow-hidden" aria-label="Brands Trusted Us">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="logos-title animate-fade-in-down">
-          <span className="bg-gradient-to-r from-[#2cc16f] to-[#ff9700] bg-clip-text text-transparent">Brands </span>
-          <span className="text-[#1a1a1a]">Trusted Us</span>
+          <span className="bg-gradient-to-r from-[#FFB3D9] to-[#FF6B9D] bg-clip-text text-transparent">Brands </span>
+          <span className="text-[#6B4E71]">Trusted Us</span>
         </h2>
-        <p className="text-sm text-gray-600 mb-8 animate-fade-in-up animate-delay-200">
-          <span className="bg-gradient-to-r from-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent font-semibold">Leading companies</span> choose us for their event management needs
+        <p className="text-sm text-[#6B4E71] mb-8 animate-fade-in-up animate-delay-200 font-medium">
+          <span className="bg-gradient-to-r from-[#FFB3D9] to-[#E6D5FF] bg-clip-text text-transparent font-semibold">Leading companies</span> choose us for their event management needs
         </p>
 
         <div className="relative w-full overflow-hidden">
@@ -33,7 +33,7 @@ export default function BrandsCarousel() {
             {infiniteBrands.map((brand, i) => (
               <div
                 key={`left-${i}`}
-                className="flex-shrink-0 mx-3 bg-white rounded-lg shadow-md animate-card-hover transition-shadow duration-300 p-3 w-28 h-16 flex items-center justify-center border border-gray-200 animate-scale-in"
+                className="flex-shrink-0 mx-3 bg-white rounded-lg shadow-soft card-hover-lift p-3 w-28 h-16 flex items-center justify-center border border-pink-200"
               >
                 <img
                   src={brand.logo}
@@ -50,7 +50,7 @@ export default function BrandsCarousel() {
             {infiniteBrands.map((brand, i) => (
               <div
                 key={`right-${i}`}
-                className="flex-shrink-0 mx-3 bg-white rounded-lg shadow-md animate-card-hover transition-shadow duration-300 p-3 w-28 h-16 flex items-center justify-center border border-gray-200 animate-scale-in animate-delay-400"
+                className="flex-shrink-0 mx-3 bg-white rounded-lg shadow-soft card-hover-lift p-3 w-28 h-16 flex items-center justify-center border border-pink-200"
               >
                 <img
                   src={brand.logo}

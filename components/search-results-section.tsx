@@ -41,10 +41,10 @@ const GROUPS: { title: string; rows: Row[] }[] = [
 ]
 
 function badgeClassFor(position: number | string) {
-	if (typeof position !== "number") return "bg-white/10 text-gray-800"
-	if (position <= 25) return "bg-emerald-500/20 text-emerald-800"
-	if (position <= 100) return "bg-amber-400/15 text-amber-800"
-	return "bg-white/6 text-rose-700"
+	if (typeof position !== "number") return "bg-pink-100/60 text-[#6B4E71] font-medium"
+	if (position <= 25) return "bg-emerald-100/70 text-emerald-700 font-semibold"
+	if (position <= 100) return "bg-amber-100/70 text-amber-700 font-semibold"
+	return "bg-pink-100/60 text-[#FF6B9D] font-semibold"
 }
 
 export default function SearchResultsSection() {
@@ -92,17 +92,21 @@ export default function SearchResultsSection() {
 	return (
 		<section
 			ref={ref}
-			className="diagonal-bg-purple py-16 md:py-24"
+			className="diagonal-bg-purple py-16 md:py-24 relative"
 			aria-label="Our Rent Results of December"
 		>
+			{/* Floating decorative elements */}
+			<div className="absolute top-10 left-10 w-16 h-16 rounded-full bg-gradient-to-br from-[#FFB3D9] to-[#E6D5FF] opacity-15 blur-2xl animate-float pointer-events-none"></div>
+			<div className="absolute bottom-20 right-5 w-20 h-20 rounded-full bg-gradient-to-br from-[#B3F0E8] to-[#FFB3D9] opacity-10 blur-3xl animate-float pointer-events-none" style={{ animationDelay: "1.5s" }}></div>
+
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-				<header className="text-center mb-8">
-					<h2 className="text-3xl md:text-4xl font-bold mb-2">OUR RENT RESULTS OF DECEMBER</h2>
-					<p className="text-gray-600 max-w-2xl mx-auto">
+				<header className="text-center mb-8 animate-fade-in-down">
+					<h2 className="text-3xl md:text-4xl font-bold mb-2 text-[#6B4E71]">OUR RENT RESULTS OF DECEMBER</h2>
+					<p className="text-[#6B4E71] max-w-2xl mx-auto font-medium">
 						Snapshot of SEO performance and ranking positions for our core services across Delhi & NCR.
 						Positions shown are the best recorded for the period.
 					</p>
-					<p className="text-sm text-gray-500 mt-2">Last updated: December</p>
+					<p className="text-sm text-[#8B6B8D] mt-2 font-medium">Last updated: December</p>
 				</header>
 
 				<div className="grid gap-6 md:grid-cols-3">
@@ -118,26 +122,26 @@ export default function SearchResultsSection() {
 						return (
 							<article
 								key={group.title}
-								style={cardStyle}
-								className="rounded-2xl overflow-hidden transform-gpu"
+								style={{ ...cardStyle, animationDelay: `${groupDelay}ms` }}
+								className="rounded-2xl overflow-hidden transform-gpu card-hover-lift shadow-soft animate-slide-up"
 							>
-								{/* glass / transparent card */}
+								{/* Premium light card */}
 								<div
-									className="bg-white/8 dark:bg-black/16 backdrop-blur-md border border-white/8 dark:border-white/6 shadow-lg"
+									className="bg-white border-2 border-pink-200 shadow-soft-lg"
 									style={{ borderRadius: 16 }}
 								>
-									<div className="p-5 flex items-start justify-between gap-4 border-b border-white/6">
+									<div className="p-5 flex items-start justify-between gap-4 border-b border-pink-100">
 										<div>
-											<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 leading-tight">
+											<h3 className="text-lg font-bold text-[#6B4E71] leading-tight">
 												{group.title}
 											</h3>
-											<p className="text-xs text-gray-500 mt-1">Top service keywords & positions</p>
+											<p className="text-xs text-[#8B6B8D] mt-1 font-medium">Top service keywords & positions</p>
 										</div>
 
 										<div className="flex items-center gap-3">
 											<div className="text-right">
-												<div className="text-xs text-gray-500">Top position</div>
-												<div className="text-sm font-semibold text-[#5a3a7a]">
+												<div className="text-xs text-[#8B6B8D] font-medium">Top position</div>
+												<div className="text-sm font-bold text-[#FF6B9D]">
 													{
 														group.rows
 															.map((r) => (typeof r.position === "number" ? r.position : Infinity))
@@ -145,7 +149,7 @@ export default function SearchResultsSection() {
 													}
 												</div>
 											</div>
-											<div className="w-10 h-10 rounded-lg bg-white/6 flex items-center justify-center border border-white/6">
+											<div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#FFB3D9] to-[#E6D5FF] flex items-center justify-center border border-pink-200 shadow-soft">
 												<svg
 													width="20"
 													height="20"
@@ -170,11 +174,11 @@ export default function SearchResultsSection() {
 											<table className="w-full text-left">
 												<thead>
 													<tr>
-														<th className="text-sm text-gray-400 font-medium pb-3">Services</th>
-														<th className="text-sm text-gray-400 font-medium pb-3">Position</th>
+														<th className="text-sm text-[#6B4E71] font-bold pb-3">Services</th>
+														<th className="text-sm text-[#6B4E71] font-bold pb-3">Position</th>
 													</tr>
 												</thead>
-												<tbody className="divide-y divide-white/6">
+												<tbody className="divide-y divide-pink-100">
 													{group.rows.map((row, ri) => {
 														const rowDelay = (gi * 6 + ri) * CARD_STAGGER
 														const rowStyle: React.CSSProperties = {
@@ -191,15 +195,14 @@ export default function SearchResultsSection() {
 															<tr
 																key={row.service}
 																style={rowStyle}
-																className="align-middle hover:bg-white/4"
+																className="align-middle hover:bg-pink-50/30 transition-colors"
 															>
 																<td className="py-3 pr-4">
 																	<div className="flex items-start gap-3">
 																		<div className="mt-0.5">
 																			<div
-																				className={`inline-flex items-center justify-center w-8 h-8 rounded-md ${
-																					isTop ? "bg-emerald-50/60" : "bg-white/6"
-																				} text-sm`}
+																				className={`inline-flex items-center justify-center w-8 h-8 rounded-md ${isTop ? "bg-emerald-100/80 text-emerald-700" : "bg-pink-100/60 text-[#FF6B9D]"
+																					} text-sm font-bold`}
 																			>
 																				{typeof row.position === "number" && row.position <= 25
 																					? "★"
@@ -207,10 +210,10 @@ export default function SearchResultsSection() {
 																			</div>
 																		</div>
 																		<div>
-																			<div className="text-sm text-gray-900 dark:text-gray-100 font-medium">
+																			<div className="text-sm text-[#6B4E71] font-semibold">
 																				{row.service}
 																			</div>
-																			<div className="text-xs text-gray-400 mt-0.5">
+																			<div className="text-xs text-[#8B6B8D] mt-0.5 font-medium">
 																				keyword visibility
 																			</div>
 																		</div>

@@ -55,8 +55,12 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="section-diag section-diag--a py-16 md:py-24" aria-label="Get in touch">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section-diag section-diag--a py-16 md:py-24 relative" aria-label="Get in touch">
+      {/* Floating decorative elements */}
+      <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-gradient-to-br from-[#FFB3D9] to-[#E6D5FF] opacity-15 blur-2xl animate-float pointer-events-none"></div>
+      <div className="absolute bottom-20 left-5 w-20 h-20 rounded-full bg-gradient-to-br from-[#FF6B9D] to-[#B3F0E8] opacity-10 blur-3xl animate-float pointer-events-none" style={{ animationDelay: "1.5s" }}></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid gap-8 lg:grid-cols-2 items-start">
           {/* Addresses */}
           <div>
@@ -93,7 +97,7 @@ export default function ContactSection() {
                   required
                   value={form.name}
                   onChange={(e) => update("name", e.target.value)}
-                  className="mt-1 block w-full rounded-md border-pink-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                  className="input-premium mt-1 block w-full"
                 />
               </div>
 
@@ -104,7 +108,7 @@ export default function ContactSection() {
                   type="email"
                   value={form.email}
                   onChange={(e) => update("email", e.target.value)}
-                  className="mt-1 block w-full rounded-md border-pink-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                  className="input-premium mt-1 block w-full"
                 />
               </div>
 
@@ -115,7 +119,7 @@ export default function ContactSection() {
                   rows={8}
                   value={form.message}
                   onChange={(e) => update("message", e.target.value)}
-                  className="mt-1 block w-full rounded-md border-pink-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                  className="input-premium mt-1 block w-full"
                 />
               </div>
 
@@ -123,7 +127,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="inline-flex items-center justify-center rounded-md bg-[#FF6B9D] hover:bg-[#FF5287] px-4 py-2 text-sm font-semibold text-white transition-colors disabled:opacity-60"
+                  className="btn-premium px-4 py-2 text-sm font-semibold disabled:opacity-60"
                 >
                   {submitting ? "Sending..." : "Send"}
                 </button>

@@ -86,34 +86,39 @@ export default function WhyChooseUs() {
   ]
 
   return (
-    <section className="section-diag section-diag--a py-16 md:py-24">
+    <section className="section-diag section-diag--a py-16 md:py-24 relative">
+      {/* Floating decorative elements */}
+      <div className="absolute top-10 left-5 w-16 h-16 rounded-full bg-gradient-to-br from-[#FFB3D9] to-[#E6D5FF] opacity-15 blur-2xl animate-float pointer-events-none"></div>
+      <div className="absolute bottom-20 right-10 w-20 h-20 rounded-full bg-gradient-to-br from-[#B3F0E8] to-[#FFB3D9] opacity-10 blur-3xl animate-float pointer-events-none" style={{ animationDelay: "1.5s" }}></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <header className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#1a1a1a] animate-fade-in-down">
-            <span className="text-[#1a1a1a]">Why Choose </span>
-            <span className="bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">Rent My Event</span>
+        <header className="text-center mb-10 animate-fade-in-down">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#6B4E71]">
+            <span className="text-[#6B4E71]">Why Choose </span>
+            <span className="bg-gradient-to-r from-[#FFB3D9] via-[#E6D5FF] to-[#FF6B9D] bg-clip-text text-transparent">Rent My Event</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto animate-fade-in-up animate-delay-200">
-            <span className="text-[#ff9700] font-semibold">Services & management you can trust</span> — transparent pricing, award‑winning execution and goal‑oriented planning.
+          <p className="text-[#6B4E71] max-w-2xl mx-auto animate-fade-in-up animate-delay-200 font-medium">
+            <span className="text-[#FF6B9D] font-semibold">Services & management you can trust</span> — transparent pricing, award‑winning execution and goal‑oriented planning.
           </p>
         </header>
 
         {/* Highlight cards (marketing copy as cards) */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-10">
-          {highlights.map((h) => {
+          {highlights.map((h, idx) => {
             const Icon = h.icon
             return (
               <article
                 key={h.title}
-                className="group bg-white/6 dark:bg-black/20 backdrop-blur-sm border border-white/8 dark:border-white/6 rounded-2xl p-6 hover:scale-[1.01] transition-transform duration-300"
+                className="group bg-white border-2 border-pink-200 rounded-2xl p-6 card-hover-lift shadow-soft animate-slide-up"
+                style={{ animationDelay: `${idx * 100}ms` }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-none w-16 h-16 rounded-lg bg-[#5a3a7a]/12 flex items-center justify-center text-[#5a3a7a]">
+                  <div className="flex-none w-16 h-16 rounded-lg bg-gradient-to-br from-[#FFB3D9] to-[#E6D5FF] flex items-center justify-center text-[#FF6B9D] shadow-soft">
                     <Icon className="w-8 h-8" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-[#111827] dark:text-white">{h.title}</h3>
-                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{h.content}</p>
+                    <h3 className="text-lg font-bold text-[#6B4E71]">{h.title}</h3>
+                    <p className="mt-2 text-sm text-[#7B5E81] leading-relaxed font-medium">{h.content}</p>
                   </div>
                 </div>
               </article>
@@ -123,19 +128,20 @@ export default function WhyChooseUs() {
 
         {/* Benefits grid (updated) */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit) => {
+          {benefits.map((benefit, idx) => {
             const Icon = benefit.icon
             return (
               <div
                 key={benefit.title}
-                className="flex items-start gap-4 bg-white/5 dark:bg-black/16 backdrop-blur-sm border border-white/6 rounded-lg p-6"
+                className="flex items-start gap-4 bg-white border border-pink-200 rounded-lg p-6 card-hover-lift shadow-soft animate-slide-up"
+                style={{ animationDelay: `${idx * 100}ms` }}
               >
-                <div className="flex-none w-20 h-20 rounded-lg bg-[#5a3a7a]/12 flex items-center justify-center">
-                  <Icon className="w-10 h-10 text-[#5a3a7a]" />
+                <div className="flex-none w-20 h-20 rounded-lg bg-gradient-to-br from-[#FFB3D9] to-[#E6D5FF] flex items-center justify-center shadow-soft">
+                  <Icon className="w-10 h-10 text-[#FF6B9D]" />
                 </div>
                 <div>
-                  <h4 className="text-md font-semibold text-[#111827] dark:text-white">{benefit.title}</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{benefit.description}</p>
+                  <h4 className="text-md font-bold text-[#6B4E71]">{benefit.title}</h4>
+                  <p className="text-sm text-[#7B5E81] mt-1 font-medium">{benefit.description}</p>
                 </div>
               </div>
             )
