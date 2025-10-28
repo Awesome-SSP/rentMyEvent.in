@@ -8,11 +8,11 @@ export default function HeroSection() {
   return (
     <section className="diagonal-bg-dark py-12 md:py-16 overflow-x-hidden relative">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 relative z-10">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-[#1a1a1a] leading-tight animate-fade-in-up relative inline-block w-full">
-          <span className="bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent animate-pulse">Premium Event Rental</span> & <span className="text-[#1a1a1a]">Management Solutions</span>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-[#1a1a1a] leading-tight animate-fade-in-up relative inline-block w-full ultra-smooth-reveal">
+          <span className="aurora-wave font-extrabold">Premium Event Rental</span> & <span className="text-[#1a1a1a] font-bold">Management Solutions</span>
         </h2>
 
-        <p className="text-center text-gray-600 text-base md:text-lg mb-8 max-w-2xl mx-auto animate-fade-in-up animate-delay-200">
+        <p className="text-center text-gray-600 text-base md:text-lg mb-8 max-w-2xl mx-auto animate-fade-in-up animate-delay-200 aurora-wave">
           Comprehensive equipment rental and professional event management services across Delhi NCR
         </p>
       </div>
@@ -45,11 +45,11 @@ export default function HeroSection() {
               ]).map((stat, idx) => (
                 <div
                   key={idx}
-                  className="bg-white border border-gray-200/60 rounded-lg p-4 md:p-6 lg:p-8 text-center hover:shadow-lg transition-all duration-300 shadow-md backdrop-blur-sm animate-card-hover animate-pop-in"
+                  className="bg-gradient-to-br from-white via-pink-50 to-blue-50 border-2 border-pink-300 rounded-xl p-4 md:p-6 lg:p-8 text-center hover:shadow-2xl transition-all duration-300 shadow-lg backdrop-blur-sm animate-card-hover card-3d-flip neon-glow tilt-3d"
                   style={{ animationDelay: `${(idx + 1) * 0.1}s` }}
                 >
-                  <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#5a3a7a] mb-1">{stat.value}</p>
-                  <p className="text-gray-600 font-medium text-xs md:text-sm">{stat.label}</p>
+                  <p className="bg-gradient-to-r from-[#E91E63] via-[#D32F2F] to-[#2196F3] bg-clip-text text-transparent text-xl md:text-2xl lg:text-3xl font-black mb-1 aurora-wave">{stat.value}</p>
+                  <p className="text-gray-700 font-bold text-xs md:text-sm bg-gradient-to-r from-[#E91E63] to-[#D32F2F] bg-clip-text text-transparent">{stat.label}</p>
                 </div>
               ))}
             </div>

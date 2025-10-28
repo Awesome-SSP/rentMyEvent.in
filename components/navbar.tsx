@@ -34,7 +34,7 @@ export default function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-700 hover:text-[#2cc16f] font-medium text-sm transition-colors duration-200"
+                className="text-gray-700 hover:text-[#E91E63] font-medium text-sm transition-colors duration-200"
               >
                 {item.label}
               </a>
@@ -60,7 +60,7 @@ export default function Navbar() {
           {/* responsive button: prevent overflow by limiting width, truncating and reducing padding on smaller viewports */}
           <div className="hidden md:flex items-center md:ml-4">
             <Button
-              className="flex-shrink-0 bg-[#2cc16f] hover:bg-[#1fa958] text-white font-semibold text-sm px-3 md:px-6 py-1.5 rounded-md transition-all duration-200 max-w-[160px] truncate"
+              className="flex-shrink-0 bg-[#E91E63] hover:bg-[#C2185B] text-white font-semibold text-sm px-3 md:px-6 py-1.5 rounded-md transition-all duration-200 max-w-[160px] truncate"
             >
               <span className="inline-block w-full text-center truncate">GET QUOTE</span>
             </Button>
@@ -85,7 +85,7 @@ export default function Navbar() {
                 {item.label}
               </a>
             ))}
-            <Button className="w-full bg-[#2cc16f] hover:bg-[#1fa958] text-white font-semibold mt-3">GET QUOTE</Button>
+            <Button className="w-full bg-[#E91E63] hover:bg-[#C2185B] text-white font-semibold mt-3">GET QUOTE</Button>
           </div>
         )}
       </div>

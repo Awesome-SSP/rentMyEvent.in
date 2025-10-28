@@ -37,17 +37,25 @@
   --sidebar-accent-foreground: oklch(0.2 0 0);
   --sidebar-border: oklch(0.92 0 0);
   --sidebar-ring: oklch(0.35 0.12 280);
-  /* Global background & card colors switched to light-blue / light-green / light-orange palette */
-  --section-bg: #4eb1cf;
+
+  /* NEW PROFESSIONAL COLOR PALETTE: Pink/Red/Black/Light Blue */
+  --primary-pink: #E91E63;
+  --primary-red: #D32F2F;
+  --dark-black: #1A1A2E;
+  --light-blue: #E3F2FD;
+  --accent-blue: #2196F3;
+  --dark-blue: #1565C0;
+  --light-pink: #F8BBD0;
+  --vibrant-red: #FF5252;
+
+  --section-bg: #E3F2FD;
   /* light blue */
-  --card-bg: #fffaf5;
-  /* very light orange/peach for subtle warmth */
-  --muted: #6b7280;
+  --card-bg: #F5F5F5;
+  /* light gray/white */
+  --muted: #424242;
   --max-width: 1200px;
   --logo-speed: 24s;
-  /* slower carousel for calmer motion */
   --logo-speed-reverse: 20s;
-  /* slower reverse row */
   /* section base colors: assign light blue / light green / light orange */
   --section-bg-dark-base: #ac523e;
   /* light orange/peach */
@@ -204,33 +212,32 @@
   position: relative;
 }
 
-/* Professional elegant diagonal backgrounds with consistent color palette */
+/* Professional elegant diagonal backgrounds with Gold/Purple/White palette - MATCHES LOGO */
 .diagonal-bg-dark {
-  color: #2d4a2d;
-  background-image: linear-gradient(314deg, #2cc16f 10% 50%, rgba(220, 95, 95, 0.6) 50% 100%);
+  background-image: linear-gradient(314deg, #6B46C1 10% 50%, rgba(139, 92, 246, 0.7) 50% 100%);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(44, 193, 111, 0.1);
+  background-color: rgba(107, 70, 193, 0.12);
   background-size: cover;
   position: relative;
 }
 
 .diagonal-bg-teal {
-  color: #2d4a2d;
-  background-image: linear-gradient(135deg, #2cc16f 0% 30%, rgba(255, 151, 0, 0.4) 30% 100%);
+  color: #1A1A2E;
+  background-image: linear-gradient(135deg, #F59E0B 0% 30%, rgba(107, 70, 193, 0.5) 30% 100%);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(44, 193, 111, 0.08);
+  background-color: rgba(245, 158, 11, 0.1);
   background-size: cover;
   position: relative;
 }
 
 .diagonal-bg-purple {
-  color: #2d4a2d;
-  background-image: linear-gradient(225deg, #ff9700 0% 40%, rgba(220, 95, 95, 0.5) 40% 100%);
+  color: #1A1A2E;
+  background-image: linear-gradient(225deg, #8B5CF6 0% 40%, rgba(26, 26, 46, 0.7) 40% 100%);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(255, 151, 0, 0.1);
+  background-color: rgba(139, 92, 246, 0.12);
   background-size: cover;
   position: relative;
 }
@@ -252,11 +259,11 @@
    Higher specificity prevents other .logos-section rules from accidentally overriding it. */
 .logos-section.diagonal-bg-dark,
 .diagonal-bg-dark.logos-section {
-  color: #2d4a2d;
-  background-image: linear-gradient(188deg, #64b058 10% 50%, rgba(220, 95, 95, 0.6) 50% 100%);
+  color: #1A1A2E;
+  background-image: linear-gradient(188deg, #8B5CF6 10% 50%, rgba(107, 70, 193, 0.7) 50% 100%);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(44, 193, 111, 0.1);
+  background-color: rgba(139, 92, 246, 0.12);
   background-size: cover;
   position: relative;
 }
@@ -808,13 +815,15 @@
 /* Override all diagonal/section backgrounds with light black + red palette.
    Placed at end to ensure these rules win over all previous declarations. */
 
-/* Core diagonal backgrounds */
+/* Override diagonal backgrounds with clean pink/red/black/blue palette - FINAL VERSION */
+
+/* Core diagonal backgrounds - Professional Colors */
 .diagonal-bg-dark {
   background-image: linear-gradient(135deg,
-      #2a2a2a 0%,
-      #2a2a2a 50%,
-      #ff4444 50%,
-      #ff4444 100%);
+      #E91E63 0%,
+      #E91E63 50%,
+      #D32F2F 50%,
+      #D32F2F 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -826,10 +835,10 @@
 .diagonal-bg-blue,
 .diagonal-bg-purple {
   background-image: linear-gradient(135deg,
-      #2a2a2a 0%,
-      #2a2a2a 50%,
-      #ff4444 50%,
-      #ff4444 100%);
+      #2196F3 0%,
+      #2196F3 50%,
+      #1A1A2E 50%,
+      #1A1A2E 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -837,104 +846,60 @@
   position: relative;
 }
 
-/* Section diagonal variants */
+/* Section diagonal variants - Professional Colors */
 .section-diag--a {
   background-image: linear-gradient(135deg,
-      #2a2a2a 0%,
-      #2a2a2a 50%,
-      #ff4444 50%,
-      #ff4444 100%) !important;
+      #E91E63 0%,
+      #E91E63 50%,
+      #D32F2F 50%,
+      #D32F2F 100%) !important;
+  color: #fff;
+  position: relative;
 }
 
 .section-diag--b {
   background-image: linear-gradient(135deg,
-      #2a2a2a 0%,
-      #2a2a2a 50%,
-      #ff4444 50%,
-      #ff4444 100%) !important;
+      #2196F3 0%,
+      #2196F3 50%,
+      #1A1A2E 50%,
+      #1A1A2E 100%) !important;
+  color: #fff;
+  position: relative;
 }
 
 .section-diag--c {
   background-image: linear-gradient(135deg,
-      #2a2a2a 0%,
-      #2a2a2a 50%,
-      #ff4444 50%,
-      #ff4444 100%) !important;
-}
-
-/* Override any background properties that use the CSS variables */
-.section-diag {
-  background: linear-gradient(135deg,
-      #2a2a2a 0%,
-      #2a2a2a 50%,
-      #ff4444 50%,
-      #ff4444 100%) !important;
+      #D32F2F 0%,
+      #D32F2F 50%,
+      #1A1A2E 50%,
+      #1A1A2E 100%) !important;
   color: #fff;
   position: relative;
 }
 
-/* Update CSS variables to match */
+/* Main section-diag class */
+.section-diag {
+  background: linear-gradient(135deg,
+      #E91E63 0%,
+      #E91E63 50%,
+      #D32F2F 50%,
+      #D32F2F 100%) !important;
+  color: #fff;
+  position: relative;
+}
+
+/* Update CSS variables for theme colors - Pink/Red/Black/Blue */
 :root {
-  --section-a-base: #2a2a2a;
-  --section-b-base: #2a2a2a;
-  --section-c-base: #2a2a2a;
-  --accent-a: 255, 68, 68;
-  /* red */
-  --accent-b: 255, 68, 68;
-  /* red */
-  --accent-c: 255, 68, 68;
-  /* red */
-}
-
-/* Override all diagonal/section backgrounds with lighter faded light black + red palette.
-   Placed at end to ensure these rules win over all previous declarations. */
-
-/* Core diagonal backgrounds - lighter/faded version */
-.diagonal-bg-dark {
-  background-image: linear-gradient(135deg,
-      rgba(42, 42, 42, 0.3) 0%,
-      rgba(42, 42, 42, 0.3) 50%,
-      rgba(255, 68, 68, 0.4) 50%,
-      rgba(255, 68, 68, 0.4) 100%);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: #333;
-  position: relative;
-}
-
-.diagonal-bg-teal,
-.diagonal-bg-blue,
-.diagonal-bg-purple {
-  background-image: linear-gradient(135deg,
-      rgba(42, 42, 42, 0.25) 0%,
-      rgba(42, 42, 42, 0.25) 50%,
-      rgba(255, 68, 68, 0.35) 50%,
-      rgba(255, 68, 68, 0.35) 100%);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: #333;
-  position: relative;
-}
-
-/* Section diagonal variants - much lighter */
-.section-diag--a {
-  background-image: linear-gradient(135deg,
-      rgba(42, 42, 42, 0.15) 0%,
-      rgba(42, 42, 42, 0.15) 50%,
-      rgba(255, 68, 68, 0.25) 50%,
-      rgba(255, 68, 68, 0.25) 100%) !important;
-  color: #333 !important;
-}
-
-.section-diag--b {
-  background-image: linear-gradient(135deg,
-      rgba(42, 42, 42, 0.2) 0%,
-      rgba(42, 42, 42, 0.2) 50%,
-      rgba(255, 68, 68, 0.3) 50%,
-      rgba(255, 68, 68, 0.3) 100%) !important;
-  color: #333 !important;
+  --primary-color: #E91E63;
+  /* Hot Pink */
+  --secondary-color: #D32F2F;
+  /* Deep Red */
+  --accent-color: #2196F3;
+  /* Bright Blue */
+  --dark-color: #1A1A2E;
+  /* Dark Blue-Black */
+  --light-accent: #E3F2FD;
+  /* Light Blue */
 }
 
 .section-diag--c {
@@ -1807,4 +1772,237 @@ span[class*="bg-gradient"]:hover {
     border-right: none;
     animation: none;
   }
+}
+
+/* ========================================
+   ADVANCED 3D & PREMIUM ANIMATIONS
+   ======================================== */
+
+/* 3D Card Flip */
+@keyframes card3dFlip {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+
+  50% {
+    transform: rotateY(180deg) rotateX(5deg);
+  }
+
+  100% {
+    transform: rotateY(360deg) rotateX(0deg);
+  }
+}
+
+.card-3d-flip {
+  animation: card3dFlip 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* 3D Depth Zoom */
+@keyframes depth3dZoom {
+  0% {
+    transform: perspective(1000px) rotateZ(0deg) scale(0.8);
+    opacity: 0;
+  }
+
+  50% {
+    transform: perspective(1000px) rotateZ(5deg) scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: perspective(1000px) rotateZ(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.depth-3d-zoom {
+  animation: depth3dZoom 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Holographic Shimmer */
+@keyframes holographicShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.holographic-shimmer {
+  background: linear-gradient(45deg, transparent 0%, rgba(255, 255, 255, 0.3) 25%, transparent 50%, transparent 75%, transparent 100%);
+  background-size: 200% 200%;
+  animation: holographicShimmer 3s ease-in-out infinite;
+}
+
+/* Glass Morphism Pulse */
+@keyframes glassPulse {
+  0% {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(44, 193, 111, 0.2);
+  }
+
+  50% {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(44, 193, 111, 0.5);
+  }
+
+  100% {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(44, 193, 111, 0.2);
+  }
+}
+
+.glass-morph {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  animation: glassPulse 3s ease-in-out infinite;
+}
+
+/* Liquid Swirl */
+@keyframes liquidSwirl {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(10deg) translateY(-10px);
+  }
+
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+}
+
+.liquid-swirl {
+  animation: liquidSwirl 4s ease-in-out infinite;
+  filter: drop-shadow(0 10px 20px rgba(44, 193, 111, 0.2));
+}
+
+/* Neon Glow Pulse */
+@keyframes neonGlowPulse {
+  0% {
+    box-shadow: 0 0 5px rgba(44, 193, 111, 0.5), 0 0 10px rgba(44, 193, 111, 0.3), inset 0 0 5px rgba(44, 193, 111, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(44, 193, 111, 0.8), 0 0 30px rgba(44, 193, 111, 0.5), inset 0 0 10px rgba(44, 193, 111, 0.4);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(44, 193, 111, 0.5), 0 0 10px rgba(44, 193, 111, 0.3), inset 0 0 5px rgba(44, 193, 111, 0.2);
+  }
+}
+
+.neon-glow {
+  animation: neonGlowPulse 2s ease-in-out infinite;
+  border-radius: 10px;
+  border: 2px solid rgba(44, 193, 111, 0.5);
+}
+
+/* Aurora Borealis Wave */
+@keyframes auroraWave {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.aurora-wave {
+  background: linear-gradient(45deg, #2cc16f 0%, #00d4ff 25%, #ff00ff 50%, #ff9700 75%, #2cc16f 100%);
+  background-size: 300% 300%;
+  animation: auroraWave 4s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating Orbs */
+@keyframes floatingOrb {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+
+  50% {
+    transform: translateY(-40px) translateX(-10px);
+  }
+
+  75% {
+    transform: translateY(-20px) translateX(-20px);
+  }
+
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+.floating-orb {
+  animation: floatingOrb 6s ease-in-out infinite;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(44, 193, 111, 0.6), 0 0 60px rgba(44, 193, 111, 0.3);
+}
+
+/* Gradient Mesh Animation */
+@keyframes gradientMesh {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-mesh {
+  background: linear-gradient(-45deg, #2cc16f, #ff9700, #dc5f5f, #00d4ff);
+  background-size: 400% 400%;
+  animation: gradientMesh 15s ease infinite;
+}
+
+/* Ultra Smooth Reveals */
+@keyframes ultraSmoothReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) rotateX(-10deg) scale(0.95);
+    filter: blur(10px);
+  }
+
+  50% {
+    filter: blur(5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.ultra-smooth-reveal {
+  animation: ultraSmoothReveal 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  perspective: 1200px;
 }
