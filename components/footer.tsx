@@ -2,24 +2,24 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "luc
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 overflow-hidden box-border">
+    <footer className="bg-white text-gray-700 overflow-hidden box-border border-t border-pink-200">
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="min-w-0">
-            <h3 className="text-white font-bold text-lg mb-4 bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">RENT MY EVENT</h3>
-            <p className="text-sm mb-4">Your one-stop event rental and management company in Delhi NCR.</p>
+            <h3 className="text-gray-900 font-bold text-lg mb-4 bg-gradient-to-r from-[#FF6B9D] via-[#FFB3D9] to-[#E6D5FF] bg-clip-text text-transparent">RENT MY EVENT</h3>
+            <p className="text-sm mb-4 text-gray-600">Your one-stop event rental and management company in Delhi NCR.</p>
             <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
+              <div className="flex items-center gap-2 text-gray-700">
+                <Phone className="w-4 h-4 text-[#FF6B9D]" />
                 <span>+91 XXXX XXXX XX</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
+              <div className="flex items-center gap-2 text-gray-700">
+                <Mail className="w-4 h-4 text-[#FF6B9D]" />
                 <span>info@rentmyevent.com</span>
               </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
+              <div className="flex items-center gap-2 text-gray-700">
+                <MapPin className="w-4 h-4 text-[#FF6B9D]" />
                 <span>Delhi NCR, India</span>
               </div>
             </div>
@@ -27,25 +27,25 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="min-w-0">
-            <h4 className="text-white font-bold mb-4">Quick Links</h4>
+            <h4 className="text-gray-900 font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-white transition break-words">
+                <a href="#" className="text-gray-600 hover:text-[#FF6B9D] transition break-words font-medium">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition break-words">
+                <a href="#" className="text-gray-600 hover:text-[#FF6B9D] transition break-words font-medium">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition break-words">
+                <a href="#" className="text-gray-600 hover:text-[#FF6B9D] transition break-words font-medium">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition break-words">
+                <a href="#" className="text-gray-600 hover:text-[#FF6B9D] transition break-words font-medium">
                   Contact
                 </a>
               </li>

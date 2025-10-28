@@ -61,18 +61,18 @@ export default function ContactSection() {
           {/* Addresses */}
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-3 animate-fade-in-down">
-              <span className="text-[#2cc16f]">GET IN </span>
-              <span className="bg-gradient-to-r from-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">TOUCH</span>
+              <span className="text-[#FF6B9D]">GET IN </span>
+              <span className="bg-gradient-to-r from-[#FFB3D9] to-[#E6D5FF] bg-clip-text text-transparent">TOUCH</span>
             </h2>
-            <p className="text-gray-600 mb-6 animate-fade-in-up animate-delay-200">
-              Send us a message or visit our offices — we cover <span className="text-[#ff9700] font-semibold">Gurugram, Faridabad and Delhi</span>.
+            <p className="text-[#6B4E71] mb-6 animate-fade-in-up animate-delay-200 font-medium">
+              Send us a message or visit our offices — we cover <span className="text-[#FF6B9D] font-semibold">Gurugram, Faridabad and Delhi</span>.
             </p>
 
             <div className="space-y-4">
               {ADDRESSES.map((addr) => (
-                <div key={addr.title} className="bg-white/6 dark:bg-black/14 backdrop-blur-sm p-4 rounded-lg border border-white/8">
-                  <h3 className="font-semibold text-[#111827] dark:text-white">{addr.title}</h3>
-                  <address className="not-italic text-sm text-gray-600 mt-1">
+                <div key={addr.title} className="bg-white/80 backdrop-blur-sm p-4 rounded-lg border border-pink-200 hover:bg-white/90 transition-all">
+                  <h3 className="font-semibold text-[#6B4E71]">{addr.title}</h3>
+                  <address className="not-italic text-sm text-[#8B6B8D] mt-1">
                     {addr.lines.map((l, i) => (
                       <div key={i}>{l}</div>
                     ))}
@@ -84,38 +84,38 @@ export default function ContactSection() {
 
           {/* Contact form */}
           <div>
-            <h3 className="text-lg font-semibold mb-2">Send Us a Message</h3>
+            <h3 className="text-lg font-semibold mb-2 text-[#6B4E71]">Send Us a Message</h3>
 
-            <form onSubmit={handleSubmit} className="space-y-4 bg-white/6 dark:bg-black/14 backdrop-blur-sm p-6 rounded-lg border border-white/8">
+            <form onSubmit={handleSubmit} className="space-y-4 bg-white/95 p-6 rounded-lg border border-pink-200">
               <div>
-                <label className="block text-sm font-medium text-gray-700">Your Name</label>
+                <label className="block text-sm font-medium text-[#6B4E71]">Your Name</label>
                 <input
                   required
                   value={form.name}
                   onChange={(e) => update("name", e.target.value)}
-                  className="mt-1 block w-full rounded-md border-gray-200 bg-white/60 px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#5a3a7a]"
+                  className="mt-1 block w-full rounded-md border-pink-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700">Email</label>
+                <label className="block text-sm font-medium text-[#6B4E71]">Email</label>
                 <input
                   required
                   type="email"
                   value={form.email}
                   onChange={(e) => update("email", e.target.value)}
-                  className="mt-1 block w-full rounded-md border-gray-200 bg-white/60 px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#5a3a7a]"
+                  className="mt-1 block w-full rounded-md border-pink-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700">Message</label>
+                <label className="block text-sm font-medium text-[#6B4E71]">Message</label>
                 <textarea
                   required
                   rows={8}
                   value={form.message}
                   onChange={(e) => update("message", e.target.value)}
-                  className="mt-1 block w-full rounded-md border-gray-200 bg-white/60 px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#5a3a7a]"
+                  className="mt-1 block w-full rounded-md border-pink-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent"
                 />
               </div>
 
@@ -123,12 +123,12 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="inline-flex items-center justify-center rounded-md bg-[#5a3a7a] px-4 py-2 text-sm font-medium text-white disabled:opacity-60"
+                  className="inline-flex items-center justify-center rounded-md bg-[#FF6B9D] hover:bg-[#FF5287] px-4 py-2 text-sm font-semibold text-white transition-colors disabled:opacity-60"
                 >
                   {submitting ? "Sending..." : "Send"}
                 </button>
 
-                {sent && <div className="text-sm text-green-700">Message sent — we will contact you soon.</div>}
+                {sent && <div className="text-sm text-[#FF6B9D] font-medium">Message sent — we will contact you soon.</div>}
               </div>
             </form>
           </div>

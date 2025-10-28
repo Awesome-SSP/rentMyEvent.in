@@ -69,8 +69,8 @@ export default function ServicesSection() {
       aria-label="Our Rental Services"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1a1a1a]">Our Rental Services</h2>
-        <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto text-lg">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#6B4E71]">Our Rental Services</h2>
+        <p className="text-center text-[#8B6B8D] mb-16 max-w-2xl mx-auto text-lg font-medium">
           Comprehensive equipment rental solutions designed for professional events
         </p>
 
@@ -90,16 +90,16 @@ export default function ServicesSection() {
             return (
               <div
                 key={service.title}
-                className="service-card bg-white border border-gray-200/60 rounded-lg p-6 hover:shadow-lg transition-all hover:border-[#5a3a7a]/30"
+                className="service-card bg-white border border-purple-200 rounded-lg p-6 hover:shadow-xl transition-all hover:border-pink-300 hover:bg-pink-50"
                 style={cardStyle}
                 aria-hidden={!inView}
               >
-                <div className="bg-[#5a3a7a]/10 w-12 h-12 rounded-md flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-[#5a3a7a]" />
+                <div className="bg-pink-100 w-12 h-12 rounded-md flex items-center justify-center mb-4">
+                  <Icon className="w-6 h-6 text-[#FF6B9D]" />
                 </div>
-                <h3 className="text-lg font-semibold text-[#1a1a1a] mb-3">{service.title}</h3>
-                <p className="text-gray-600 text-sm mb-6 leading-relaxed">{service.description}</p>
-                <Button className="w-full bg-[#5a3a7a] hover:bg-[#4a2a6a] text-white font-medium text-sm">
+                <h3 className="text-lg font-semibold text-[#6B4E71] mb-3">{service.title}</h3>
+                <p className="text-[#8B6B8D] text-sm mb-6 leading-relaxed font-medium">{service.description}</p>
+                <Button className="w-full bg-[#FF6B9D] hover:bg-[#FF5287] text-white font-semibold text-sm transition-colors">
                   Learn More
                 </Button>
               </div>

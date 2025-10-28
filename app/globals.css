@@ -56,6 +56,15 @@
   --max-width: 1200px;
   --logo-speed: 24s;
   --logo-speed-reverse: 20s;
+  /* LIGHT FEMININE PALETTE: Soft pink, lavender, cream, mint */
+  --primary-pink: #FFB3D9;
+  --primary-lavender: #E6D5FF;
+  --accent-mint: #B3F0E8;
+  --accent-peach: #FFD9B3;
+  --light-cream: #FEF9F3;
+  --soft-purple: #DCC9FF;
+  --hot-pink: #FF6B9D;
+  --coral-pink: #FF8FB1;
   /* section base colors: assign light blue / light green / light orange */
   --section-bg-dark-base: #ac523e;
   /* light orange/peach */
@@ -212,32 +221,32 @@
   position: relative;
 }
 
-/* Professional elegant diagonal backgrounds with Gold/Purple/White palette - MATCHES LOGO */
+/* Professional elegant diagonal backgrounds with Light Feminine palette - GIRLISH CREATOR */
 .diagonal-bg-dark {
-  background-image: linear-gradient(314deg, #6B46C1 10% 50%, rgba(139, 92, 246, 0.7) 50% 100%);
+  background-image: linear-gradient(314deg, #FFB3D9 10% 50%, rgba(255, 179, 217, 0.6) 50% 100%);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(107, 70, 193, 0.12);
+  background-color: rgba(255, 179, 217, 0.15);
   background-size: cover;
   position: relative;
 }
 
 .diagonal-bg-teal {
-  color: #1A1A2E;
-  background-image: linear-gradient(135deg, #F59E0B 0% 30%, rgba(107, 70, 193, 0.5) 30% 100%);
+  color: #6B4E71;
+  background-image: linear-gradient(135deg, #E6D5FF 0% 30%, rgba(179, 240, 232, 0.5) 30% 100%);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(245, 158, 11, 0.1);
+  background-color: rgba(230, 213, 255, 0.2);
   background-size: cover;
   position: relative;
 }
 
 .diagonal-bg-purple {
-  color: #1A1A2E;
-  background-image: linear-gradient(225deg, #8B5CF6 0% 40%, rgba(26, 26, 46, 0.7) 40% 100%);
+  color: #6B4E71;
+  background-image: linear-gradient(225deg, #DCC9FF 0% 40%, rgba(255, 179, 217, 0.4) 40% 100%);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(139, 92, 246, 0.12);
+  background-color: rgba(220, 201, 255, 0.15);
   background-size: cover;
   position: relative;
 }
@@ -255,15 +264,66 @@
   background-color: rgba(var(--diag-accent-purple-2), 0.16);
 }
 
+/* TEXT VISIBILITY UTILITIES - Ensure text is readable on gradient backgrounds */
+.text-on-gradient {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+}
+
+.text-on-gradient-dark {
+  color: #1A1A2E;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.text-on-gradient-light {
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* HEADING VISIBILITY - Make all headings pop on colored backgrounds */
+.heading-on-bg {
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  letter-spacing: -0.5px;
+}
+
+/* ADD BACKDROP BLUR TO TEXT AREAS FOR BETTER READABILITY */
+.text-backdrop {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.text-backdrop-dark {
+  background: rgba(26, 26, 46, 0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.section-bg-teal {
+  background-color: rgba(var(--diag-accent-teal), 0.06);
+}
+
+.section-bg-purple {
+  background-color: rgba(var(--diag-accent-purple-2), 0.16);
+}
+
 /* Ensure diagonal background is applied when logos-section includes the diagonal class.
    Higher specificity prevents other .logos-section rules from accidentally overriding it. */
 .logos-section.diagonal-bg-dark,
 .diagonal-bg-dark.logos-section {
-  color: #1A1A2E;
-  background-image: linear-gradient(188deg, #8B5CF6 10% 50%, rgba(107, 70, 193, 0.7) 50% 100%);
+  color: #6B4E71;
+  background-image: linear-gradient(188deg, #E6D5FF 10% 50%, rgba(255, 179, 217, 0.5) 50% 100%);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(139, 92, 246, 0.12);
+  background-color: rgba(230, 213, 255, 0.15);
   background-size: cover;
   position: relative;
 }
@@ -817,17 +877,17 @@
 
 /* Override diagonal backgrounds with clean pink/red/black/blue palette - FINAL VERSION */
 
-/* Core diagonal backgrounds - Professional Colors */
+/* Core diagonal backgrounds - Light Feminine Colors */
 .diagonal-bg-dark {
   background-image: linear-gradient(135deg,
-      #E91E63 0%,
-      #E91E63 50%,
-      #D32F2F 50%,
-      #D32F2F 100%);
+      #FFB3D9 0%,
+      #FFB3D9 50%,
+      #E6D5FF 50%,
+      #E6D5FF 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  color: #fff;
+  color: #6B4E71;
   position: relative;
 }
 
@@ -835,71 +895,71 @@
 .diagonal-bg-blue,
 .diagonal-bg-purple {
   background-image: linear-gradient(135deg,
-      #2196F3 0%,
-      #2196F3 50%,
-      #1A1A2E 50%,
-      #1A1A2E 100%);
+      #E6D5FF 0%,
+      #E6D5FF 50%,
+      #B3F0E8 50%,
+      #B3F0E8 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  color: #fff;
+  color: #6B4E71;
   position: relative;
 }
 
-/* Section diagonal variants - Professional Colors */
+/* Section diagonal variants - Light Feminine Colors */
 .section-diag--a {
   background-image: linear-gradient(135deg,
-      #E91E63 0%,
-      #E91E63 50%,
-      #D32F2F 50%,
-      #D32F2F 100%) !important;
-  color: #fff;
+      #FFB3D9 0%,
+      #FFB3D9 50%,
+      #E6D5FF 50%,
+      #E6D5FF 100%) !important;
+  color: #6B4E71;
   position: relative;
 }
 
 .section-diag--b {
   background-image: linear-gradient(135deg,
-      #2196F3 0%,
-      #2196F3 50%,
-      #1A1A2E 50%,
-      #1A1A2E 100%) !important;
-  color: #fff;
+      #E6D5FF 0%,
+      #E6D5FF 50%,
+      #B3F0E8 50%,
+      #B3F0E8 100%) !important;
+  color: #6B4E71;
   position: relative;
 }
 
 .section-diag--c {
   background-image: linear-gradient(135deg,
-      #D32F2F 0%,
-      #D32F2F 50%,
-      #1A1A2E 50%,
-      #1A1A2E 100%) !important;
-  color: #fff;
+      #FFD9B3 0%,
+      #FFD9B3 50%,
+      #FFB3D9 50%,
+      #FFB3D9 100%) !important;
+  color: #6B4E71;
   position: relative;
 }
 
 /* Main section-diag class */
 .section-diag {
   background: linear-gradient(135deg,
-      #E91E63 0%,
-      #E91E63 50%,
-      #D32F2F 50%,
-      #D32F2F 100%) !important;
-  color: #fff;
+      #FFB3D9 0%,
+      #FFB3D9 50%,
+      #E6D5FF 50%,
+      #E6D5FF 100%) !important;
+  color: #6B4E71;
   position: relative;
 }
 
-/* Update CSS variables for theme colors - Pink/Red/Black/Blue */
+/* Update CSS variables for theme colors - Light Feminine */
 :root {
-  --primary-color: #E91E63;
-  /* Hot Pink */
-  --secondary-color: #D32F2F;
-  /* Deep Red */
-  --accent-color: #2196F3;
-  /* Bright Blue */
-  --dark-color: #1A1A2E;
-  /* Dark Blue-Black */
-  --light-accent: #E3F2FD;
-  /* Light Blue */
+  --primary-color: #FFB3D9;
+  /* Soft Pink */
+  --secondary-color: #E6D5FF;
+  /* Light Lavender */
+  --accent-color: #B3F0E8;
+  /* Mint Green */
+  --dark-color: #6B4E71;
+  /* Muted Purple */
+  --light-accent: #FEF9F3;
+  /* Cream */
 }
 
 .section-diag--c {

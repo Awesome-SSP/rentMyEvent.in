@@ -30,7 +30,7 @@ export default function WelcomeSection() {
       }
       style={{
         backgroundImage:
-          "linear-gradient(135deg, #1da1f2 0%, #1da1f2 50%, #00c853 50%, #00c853 100%)",
+          "linear-gradient(135deg, #FFB3D9 0%, #FFB3D9 50%, #E6D5FF 50%, #E6D5FF 100%)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -49,27 +49,27 @@ export default function WelcomeSection() {
           {/* text - slides in from right */}
           <div className="order-1 md:order-2 space-y-4 animate-fade-in-right animate-delay-200">
             <div className="welcome-card welcome-text animate-fade-in-up animate-delay-300" style={{ ["--j" as any]: 1 }}>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#1a1a1a] leading-tight relative inline-block">
-                Welcome to <span className="bg-gradient-to-r from-[#2cc16f] to-[#ff9700] bg-clip-text text-transparent font-extrabold">Rent My Event</span>
-                <div className="h-1 bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] rounded-full absolute -bottom-2 left-0 right-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#6B4E71] leading-tight relative inline-block">
+                Welcome to <span className="bg-gradient-to-r from-[#FF6B9D] to-[#FFB3D9] bg-clip-text text-transparent font-extrabold">Rent My Event</span>
+                <div className="h-1 bg-gradient-to-r from-[#FF6B9D] via-[#FFB3D9] to-[#E6D5FF] rounded-full absolute -bottom-2 left-0 right-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               </h2>
             </div>
 
             <div className="welcome-card welcome-text animate-fade-in-up animate-delay-400" style={{ ["--j" as any]: 2 }}>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-[#6B4E71] leading-relaxed font-medium">
                 We deliver comprehensive event rental and management solutions tailored to your specific needs.
               </p>
             </div>
 
             <div className="welcome-card welcome-text animate-fade-in-up animate-delay-500" style={{ ["--j" as any]: 3 }}>
-              <p className="text-base text-gray-600 leading-relaxed">
+              <p className="text-base text-[#7B5E81] leading-relaxed">
                 From premium audio-visual equipment to complete event coordination, our experienced team ensures every
                 detail is executed with precision and professionalism.
               </p>
             </div>
 
             <div className="welcome-card welcome-text animate-bounce animate-delay-600" style={{ ["--j" as any]: 4 }}>
-              <p className="text-base italic text-[#2a8a99] font-medium">"Excellence in every event, every time."</p>
+              <p className="text-base italic text-[#FF6B9D] font-medium">"Excellence in every event, every time."</p>
             </div>
           </div>
         </div>
