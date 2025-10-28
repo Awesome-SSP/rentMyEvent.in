@@ -82,16 +82,19 @@ export default function WhyChooseUs() {
     //   title: "Peace of Mind",
     //   description: "Relish peace of mind knowing details are managed by professionals — reliable teams and tested processes.",
     // },
-    
+
   ]
 
   return (
     <section className="section-diag section-diag--a py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <header className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#1a1a1a]">Why Choose Rent My Event</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Services & management you can trust — transparent pricing, award‑winning execution and goal‑oriented planning.
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#1a1a1a] animate-fade-in-down">
+            <span className="text-[#1a1a1a]">Why Choose </span>
+            <span className="bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">Rent My Event</span>
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto animate-fade-in-up animate-delay-200">
+            <span className="text-[#ff9700] font-semibold">Services & management you can trust</span> — transparent pricing, award‑winning execution and goal‑oriented planning.
           </p>
         </header>
 

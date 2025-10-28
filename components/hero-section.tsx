@@ -8,18 +8,18 @@ export default function HeroSection() {
   return (
     <section className="diagonal-bg-dark py-12 md:py-16 overflow-x-hidden relative">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 relative z-10">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-[#1a1a1a] leading-tight">
-          Premium Event Rental & Management Solutions
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-[#1a1a1a] leading-tight animate-fade-in-up relative inline-block w-full">
+          <span className="bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent animate-pulse">Premium Event Rental</span> & <span className="text-[#1a1a1a]">Management Solutions</span>
         </h2>
 
-        <p className="text-center text-gray-600 text-base md:text-lg mb-8 max-w-2xl mx-auto">
+        <p className="text-center text-gray-600 text-base md:text-lg mb-8 max-w-2xl mx-auto animate-fade-in-up animate-delay-200">
           Comprehensive equipment rental and professional event management services across Delhi NCR
         </p>
       </div>
 
       {/* Full-width video stretching to viewport edges */}
       <div className="relative w-full">
-        <div className="w-full h-64 md:h-80 lg:h-96 xl:h-[400px] overflow-hidden bg-gray-200">
+        <div className="w-full h-104 md:h-120 lg:h-106 xl:h-[400px] overflow-hidden bg-gray-200">
           <video
             ref={videoRef}
             src="/slidervideo.mp4"
@@ -45,7 +45,8 @@ export default function HeroSection() {
               ]).map((stat, idx) => (
                 <div
                   key={idx}
-                  className="bg-white border border-gray-200/60 rounded-lg p-4 md:p-6 lg:p-8 text-center hover:shadow-lg transition-all duration-300 shadow-md backdrop-blur-sm"
+                  className="bg-white border border-gray-200/60 rounded-lg p-4 md:p-6 lg:p-8 text-center hover:shadow-lg transition-all duration-300 shadow-md backdrop-blur-sm animate-card-hover animate-pop-in"
+                  style={{ animationDelay: `${(idx + 1) * 0.1}s` }}
                 >
                   <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#5a3a7a] mb-1">{stat.value}</p>
                   <p className="text-gray-600 font-medium text-xs md:text-sm">{stat.label}</p>

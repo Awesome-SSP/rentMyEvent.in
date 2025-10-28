@@ -13,17 +13,7 @@ export default function PromoStrips() {
   }, [])
 
   const messages = [
-    "EVENT RENTAL EXPERTS",
-    "Premium Event Rental Solutions",
-    "Professional Equipment Management",
-    "Complete Event Coordination",
-    "Expert Technical Support",
-    "Nationwide Delivery & Setup",
-    "Event Planning Services",
-    "Customized Rental Packages",
-    "24/7 Customer Assistance",
-    "High-Quality Equipment",
-    "Affordable Pricing Options",
+    'Event Rental Experts', 'Premium Event Solutions', 'Professional Equipment Management', 'Complete Event Coordination', 'Expert Technical Support', 'Nationwide Delivery & Setup', 'Creative Event Planning', 'Customized Rental Packages', '24/7 Customer Support', 'High-Quality Equipment', 'Affordable Pricing Plans', 'Your Event. Our Expertise.', 'Premium Rentals. Perfect Events.', 'Smart Equipment. Seamless Setup.', 'Plan. Rent. Celebrate.', 'On-Time Delivery. Every Time.', 'Tailored Packages. Hassle-Free.', 'Top Gear. Top Experience.', '24/7 Support. Zero Stress.', 'Nationwide Reach. Local Care.', 'Trusted by Professionals'
   ]
 
   return (
@@ -32,7 +22,7 @@ export default function PromoStrips() {
         <div
           className="flex gap-16 whitespace-nowrap transition-transform duration-200 ease-linear"
           style={{
-            transform: `translateX(-${offset * 1.2}%)`,
+            transform: `translateX(-${offset * 0.8}%)`,
           }}
         >
           {[...messages, ...messages].map((msg, idx) => (
