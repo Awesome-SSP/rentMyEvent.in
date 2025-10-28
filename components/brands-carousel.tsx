@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 export default function BrandsCarousel() {
   const brands = [
@@ -12,28 +12,40 @@ export default function BrandsCarousel() {
     { name: "Brand 6", logo: "/brandimage/brand-6.webp" },
   ]
 
-  // Triple the brands for smoother infinite scroll
-  const infiniteBrands = [...brands, ...brands, ...brands]
+  const [offsetLeft, setOffsetLeft] = useState(0)
+  const [offsetRight, setOffsetRight] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setOffsetLeft((prev) => (prev + 0.5) % 100)
+      setOffsetRight((prev) => (prev - 0.5 + 100) % 100)
+    }, 60)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
-    // <section className="section-diag section-diag--a py-12 md:py-16 logos-section overflow-hidden" aria-label="Brands Trusted Us">
-    <section className="diagonal-bg-dark py-12 md:py-16 logos-section overflow-hidden" aria-label="Brands Trusted Us">
+    <section className="py-12 md:py-16 logos-section overflow-hidden" aria-label="Brands Trusted Us">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="logos-title animate-fade-in-down">
+        <h2 className="logos-title animate-fade-in-down text-center mb-3">
           <span className="bg-gradient-to-r from-[#FFB3D9] to-[#FF6B9D] bg-clip-text text-transparent">Brands </span>
           <span className="text-[#6B4E71]">Trusted Us</span>
         </h2>
-        <p className="text-sm text-[#6B4E71] mb-8 animate-fade-in-up animate-delay-200 font-medium">
+        <p className="text-sm text-[#6B4E71] mb-8 animate-fade-in-up animate-delay-200 font-medium text-center">
           <span className="bg-gradient-to-r from-[#FFB3D9] to-[#E6D5FF] bg-clip-text text-transparent font-semibold">Leading companies</span> choose us for their event management needs
         </p>
 
-        <div className="relative w-full overflow-hidden">
-          {/* First row - moving left to right */}
-          <div className="flex mb-6 animate-marquee-left w-max">
-            {infiniteBrands.map((brand, i) => (
+        {/* First row - moving left to right */}
+        <div className="relative w-full overflow-hidden mb-6">
+          <div
+            className="flex gap-6 whitespace-nowrap transition-transform duration-200 ease-linear"
+            style={{
+              transform: `translateX(-${offsetLeft * 0.8}%)`,
+            }}
+          >
+            {[...brands, ...brands].map((brand, idx) => (
               <div
-                key={`left-${i}`}
-                className="flex-shrink-0 mx-3 bg-white rounded-lg shadow-soft card-hover-lift p-3 w-28 h-16 flex items-center justify-center border border-pink-200"
+                key={`left-${idx}`}
+                className="flex-shrink-0 bg-white rounded-lg shadow-soft card-hover-lift p-3 w-32 h-20 flex items-center justify-center border-2 border-pink-200"
               >
                 <img
                   src={brand.logo}
@@ -44,13 +56,20 @@ export default function BrandsCarousel() {
               </div>
             ))}
           </div>
+        </div>
 
-          {/* Second row - moving right to left */}
-          <div className="flex animate-marquee-right w-max">
-            {infiniteBrands.map((brand, i) => (
+        {/* Second row - moving right to left */}
+        <div className="relative w-full overflow-hidden">
+          <div
+            className="flex gap-6 whitespace-nowrap transition-transform duration-200 ease-linear"
+            style={{
+              transform: `translateX(-${offsetRight * 0.8}%)`,
+            }}
+          >
+            {[...brands, ...brands].map((brand, idx) => (
               <div
-                key={`right-${i}`}
-                className="flex-shrink-0 mx-3 bg-white rounded-lg shadow-soft card-hover-lift p-3 w-28 h-16 flex items-center justify-center border border-pink-200"
+                key={`right-${idx}`}
+                className="flex-shrink-0 bg-white rounded-lg shadow-soft card-hover-lift p-3 w-32 h-20 flex items-center justify-center border-2 border-pink-200"
               >
                 <img
                   src={brand.logo}
@@ -63,39 +82,6 @@ export default function BrandsCarousel() {
           </div>
         </div>
       </div>
-
-      <style jsx global>{`
-        @keyframes marquee-left {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0%);
-          }
-        }
-
-        @keyframes marquee-right {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .animate-marquee-left {
-          animation: marquee-left 20s linear infinite;
-        }
-
-        .animate-marquee-right {
-          animation: marquee-right 20s linear infinite;
-        }
-
-        .animate-marquee-left:hover,
-        .animate-marquee-right:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   )
 }

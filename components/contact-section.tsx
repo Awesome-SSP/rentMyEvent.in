@@ -55,28 +55,47 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="section-diag section-diag--a py-16 md:py-24 relative" aria-label="Get in touch">
-      {/* Floating decorative elements */}
-      <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-gradient-to-br from-[#FFB3D9] to-[#E6D5FF] opacity-15 blur-2xl animate-float pointer-events-none"></div>
-      <div className="absolute bottom-20 left-5 w-20 h-20 rounded-full bg-gradient-to-br from-[#FF6B9D] to-[#B3F0E8] opacity-10 blur-3xl animate-float pointer-events-none" style={{ animationDelay: "1.5s" }}></div>
+    <section className="relative py-16 md:py-32 bg-gradient-to-b from-white via-[#FEF9F3] to-[#FFE6F0]/15 overflow-hidden" aria-label="Get in touch">
+      {/* Premium Floating Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-40 right-40 w-96 h-96 bg-gradient-to-bl from-[#FFB3D9]/15 to-[#E6D5FF]/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute -bottom-20 left-40 w-80 h-80 bg-gradient-to-tr from-[#FF6B9D]/10 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: "1.5s" }}></div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid gap-8 lg:grid-cols-2 items-start">
-          {/* Addresses */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 animate-fade-in-down">
-              <span className="text-[#FF6B9D]">GET IN </span>
-              <span className="bg-gradient-to-r from-[#FFB3D9] to-[#E6D5FF] bg-clip-text text-transparent">TOUCH</span>
-            </h2>
-            <p className="text-[#6B4E71] mb-6 animate-fade-in-up animate-delay-200 font-medium">
-              Send us a message or visit our offices — we cover <span className="text-[#FF6B9D] font-semibold">Gurugram, Faridabad and Delhi</span>.
-            </p>
+        {/* Premium Section Header */}
+        <div className="text-center mb-16 md:mb-20 animate-slide-up-blur">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4">
+            <span className="text-[#6B4E71]">Get In </span>
+            <span className="bg-gradient-to-r from-[#FF6B9D] via-[#FFB3D9] to-[#E6D5FF] bg-clip-text text-transparent">Touch</span>
+          </h2>
+          <p className="text-[#8B6B8D] text-base md:text-lg font-bold max-w-2xl mx-auto animate-fade-in-up animate-delay-100">
+            We're here to help! <span className="text-[#FF6B9D]">Contact us for event consultations.</span>
+          </p>
+          <div className="h-1 w-24 bg-gradient-to-r from-[#FFB3D9] to-[#E6D5FF] rounded-full mx-auto mt-4 animate-fade-in-up animate-delay-200"></div>
+        </div>
 
-            <div className="space-y-4">
-              {ADDRESSES.map((addr) => (
-                <div key={addr.title} className="bg-white/80 backdrop-blur-sm p-4 rounded-lg border border-pink-200 hover:bg-white/90 transition-all">
-                  <h3 className="font-semibold text-[#6B4E71]">{addr.title}</h3>
-                  <address className="not-italic text-sm text-[#8B6B8D] mt-1">
+        <div className="grid gap-8 lg:gap-12 lg:grid-cols-2 items-start">
+          {/* Addresses Section */}
+          <div className="animate-slide-in-left" style={{ animationDuration: "0.8s" }}>
+            <h3 className="text-2xl md:text-3xl font-black text-[#6B4E71] mb-8">Our Offices</h3>
+
+            <div className="space-y-6">
+              {ADDRESSES.map((addr, idx) => (
+                <div
+                  key={addr.title}
+                  className="group bg-gradient-to-br from-white to-[#FEF9F3] border-2 border-[#FFB3D9] p-6 md:p-8 rounded-2xl shadow-premium hover:shadow-premium-lg transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 animate-slide-up-blur"
+                  style={{ animationDelay: `${idx * 100}ms` }}
+                >
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#FFB3D9] to-[#E6D5FF] rounded-lg flex items-center justify-center shadow-premium group-hover:scale-110 transition-transform duration-500">
+                      <span className="text-lg">📍</span>
+                    </div>
+                    <h4 className="text-lg md:text-xl font-black text-[#FF6B9D] group-hover:text-[#FFB3D9] transition-colors duration-300">
+                      {addr.title}
+                    </h4>
+                  </div>
+                  <address className="not-italic text-sm md:text-base text-[#8B6B8D] leading-relaxed font-bold space-y-1">
                     {addr.lines.map((l, i) => (
                       <div key={i}>{l}</div>
                     ))}
@@ -86,55 +105,73 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Contact form */}
-          <div>
-            <h3 className="text-lg font-semibold mb-2 text-[#6B4E71]">Send Us a Message</h3>
+          {/* Contact Form */}
+          <div className="animate-slide-in-right" style={{ animationDuration: "0.8s" }}>
+            <div className="bg-gradient-to-br from-white to-[#FEF9F3] border-2 border-[#FFB3D9] p-8 md:p-10 rounded-2xl shadow-premium-lg">
+              <h3 className="text-2xl md:text-3xl font-black text-[#6B4E71] mb-8">Send Us a Message</h3>
 
-            <form onSubmit={handleSubmit} className="space-y-4 bg-white/95 p-6 rounded-lg border border-pink-200">
-              <div>
-                <label className="block text-sm font-medium text-[#6B4E71]">Your Name</label>
-                <input
-                  required
-                  value={form.name}
-                  onChange={(e) => update("name", e.target.value)}
-                  className="input-premium mt-1 block w-full"
-                />
-              </div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name Field */}
+                <div className="animate-fade-in-up animate-delay-200">
+                  <label className="block text-sm md:text-base font-black text-[#6B4E71] mb-2">Your Name</label>
+                  <input
+                    required
+                    value={form.name}
+                    onChange={(e) => update("name", e.target.value)}
+                    placeholder="Enter your full name"
+                    className="input-pro w-full px-4 py-3 md:py-4 rounded-lg text-base font-bold focus:ring-2 focus:ring-[#FF6B9D] focus:ring-offset-2"
+                  />
+                </div>
 
-              <div>
-                <label className="block text-sm font-medium text-[#6B4E71]">Email</label>
-                <input
-                  required
-                  type="email"
-                  value={form.email}
-                  onChange={(e) => update("email", e.target.value)}
-                  className="input-premium mt-1 block w-full"
-                />
-              </div>
+                {/* Email Field */}
+                <div className="animate-fade-in-up animate-delay-300">
+                  <label className="block text-sm md:text-base font-black text-[#6B4E71] mb-2">Email Address</label>
+                  <input
+                    required
+                    type="email"
+                    value={form.email}
+                    onChange={(e) => update("email", e.target.value)}
+                    placeholder="Enter your email"
+                    className="input-pro w-full px-4 py-3 md:py-4 rounded-lg text-base font-bold focus:ring-2 focus:ring-[#FF6B9D] focus:ring-offset-2"
+                  />
+                </div>
 
-              <div>
-                <label className="block text-sm font-medium text-[#6B4E71]">Message</label>
-                <textarea
-                  required
-                  rows={8}
-                  value={form.message}
-                  onChange={(e) => update("message", e.target.value)}
-                  className="input-premium mt-1 block w-full"
-                />
-              </div>
+                {/* Message Field */}
+                <div className="animate-fade-in-up animate-delay-400">
+                  <label className="block text-sm md:text-base font-black text-[#6B4E71] mb-2">Your Message</label>
+                  <textarea
+                    required
+                    rows={6}
+                    value={form.message}
+                    onChange={(e) => update("message", e.target.value)}
+                    placeholder="Tell us about your event requirements..."
+                    className="input-pro w-full px-4 py-3 md:py-4 rounded-lg text-base font-bold resize-none focus:ring-2 focus:ring-[#FF6B9D] focus:ring-offset-2"
+                  />
+                </div>
 
-              <div className="flex items-center gap-3">
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="btn-premium px-4 py-2 text-sm font-semibold disabled:opacity-60"
-                >
-                  {submitting ? "Sending..." : "Send"}
-                </button>
+                {/* Submit Button & Status */}
+                <div className="flex items-center gap-4 animate-fade-in-up animate-delay-500">
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="btn-pro px-8 md:px-10 py-3 md:py-4 rounded-lg font-black text-base md:text-lg shadow-premium-lg hover:shadow-premium-hover disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-1 transition-all duration-300"
+                  >
+                    {submitting ? "🚀 Sending..." : "📧 Send Message"}
+                  </button>
 
-                {sent && <div className="text-sm text-[#FF6B9D] font-medium">Message sent — we will contact you soon.</div>}
-              </div>
-            </form>
+                  {sent && (
+                    <div className="text-base md:text-lg font-black text-[#FF6B9D] flex items-center gap-2 animate-slide-down-blur">
+                      ✅ Message sent!
+                    </div>
+                  )}
+                </div>
+
+                {/* Help Text */}
+                <p className="text-xs md:text-sm text-[#8B6B8D] font-bold">
+                  💡 We'll get back to you within 24 hours during business hours.
+                </p>
+              </form>
+            </div>
           </div>
         </div>
       </div>

@@ -2,24 +2,24 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "luc
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-gray-700 overflow-hidden box-border border-t border-pink-200">
+    <footer className="bg-gradient-to-b from-white to-[#FEF9F3] text-[#6B4E71] overflow-hidden border-t-2 border-[#FFB3D9]">
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid md:grid-cols-4 gap-8 md:gap-12 mb-12">
           {/* Company Info */}
           <div className="min-w-0">
-            <h3 className="text-gray-900 font-bold text-lg mb-4 bg-gradient-to-r from-[#FF6B9D] via-[#FFB3D9] to-[#E6D5FF] bg-clip-text text-transparent">RENT MY EVENT</h3>
-            <p className="text-sm mb-4 text-gray-600">Your one-stop event rental and management company in Delhi NCR.</p>
-            <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2 text-gray-700">
-                <Phone className="w-4 h-4 text-[#FF6B9D]" />
-                <span>+91 XXXX XXXX XX</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-700">
-                <Mail className="w-4 h-4 text-[#FF6B9D]" />
-                <span>info@rentmyevent.com</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-700">
-                <MapPin className="w-4 h-4 text-[#FF6B9D]" />
+            <h3 className="text-2xl font-black bg-gradient-to-r from-[#FF6B9D] to-[#E6D5FF] bg-clip-text text-transparent mb-4">RENT MY EVENT</h3>
+            <p className="text-sm mb-6 text-[#8B6B8D] font-medium leading-relaxed">Your premium event rental and management solutions across Delhi NCR.</p>
+            <div className="space-y-3 text-sm">
+              <a href="tel:+91XXXXXXXXXX" className="flex items-center gap-2 text-[#6B4E71] hover:text-[#FF6B9D] transition font-bold group">
+                <Phone className="w-5 h-5 text-[#FFB3D9] group-hover:animate-float" />
+                <span className="underline-hover">+91 XXXX XXXX XX</span>
+              </a>
+              <a href="mailto:info@rentmyevent.com" className="flex items-center gap-2 text-[#6B4E71] hover:text-[#FF6B9D] transition font-bold group">
+                <Mail className="w-5 h-5 text-[#FFB3D9] group-hover:animate-float" />
+                <span className="underline-hover">info@rentmyevent.com</span>
+              </a>
+              <div className="flex items-center gap-2 text-[#6B4E71] font-bold">
+                <MapPin className="w-5 h-5 text-[#FFB3D9]" />
                 <span>Delhi NCR, India</span>
               </div>
             </div>
@@ -27,55 +27,39 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="min-w-0">
-            <h4 className="text-gray-900 font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-[#FF6B9D] transition break-words font-medium">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-[#FF6B9D] transition break-words font-medium">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-[#FF6B9D] transition break-words font-medium">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-[#FF6B9D] transition break-words font-medium">
-                  Contact
-                </a>
-              </li>
+            <h4 className="text-lg font-black text-[#FF6B9D] mb-6">Quick Links</h4>
+            <ul className="space-y-3 text-sm">
+              {[
+                { label: "🏠 Home", href: "/" },
+                { label: "ℹ️ About Us", href: "/about" },
+                { label: "🛠️ Services", href: "/services" },
+                { label: "📧 Contact", href: "/contact" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className="text-[#8B6B8D] hover:text-[#FF6B9D] transition font-bold hover:translate-x-1 inline-block">
+                    {item.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Services */}
           <div className="min-w-0">
-            <h4 className="text-white font-bold mb-4">Services</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="hover:text-white transition break-words">
-                  Equipment Rental
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition break-words">
-                  Event Management
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition break-words">
-                  Technical Support
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition break-words">
-                  Consultation
-                </a>
-              </li>
+            <h4 className="text-lg font-black text-[#FF6B9D] mb-6">Services</h4>
+            <ul className="space-y-3 text-sm">
+              {[
+                { label: "📦 Equipment Rental", href: "#" },
+                { label: "🎉 Event Management", href: "#" },
+                { label: "🔧 Technical Support", href: "#" },
+                { label: "💡 Consultation", href: "#" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className="text-[#8B6B8D] hover:text-[#FF6B9D] transition font-bold hover:translate-x-1 inline-block">
+                    {item.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
