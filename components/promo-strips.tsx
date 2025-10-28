@@ -13,11 +13,17 @@ export default function PromoStrips() {
   }, [])
 
   const messages = [
+    "EVENT RENTAL EXPERTS",
     "Premium Event Rental Solutions",
     "Professional Equipment Management",
     "Complete Event Coordination",
     "Expert Technical Support",
     "Nationwide Delivery & Setup",
+    "Event Planning Services",
+    "Customized Rental Packages",
+    "24/7 Customer Assistance",
+    "High-Quality Equipment",
+    "Affordable Pricing Options",
   ]
 
   return (
