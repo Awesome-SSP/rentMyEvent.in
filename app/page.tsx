@@ -28,7 +28,7 @@ export default function Home() {
         <WhyChooseUs />
       </main>
 
-      <ApproachSection />
+      {/* <ApproachSection /> */}
       <ContactSection />
       <Footer />
     </>

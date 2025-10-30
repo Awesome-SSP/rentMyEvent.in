@@ -1,91 +1,122 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/98 backdrop-blur-sm border-b border-gray-200/60 shadow-sm">
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled
+      ? 'top-0 bg-[#0A0E27]/95 backdrop-blur-2xl border-b border-[#6366F1]/30 shadow-2xl'
+      : 'top-[4.5rem] bg-transparent backdrop-blur-sm'
+      }`}>
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center gap-4">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo Section */}
+          <div className="flex items-center gap-3 group">
             <img
               src={encodeURI("/new logo.png")}
               alt="Rent My Event"
-              className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-md object-contain"
+              className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-contain transform group-hover:scale-105 transition-all duration-300"
             />
+
             <div className="hidden sm:block">
-              <h1 className="text-base font-semibold text-[#1a1a1a] tracking-tight">RENT MY EVENT</h1>
-              <p className="text-xs text-gray-500 font-medium">Event Rental Solutions</p>
+              <h1 className={`text-lg font-black tracking-wide transition-colors duration-300 ${scrolled ? 'text-white' : 'text-[#0F172A]'
+                }`}>
+                RENT MY EVENT
+              </h1>
+              <p className={`text-xs font-bold transition-colors duration-300 ${scrolled ? 'text-[#94A3B8]' : 'text-[#64748B]'
+                }`}>
+                Premium Events
+              </p>
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6">
             {[
-              { label: "HOME", href: "/" },
-              { label: "ABOUT", href: "/about" },
-              { label: "SERVICES", href: "/services" },
-              { label: "BLOG", href: "/blog" },
-              { label: "CONTACT", href: "/contact" },
+              { label: "Home", href: "/" },
+              { label: "About", href: "/about" },
+              { label: "Services", href: "/services" },
+              { label: "Blog", href: "/blog" },
+              { label: "Contact", href: "/contact" },
             ].map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-700 hover:text-[#E91E63] font-medium text-sm transition-colors duration-200"
+                className={`px-3 py-2 rounded-lg transition-all duration-300 ${scrolled
+                  ? 'text-white hover:text-[#6366F1] hover:bg-white/10'
+                  : 'text-[#475569] hover:text-[#6366F1] hover:bg-[#6366F1]/10'
+                  } font-semibold text-sm`}
               >
                 {item.label}
               </a>
             ))}
-            <div className="relative group">
-              <button className="text-gray-700 hover:text-[#5a3a7a] font-medium text-sm transition-colors duration-200">
-                LOCATIONS
-              </button>
-              <div className="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-200/50">
-                {["Delhi", "NCR", "Gurgaon"].map((loc) => (
-                  <a
-                    key={loc}
-                    href="#"
-                    className="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 text-sm transition-colors first:rounded-t-md last:rounded-b-md"
-                  >
-                    {loc}
-                  </a>
-                ))}
-              </div>
-            </div>
+
+
           </div>
 
-          {/* responsive button: prevent overflow by limiting width, truncating and reducing padding on smaller viewports */}
-          <div className="hidden md:flex items-center md:ml-4">
-            <Button
-              className="flex-shrink-0 bg-[#E91E63] hover:bg-[#C2185B] text-white font-semibold text-sm px-3 md:px-6 py-1.5 rounded-md transition-all duration-200 max-w-[160px] truncate"
-            >
-              <span className="inline-block w-full text-center truncate">GET QUOTE</span>
-            </Button>
+          {/* CTA Button */}
+          <div className="hidden md:flex items-center ml-4">
+            <button className="bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] hover:from-[#8B5CF6] hover:to-[#EC4899] text-white font-bold text-sm px-6 py-2.5 rounded-xl transition-all duration-300 hover:shadow-lg">
+              Get Quote
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X className="w-6 h-6 text-gray-700" /> : <Menu className="w-6 h-6 text-gray-700" />}
+          <button
+            className={`md:hidden p-2 rounded-lg transition-colors duration-300 ${scrolled ? 'text-white hover:bg-white/10' : 'text-[#0F172A] hover:bg-black/10'
+              }`}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
+        {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pb-4 space-y-1 animate-in fade-in slide-in-from-top-2">
+          <div className={`md:hidden pb-4 space-y-2 backdrop-blur-xl rounded-xl mt-4 border shadow-xl animate-slide-down ${scrolled
+              ? 'bg-[#0A0E27]/95 border-[#6366F1]/20'
+              : 'bg-white/95 border-gray-200'
+            }`}>
             {[
-              { label: "HOME", href: "/" },
-              { label: "ABOUT", href: "/about" },
-              { label: "SERVICES", href: "/services" },
-              { label: "BLOG", href: "/blog" },
-              { label: "CONTACT", href: "/contact" },
+              { label: "Home", href: "/" },
+              { label: "About", href: "/about" },
+              { label: "Services", href: "/services" },
+              { label: "Blog", href: "/blog" },
+              { label: "Contact", href: "/contact" },
             ].map((item) => (
-              <a key={item.label} href={item.href} className="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 text-sm rounded-md">
+              <a
+                key={item.label}
+                href={item.href}
+                className={`block px-4 py-3 text-sm font-semibold rounded-lg transition-colors duration-300 ${scrolled
+                    ? 'text-white hover:bg-white/10'
+                    : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+              >
                 {item.label}
               </a>
             ))}
-            <Button className="w-full bg-[#E91E63] hover:bg-[#C2185B] text-white font-semibold mt-3">GET QUOTE</Button>
+
+            <button className="w-full bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white font-bold mt-3 py-3 rounded-xl transition-all duration-300 hover:shadow-lg">
+              Get Quote
+            </button>
           </div>
         )}
       </div>

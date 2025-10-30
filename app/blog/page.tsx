@@ -79,10 +79,10 @@ export default function Blog() {
                 <section className="diagonal-bg-dark py-16 md:py-24 overflow-x-hidden relative">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#1a1a1a] leading-tight animate-fade-in-up">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white leading-tight animate-fade-in-up">
                                 Event Planning <span className="bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">Insights & Tips</span>
                             </h1>
-                            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
+                            <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
                                 Expert articles and guides to help you plan <span className="text-[#ff9700] font-semibold">amazing events</span>
                             </p>
                         </div>
@@ -179,10 +179,10 @@ export default function Blog() {
                 {/* CTA Section */}
                 <section className="diagonal-bg-dark py-16 md:py-24">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#1a1a1a] animate-fade-in-up">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white animate-fade-in-up">
                             Ready to Plan Your <span className="bg-gradient-to-r from-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">Next Event</span>?
                         </h2>
-                        <p className="text-gray-600 mb-8 text-lg animate-fade-in-up animate-delay-200">
+                        <p className="text-white/80 mb-8 text-lg animate-fade-in-up animate-delay-200">
                             Let our team of experts help you create an unforgettable experience.
                         </p>
                         <a

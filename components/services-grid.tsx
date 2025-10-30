@@ -9,7 +9,7 @@ export default function ServicesGrid() {
     { title: "Fashion Show", image: "/icon/Fashion Show.gif" },
     { title: "Award Night", image: "/icon/Award Night (3).gif" },
     { title: "Live Show", image: "/icon/Live Show.gif" },
-    { title: "Exhibition & Stall", image: "/icon/Exhibition & Stall.gif" },
+    // { title: "Exhibition & Stall", image: "/icon/Exhibition & Stall.gif" },
 
     // keep Corporate Event and Mall Activity as requested
     { title: "Corporate Event", image: "/corporate-event.jpg" },
@@ -69,10 +69,10 @@ export default function ServicesGrid() {
   return (
     <section ref={ref} className="diagonal-bg-dark py-16 md:py-24" aria-label="Services & Equipment">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-[#1a1a1a] animate-fade-in-down">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white animate-fade-in-down">
           <span className="bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">Services & Equipment</span>
         </h2>
-        <p className="text-center text-gray-600 mb-12 text-lg animate-fade-in-up animate-delay-200">
+        <p className="text-center text-white/80 mb-12 text-lg animate-fade-in-up animate-delay-200">
           <span className="bg-gradient-to-r from-[#2cc16f] to-[#dc5f5f] bg-clip-text text-transparent font-semibold">Comprehensive rental solutions</span> for every event type
         </p>
 

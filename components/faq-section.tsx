@@ -1,10 +1,44 @@
 "use client"
 
-import { useState } from "react"
-import { ChevronDown } from "lucide-react"
+import { useState, useRef, useEffect, Suspense } from "react"
+import { ChevronDown, HelpCircle } from "lucide-react"
+
+// Lazy loading components for performance
+const LazyFloatingDecoration = ({ children }: { children: React.ReactNode }) => {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100)
+    return () => clearTimeout(timer)
+  }, [])
+
+  return isVisible ? <>{children}</> : null
+}
+
+const LazyFAQItem = ({ children }: { children: React.ReactNode }) => {
+  return <Suspense fallback={<div className="h-16 animate-pulse bg-gray-200/10 rounded-2xl" />}>{children}</Suspense>
+}
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(-1)
+  const [inView, setInView] = useState(false)
+  const ref = useRef<HTMLElement | null>(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true)
+          obs.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
 
   const faqs = [
     {
@@ -70,13 +104,44 @@ export default function FAQSection() {
   ]
 
   return (
-    <section className="diagonal-bg-dark py-16 md:py-28">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-[#1a1a1a] animate-fade-in-down">
-          <span className="text-[#2cc16f]">Frequently </span>
-          <span className="text-[#ff9700]">Asked </span>
-          <span className="bg-gradient-to-r from-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">Questions</span>
-        </h2>
+    <section
+      ref={ref}
+      className="relative py-20 md:py-40 bg-gradient-to-br from-[#0A0E27] via-[#1a1f3a] to-[#2D1B4E] overflow-hidden"
+    >
+      {/* Background accents kept minimal for pro theme */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 -left-20 w-80 h-80 bg-gradient-to-br from-[#6366F1]/12 to-[#8B5CF6]/6 rounded-full blur-3xl animate-service-card-float"></div>
+        <div className="absolute bottom-20 -right-20 w-96 h-96 bg-gradient-to-bl from-[#EC4899]/10 to-transparent rounded-full blur-3xl animate-service-card-float" style={{ animationDelay: "3s" }}></div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* 3D Header */}
+        <div className="text-center mb-20 relative">
+          {/* Title decorations removed for a cleaner look */}
+
+          <div className="inline-block mb-8 relative">
+            <span className="px-6 py-3 bg-gradient-to-r from-[#6366F1]/20 to-[#8B5CF6]/20 border border-[#6366F1]/30 rounded-full text-sm font-bold text-[#6366F1] backdrop-blur-xl">Frequently Asked Questions</span>
+
+            {/* Floating particles around badge */}
+            <div className="absolute -top-2 -left-2 w-2 h-2 bg-[#6366F1] rounded-full animate-ping-slow"></div>
+            <div className="absolute -bottom-2 -right-2 w-2 h-2 bg-[#EC4899] rounded-full animate-ping-slow" style={{ animationDelay: "0.5s" }}></div>
+          </div>
+
+          <h2 className="text-5xl md:text-7xl font-black text-white mb-6 relative z-10">
+            <span className="bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent animate-gradient-x">
+              Get Your Answers
+            </span>
+          </h2>
+
+          {/* 3D Text Shadow */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#6366F1] to-[#EC4899] bg-clip-text text-transparent blur-sm opacity-30 -z-10">
+            Get Your Answers
+          </div>
+
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto font-medium leading-relaxed">
+            Find quick answers to common questions about our <span className="text-[#6366F1] font-bold">premium event rental services</span>
+          </p>
+        </div>
 
         <div className="space-y-3">
           {faqs.map((faq, index) => (

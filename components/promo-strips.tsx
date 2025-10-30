@@ -17,7 +17,7 @@ export default function PromoStrips() {
   ]
 
   return (
-    <div className="bg-gradient-to-r from-[#f1040c] via-[#f31212ee] to-[#e30a0a] text-gray-100 overflow-hidden">
+    <div className="fixed top-0 w-full z-[60] bg-gradient-to-r from-[#f1040c] via-[#f31212ee] to-[#e30a0a] text-gray-100 overflow-hidden">
       <div className="py-2 px-4 relative overflow-hidden border-b border-gray-700/30">
         <div
           className="flex gap-16 whitespace-nowrap transition-transform duration-200 ease-linear"
