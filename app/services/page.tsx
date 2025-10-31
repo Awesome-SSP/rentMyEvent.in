@@ -3,6 +3,7 @@
 import Navbar from "@/components/navbar"
 import PromoStrips from "@/components/promo-strips"
 import Footer from "@/components/footer"
+import SectionHeader from "@/components/ui/section-header"
 import { Monitor, Calendar, Users, Wrench, Lightbulb, Shield } from "lucide-react"
 
 export default function Services() {
@@ -54,14 +55,14 @@ export default function Services() {
                 {/* Hero Section */}
                 <section className="diagonal-bg-dark py-16 md:py-24 overflow-x-hidden relative">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="text-center">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white leading-tight animate-fade-in-up">
-                                Our <span className="bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">Premium Services</span>
-                            </h1>
-                            <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
-                                Comprehensive event solutions designed to <span className="text-[#2cc16f] font-semibold">exceed your expectations</span>
-                            </p>
-                        </div>
+                        <SectionHeader
+                            title="Our"
+                            highlight="Premium Services"
+                            subtitle="Comprehensive event solutions designed to exceed your expectations"
+                            align="center"
+                            onDark
+                            className="animate-fade-in-up"
+                        />
                     </div>
                 </section>
 
@@ -72,22 +73,20 @@ export default function Services() {
                             {services.map((service, idx) => {
                                 const Icon = service.icon
                                 return (
-                                    <div
-                                        key={idx}
-                                        className="bg-white rounded-lg border border-gray-200/60 p-8 hover:shadow-xl transition-all duration-300 animate-scale-in"
-                                        style={{ animationDelay: `${(idx + 1) * 0.1}s` }}
-                                    >
-                                        <Icon className="w-14 h-14 text-[#ff9700] mb-4" />
-                                        <h3 className="text-2xl font-bold text-[#1a1a1a] mb-3">{service.title}</h3>
-                                        <p className="text-gray-600 mb-6">{service.description}</p>
-                                        <ul className="space-y-2">
-                                            {service.features.map((feature, fidx) => (
-                                                <li key={fidx} className="text-sm text-gray-700 flex items-center gap-2">
-                                                    <span className="w-2 h-2 bg-[#2cc16f] rounded-full"></span>
-                                                    {feature}
-                                                </li>
-                                            ))}
-                                        </ul>
+                                    <div key={idx} className="p-[1px] rounded-xl bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] animate-scale-in" style={{ animationDelay: `${(idx + 1) * 0.1}s` }}>
+                                        <div className="bg-white rounded-xl p-8 h-full hover:shadow-xl transition-all duration-300">
+                                            <Icon className="w-14 h-14 text-[#ff9700] mb-4" />
+                                            <h3 className="text-2xl font-bold text-[#1a1a1a] mb-3">{service.title}</h3>
+                                            <p className="text-gray-600 mb-6">{service.description}</p>
+                                            <ul className="space-y-2">
+                                                {service.features.map((feature, fidx) => (
+                                                    <li key={fidx} className="text-sm text-gray-700 flex items-center gap-2">
+                                                        <span className="w-2 h-2 bg-[#2cc16f] rounded-full"></span>
+                                                        {feature}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
                                     </div>
                                 )
                             })}
@@ -98,9 +97,12 @@ export default function Services() {
                 {/* Why Our Services Section */}
                 <section className="section-diag section-diag--b py-16 md:py-24">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#1a1a1a] animate-fade-in-down">
-                            Why Choose <span className="bg-gradient-to-r from-[#2cc16f] to-[#ff9700] bg-clip-text text-transparent">Our Services</span>
-                        </h2>
+                        <SectionHeader
+                            title="Why Choose"
+                            highlight="Our Services"
+                            align="center"
+                            className="animate-fade-in-down mb-12"
+                        />
 
                         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                             <div className="animate-fade-in-left">

@@ -2,6 +2,7 @@
 
 import { Award, Package, Users, Clock, DollarSign, CheckCircle, Info } from "lucide-react"
 import React, { useRef, useEffect, useState, Suspense } from "react"
+import SectionHeader from "@/components/ui/section-header"
 
 // Lazy loading components for performance optimization
 const LazyFloatingShape = ({ children }: { children: React.ReactNode }) => {
@@ -135,37 +136,18 @@ export default function WhyChooseUs() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* 3D Section Header */}
+        {/* Section Header */}
         <header className="text-center mb-20 space-y-8 animate-slide-up-blur relative">
-          {/* Header decorations removed for cleaner look */}
-
           <div className="inline-block relative">
             <span className="px-6 py-3 bg-gradient-to-r from-[#6366F1]/20 to-[#8B5CF6]/20 border border-[#6366F1]/30 rounded-full text-sm font-bold text-[#6366F1] backdrop-blur-xl">Why Choose Us</span>
-
-            {/* Orbiting particles */}
-            <div className="absolute -top-2 -left-2 w-3 h-3 bg-[#6366F1] rounded-full animate-ping-slow"></div>
-            <div className="absolute -bottom-2 -right-2 w-2 h-2 bg-[#EC4899] rounded-full animate-ping-slow" style={{ animationDelay: "0.5s" }}></div>
           </div>
-
-          <div className="relative">
-            <h2 className="text-5xl md:text-7xl font-black text-white leading-tight relative z-10">
-              Why Choose <br />
-              <span className="bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent animate-gradient-x">
-                Rent My Event
-              </span>
-            </h2>
-
-            {/* 3D Text Shadow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#6366F1] to-[#EC4899] bg-clip-text text-transparent blur-sm opacity-30 -z-10">
-              Why Choose Rent My Event
-            </div>
-          </div>
-
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-medium leading-relaxed">
-            Services & management you can trust — <span className="text-[#6366F1] font-bold">transparent pricing</span>,
-            <span className="text-[#EC4899] font-bold"> award-winning execution</span> and
-            <span className="text-[#06B6D4] font-bold"> goal-oriented planning</span>.
-          </p>
+          <SectionHeader
+            title="Why Choose"
+            highlight="Rent My Event"
+            subtitle="Services & management you can trust — transparent pricing, award-winning execution and goal-oriented planning."
+            onDark
+            align="center"
+          />
         </header>
 
         {/* 3D Highlight Cards with Motion Effects */}
@@ -240,14 +222,7 @@ export default function WhyChooseUs() {
 
         {/* 3D Benefits Section Header */}
         <div className="text-center mb-20 relative">
-          {/* Floating emojis removed */}
-
-          <h3 className="text-4xl md:text-6xl font-black text-white mb-4 relative z-10">
-            What You <span className="bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent animate-gradient-x">Get With Us</span>
-          </h3>
-
-          {/* 3D underline */}
-          <div className="w-40 h-2 bg-gradient-to-r from-[#6366F1] to-[#EC4899] rounded-full mx-auto animate-pulse"></div>
+          <SectionHeader title="What You" highlight="Get With Us" onDark align="center" />
         </div>
 
         {/* 3D Benefits Grid with Advanced Motion Effects */}

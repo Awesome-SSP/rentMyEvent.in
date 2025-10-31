@@ -3,6 +3,7 @@
 import Navbar from "@/components/navbar"
 import PromoStrips from "@/components/promo-strips"
 import Footer from "@/components/footer"
+import SectionHeader from "@/components/ui/section-header"
 import { Calendar, User, ArrowRight } from "lucide-react"
 
 export default function Blog() {
@@ -78,14 +79,14 @@ export default function Blog() {
                 {/* Hero Section */}
                 <section className="diagonal-bg-dark py-16 md:py-24 overflow-x-hidden relative">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="text-center">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white leading-tight animate-fade-in-up">
-                                Event Planning <span className="bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">Insights & Tips</span>
-                            </h1>
-                            <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
-                                Expert articles and guides to help you plan <span className="text-[#ff9700] font-semibold">amazing events</span>
-                            </p>
-                        </div>
+                        <SectionHeader
+                            title="Event Planning"
+                            highlight="Insights & Tips"
+                            subtitle="Expert articles and guides to help you plan amazing events"
+                            align="center"
+                            onDark
+                            className="animate-fade-in-up"
+                        />
                     </div>
                 </section>
 

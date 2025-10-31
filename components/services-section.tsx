@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, useState, Suspense } from "react"
 import { Zap, Projector, Mic2, Video, Monitor, Speaker } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import SectionHeader from "@/components/ui/section-header"
 
 // Lazy loading component for floating decorations
 const LazyFloatingDecoration = ({ children }: { children: React.ReactNode }) => {
@@ -124,32 +125,18 @@ export default function ServicesSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* 3D Section Header */}
+        {/* Header */}
         <div className="text-center mb-20 space-y-8 animate-slide-up-blur">
           <div className="inline-block relative">
             <span className="px-6 py-3 bg-gradient-to-r from-[#6366F1]/20 to-[#8B5CF6]/20 border border-[#6366F1]/30 rounded-full text-sm font-bold text-[#6366F1] backdrop-blur-xl">Premium 3D Solutions</span>
-
-            {/* Floating Icons around Badge */}
-            {/* Removed floating emoji around badge for professional tone */}
           </div>
-
-          <h2 className="text-5xl md:text-7xl font-black text-white relative">
-            Everything for Your
-            <br />
-            <span className="bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent animate-gradient-x">
-              Perfect Event
-            </span>
-
-            {/* 3D Text Shadow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#6366F1] to-[#EC4899] bg-clip-text text-transparent blur-sm opacity-30 -z-10">
-              Everything for Your Perfect Event
-            </div>
-          </h2>
-
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-medium leading-relaxed">
-            From stunning 3D visuals to crystal-clear audio, we provide everything you need to make your event
-            <span className="text-[#6366F1] font-bold"> absolutely unforgettable</span>.
-          </p>
+          <SectionHeader
+            title="Everything for Your"
+            highlight="Perfect Event"
+            subtitle="From stunning 3D visuals to crystal-clear audio, we provide everything you need to make your event absolutely unforgettable."
+            onDark
+            align="center"
+          />
         </div>
 
         {/* 3D Services Grid with Floating Objects */}

@@ -1,15 +1,9 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React from "react"
+import Marquee from "./ui/marquee"
 
 export default function BrandsCarousel() {
-  const [offset, setOffset] = useState(0)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setOffset((prev) => (prev + 0.5) % 100)
-    }, 60)
-    return () => clearInterval(interval)
-  }, [])
   const brands = [
     { name: "Brand 1", logo: "/brandimage/brand-1.webp" },
     { name: "Brand 2", logo: "/brandimage/brand-2.webp" },
@@ -27,40 +21,32 @@ export default function BrandsCarousel() {
           <p className="text-sm text-slate-600 mt-2">Leading companies choose us for their events</p>
         </div>
 
-        <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <div className="relative w-full overflow-hidden">
           {/* Row 1 - left to right */}
-          <div className="marquee-row mb-6" aria-hidden="true">
-            <div
-              className="marquee-track"
-              style={{ transform: `translateX(-${offset * 0.8}%)` }}
-            >
-              {[...brands, ...brands].map((b, i) => (
-                <div key={`row1-${i}`} className="brand-tile">
+          <div className="mb-6" aria-hidden="true">
+            <Marquee direction="left" speedFactor={0.8} gapClassName="gap-3" className="" ariaLabel="Brand logos marquee left" edgeFade>
+              {brands.map((b, i) => (
+                <div key={`r1-${i}`} className="brand-tile">
                   <img src={b.logo} alt={b.name} loading="lazy" className="brand-img" />
                 </div>
               ))}
-            </div>
+            </Marquee>
           </div>
 
           {/* Row 2 - right to left */}
-          <div className="marquee-row" aria-hidden="true">
-            <div
-              className="marquee-track"
-              style={{ transform: `translateX(${offset * 0.8}%)` }}
-            >
-              {[...brands, ...brands].map((b, i) => (
-                <div key={`row2-${i}`} className="brand-tile">
+          <div aria-hidden="true">
+            <Marquee direction="right" speedFactor={0.8} gapClassName="gap-3" className="" ariaLabel="Brand logos marquee right" edgeFade>
+              {brands.map((b, i) => (
+                <div key={`r2-${i}`} className="brand-tile">
                   <img src={b.logo} alt={b.name} loading="lazy" className="brand-img" />
                 </div>
               ))}
-            </div>
+            </Marquee>
           </div>
         </div>
       </div>
 
       <style jsx global>{`
-        .marquee-row { position: relative; width: 100%; overflow: hidden; }
-  .marquee-track { display: inline-flex; width: max-content; gap: 0.75rem; will-change: transform; }
         .brand-tile {
           flex: 0 0 auto;
           width: 7rem; height: 4rem;
@@ -79,8 +65,7 @@ export default function BrandsCarousel() {
             radial-gradient(600px 600px at 90% 25%, rgba(16,185,129,0.08), transparent 45%),
             linear-gradient(180deg, #F8FAFC 0%, #ffffff 30%, #F8FAFC 100%);
         }
-
-        /* Using JS-driven transform like promo-strips; no keyframes needed. */
+        /* Using shared JS-driven Marquee; no keyframes needed. */
       `}</style>
     </section>
   )
