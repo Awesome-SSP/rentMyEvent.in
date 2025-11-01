@@ -60,9 +60,12 @@ export default function ContactSection() {
         <div className="grid gap-8 lg:grid-cols-2 items-start">
           {/* Addresses */}
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">GET IN TOUCH</h2>
-            <p className="text-gray-600 mb-6">
-              Send us a message or visit our offices — we cover Gurugram, Faridabad and Delhi.
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 animate-fade-in-down">
+              <span className="text-[#2cc16f]">GET IN </span>
+              <span className="bg-gradient-to-r from-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">TOUCH</span>
+            </h2>
+            <p className="text-gray-600 mb-6 animate-fade-in-up animate-delay-200">
+              Send us a message or visit our offices — we cover <span className="text-[#ff9700] font-semibold">Gurugram, Faridabad and Delhi</span>.
             </p>
 
             <div className="space-y-4">

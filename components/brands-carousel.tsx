@@ -16,10 +16,16 @@ export default function BrandsCarousel() {
   const infiniteBrands = [...brands, ...brands, ...brands]
 
   return (
-    <section className="section-diag section-diag--a py-12 md:py-16 logos-section overflow-hidden" aria-label="Brands Trusted Us">
+    // <section className="section-diag section-diag--a py-12 md:py-16 logos-section overflow-hidden" aria-label="Brands Trusted Us">
+    <section className="diagonal-bg-dark py-12 md:py-16 logos-section overflow-hidden" aria-label="Brands Trusted Us">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="logos-title">Brands Trusted Us</h2>
-        <p className="text-sm text-gray-600 mb-8">Leading companies choose us for their event management needs</p>
+        <h2 className="logos-title animate-fade-in-down">
+          <span className="bg-gradient-to-r from-[#2cc16f] to-[#ff9700] bg-clip-text text-transparent">Brands </span>
+          <span className="text-[#1a1a1a]">Trusted Us</span>
+        </h2>
+        <p className="text-sm text-gray-600 mb-8 animate-fade-in-up animate-delay-200">
+          <span className="bg-gradient-to-r from-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent font-semibold">Leading companies</span> choose us for their event management needs
+        </p>
 
         <div className="relative w-full overflow-hidden">
           {/* First row - moving left to right */}
@@ -27,7 +33,7 @@ export default function BrandsCarousel() {
             {infiniteBrands.map((brand, i) => (
               <div
                 key={`left-${i}`}
-                className="flex-shrink-0 mx-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-3 w-28 h-16 flex items-center justify-center border border-gray-200"
+                className="flex-shrink-0 mx-3 bg-white rounded-lg shadow-md animate-card-hover transition-shadow duration-300 p-3 w-28 h-16 flex items-center justify-center border border-gray-200 animate-scale-in"
               >
                 <img
                   src={brand.logo}
@@ -44,7 +50,7 @@ export default function BrandsCarousel() {
             {infiniteBrands.map((brand, i) => (
               <div
                 key={`right-${i}`}
-                className="flex-shrink-0 mx-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-3 w-28 h-16 flex items-center justify-center border border-gray-200"
+                className="flex-shrink-0 mx-3 bg-white rounded-lg shadow-md animate-card-hover transition-shadow duration-300 p-3 w-28 h-16 flex items-center justify-center border border-gray-200 animate-scale-in animate-delay-400"
               >
                 <img
                   src={brand.logo}

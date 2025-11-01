@@ -7,16 +7,16 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="min-w-0">
-            <h3 className="text-white font-bold text-lg mb-4">RENT MY EVENT</h3>
+            <h3 className="text-white font-bold text-lg mb-4 bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">RENT MY EVENT</h3>
             <p className="text-sm mb-4">Your one-stop event rental and management company in Delhi NCR.</p>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+91 XXXX XXXX XX</span>
+                <span>+91 7065441547 </span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>info@rentmyevent.com</span>
+                <span>rentmyevent@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
