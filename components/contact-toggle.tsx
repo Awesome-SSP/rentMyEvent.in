@@ -88,8 +88,8 @@ export default function ContactToggle({ phone = "+917065441547", whatsapp = "+91
 
             {/* Mobile: bottom horizontal bar (solid blackish-blue, no glass) */}
             <div className="md:hidden fixed inset-x-0 bottom-0 z-[70] print:hidden">
-                <div className="w-full bg-[#0b1220] text-white border-t border-[#0f1a2e]" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-                    <nav className="grid grid-cols-3 items-stretch divide-x divide-[#0f1a2e]">
+                <div className="w-full h-20 bg-[#0b1220] text-white border-t border-[#0f1a2e]" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+                    <nav className="grid grid-cols-3 items-stretch divide-x divide-[#0f1a2e]" role="navigation" aria-label="Quick contact">
                         {/* Call */}
                         <a href={tel} aria-label="Call" className="flex items-center justify-center h-20 hover:bg-[#0f1f3a] active:bg-[#0c1a33] transition">
                             {reduced ? (
@@ -105,7 +105,7 @@ export default function ContactToggle({ phone = "+917065441547", whatsapp = "+91
                             )}
                         </a>
                         {/* WhatsApp (larger) */}
-                        <a href={wa} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="flex items-center justify-center h-20 hover:bg-[#0f1f3a] active:bg-[#0c1a33] transition">
+                        <a href={wa} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="flex items-center justify-center h-20 hover:bg-[#0f1f3a] active:bg-[#0c1a33] transition">
                             {reduced ? (
                                 <svg width="24" height="24" viewBox="0 0 32 32" fill="currentColor" aria-hidden>
                                     <path d="M19.11 17.37c-.26-.13-1.53-.76-1.76-.85-.24-.09-.41-.13-.58.13-.17.26-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.3-.78-.69-1.31-1.55-1.46-1.81-.15-.26-.02-.4.11-.52.11-.11.26-.3.39-.46.13-.17.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.39-.8-1.9-.21-.5-.42-.43-.58-.43-.15 0-.32-.02-.49-.02-.17 0-.45.06-.68.32-.24.26-.9.88-.9 2.15 0 1.26.93 2.48 1.06 2.65.13.17 1.84 2.81 4.47 3.94.62.27 1.11.43 1.49.55.62.2 1.19.17 1.64.1.5-.07 1.53-.62 1.74-1.22.21-.6.21-1.11.15-1.22-.06-.11-.24-.17-.49-.29z" />
