@@ -22,22 +22,22 @@ export default function Contact() {
             title: "Gurugram Office",
             address: "4th Floor, Iris Tech Park, 406 B, Badshahpur Sohna Rd",
             city: "Gurugram, Haryana 122018",
-            phone: "+91-XXXXX-XXXXX",
-            email: "gurugram@rentmyevent.com",
+            phone: "+91-7065441547",
+            email: "rentmyevent@gmail.com",
         },
         {
             title: "Faridabad Office",
             address: "44 foot road, Dheeraj Nagar near Monday Market",
             city: "Faridabad, Haryana 121003",
-            phone: "+91-XXXXX-XXXXX",
-            email: "faridabad@rentmyevent.com",
+            phone: "+91-7065441547",
+            email: "rentmyevent@gmail.com",
         },
         {
             title: "Delhi Office",
             address: "202 2nd floor, Veer Sarwakar Block, Nirman Vihar",
             city: "Delhi 110092",
-            phone: "+91-XXXXX-XXXXX",
-            email: "delhi@rentmyevent.com",
+            phone: "+91-7065441547",
+            email: "rentmyevent@gmail.com",
         },
     ]
 
@@ -89,7 +89,7 @@ export default function Contact() {
                             <div className="bg-white rounded-lg border border-gray-200/60 p-8 hover:shadow-lg transition-all duration-300 animate-scale-in">
                                 <Phone className="w-12 h-12 text-[#2cc16f] mb-4" />
                                 <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">Call Us</h3>
-                                <p className="text-gray-600 mb-2">+91-XXXXX-XXXXX</p>
+                                <p className="text-gray-600 mb-2">+91-7065441547</p>
                                 <p className="text-sm text-gray-500">Available 24/7 for event inquiries</p>
                             </div>
 
@@ -99,7 +99,7 @@ export default function Contact() {
                             >
                                 <Mail className="w-12 h-12 text-[#ff9700] mb-4" />
                                 <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">Email Us</h3>
-                                <p className="text-gray-600 mb-2">info@rentmyevent.com</p>
+                                <p className="text-gray-600 mb-2">rentmyevent@gmail.com</p>
                                 <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
                             </div>
 

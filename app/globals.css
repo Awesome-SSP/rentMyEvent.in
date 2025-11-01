@@ -205,32 +205,40 @@
 }
 
 /* Professional elegant diagonal backgrounds with consistent color palette */
+/* Blue ⇄ Peach single diagonal blend */
 .diagonal-bg-dark {
-  color: #2d4a2d;
-  background-image: linear-gradient(314deg, #2cc16f 10% 50%, rgba(220, 95, 95, 0.6) 50% 100%);
+  color: #0f172a;
+  /* two crossing diagonals with opposite color blends */
+  background-image:
+    linear-gradient(315deg, rgba(255, 183, 168, 0) 0%, rgba(255, 183, 168, 0.7) 32%, rgba(59, 130, 246, 0.7) 68%, rgba(59, 130, 246, 0) 100%),
+    linear-gradient(135deg, rgba(59, 130, 246, 0) 0%, rgba(59, 130, 246, 0.75) 32%, rgba(255, 183, 168, 0.75) 68%, rgba(255, 183, 168, 0) 100%);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(44, 193, 111, 0.1);
+  background-color: rgba(59, 130, 246, 0.04);
   background-size: cover;
   position: relative;
 }
 
 .diagonal-bg-teal {
-  color: #2d4a2d;
-  background-image: linear-gradient(135deg, #2cc16f 0% 30%, rgba(255, 151, 0, 0.4) 30% 100%);
+  color: #0f172a;
+  background-image:
+    linear-gradient(315deg, rgba(255, 183, 168, 0) 0%, rgba(255, 183, 168, 0.65) 30%, rgba(59, 130, 246, 0.65) 70%, rgba(59, 130, 246, 0) 100%),
+    linear-gradient(135deg, rgba(59, 130, 246, 0) 0%, rgba(59, 130, 246, 0.7) 30%, rgba(255, 183, 168, 0.7) 70%, rgba(255, 183, 168, 0) 100%);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(44, 193, 111, 0.08);
+  background-color: rgba(59, 130, 246, 0.04);
   background-size: cover;
   position: relative;
 }
 
 .diagonal-bg-purple {
-  color: #2d4a2d;
-  background-image: linear-gradient(225deg, #ff9700 0% 40%, rgba(220, 95, 95, 0.5) 40% 100%);
+  color: #0f172a;
+  background-image:
+    linear-gradient(315deg, rgba(255, 183, 168, 0) 0%, rgba(255, 183, 168, 0.7) 35%, rgba(59, 130, 246, 0.7) 65%, rgba(59, 130, 246, 0) 100%),
+    linear-gradient(135deg, rgba(59, 130, 246, 0) 0%, rgba(59, 130, 246, 0.75) 35%, rgba(255, 183, 168, 0.75) 65%, rgba(255, 183, 168, 0) 100%);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(255, 151, 0, 0.1);
+  background-color: rgba(59, 130, 246, 0.04);
   background-size: cover;
   position: relative;
 }
@@ -252,11 +260,13 @@
    Higher specificity prevents other .logos-section rules from accidentally overriding it. */
 .logos-section.diagonal-bg-dark,
 .diagonal-bg-dark.logos-section {
-  color: #2d4a2d;
-  background-image: linear-gradient(188deg, #64b058 10% 50%, rgba(220, 95, 95, 0.6) 50% 100%);
+  color: #0f172a;
+  background-image:
+    linear-gradient(315deg, rgba(255, 183, 168, 0) 0%, rgba(255, 183, 168, 0.7) 30%, rgba(59, 130, 246, 0.7) 70%, rgba(59, 130, 246, 0) 100%),
+    linear-gradient(135deg, rgba(59, 130, 246, 0) 0%, rgba(59, 130, 246, 0.75) 30%, rgba(255, 183, 168, 0.75) 70%, rgba(255, 183, 168, 0) 100%);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(44, 193, 111, 0.1);
+  background-color: rgba(59, 130, 246, 0.04);
   background-size: cover;
   position: relative;
 }
