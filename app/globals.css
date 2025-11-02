@@ -222,7 +222,7 @@
 .diagonal-bg-teal {
   color: #0f172a;
   background-image:
-    linear-gradient(315deg, rgba(255, 183, 168, 0) 0%, rgba(255, 183, 168, 0.65) 30%, rgba(59, 130, 246, 0.65) 70%, rgba(59, 130, 246, 0) 100%),
+    /* linear-gradient(315deg, rgba(255, 183, 168, 0) 0%, rgba(255, 183, 168, 0.65) 30%, rgba(59, 130, 246, 0.65) 70%, rgba(59, 130, 246, 0) 100%), */
     linear-gradient(135deg, rgba(59, 130, 246, 0) 0%, rgba(59, 130, 246, 0.7) 30%, rgba(255, 183, 168, 0.7) 70%, rgba(255, 183, 168, 0) 100%);
   background-position: center;
   background-repeat: no-repeat;
@@ -234,8 +234,8 @@
 .diagonal-bg-purple {
   color: #0f172a;
   background-image:
-    linear-gradient(315deg, rgba(255, 183, 168, 0) 0%, rgba(255, 183, 168, 0.7) 35%, rgba(59, 130, 246, 0.7) 65%, rgba(59, 130, 246, 0) 100%),
-    linear-gradient(135deg, rgba(59, 130, 246, 0) 0%, rgba(59, 130, 246, 0.75) 35%, rgba(255, 183, 168, 0.75) 65%, rgba(255, 183, 168, 0) 100%);
+    linear-gradient(315deg, rgba(255, 183, 168, 0) 0%, #FF4FCB, #3B4BFF rgba(59, 130, 246, 0) 100%),
+    linear-gradient(135deg, rgba(59, 130, 246, 0) 0%, #3B4BFF, #FF4FCB, rgba(255, 183, 168, 0) 100%);
   background-position: center;
   background-repeat: no-repeat;
   background-color: rgba(59, 130, 246, 0.04);
@@ -747,11 +747,10 @@
    Uses only CSS colors (no SVG). Placed here to override earlier rules. */
 .diagonal-bg-dark {
   /* bright red -> orange (sharp transition) */
-  background-image: linear-gradient(135deg,
-      #ff2d2d 0%,
-      #ff2d2d 50%,
-      #ff9700 50%,
-      #ff9700 100%);
+  background-image:
+    linear-gradient(315deg, rgba(255, 183, 168, 0) 0%, #FF4FCB, #3B4BFF rgba(59, 130, 246, 0) 100%),
+    linear-gradient(135deg, rgba(59, 130, 246, 0) 0%, #3B4BFF, #FF4FCB, rgba(255, 183, 168, 0) 100%);
+  background-position: center;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

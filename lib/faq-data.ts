@@ -1,0 +1,64 @@
+export type FAQItem = { question: string; answer: string }
+
+export const FAQS: FAQItem[] = [
+  {
+    question: "What types of equipment do you offer for rent?",
+    answer:
+      "We offer a comprehensive range of professional event rental equipment including LED walls, projectors, PA systems, conference systems, lighting equipment, and audio-visual solutions for all types of events.",
+  },
+  {
+    question: "How far in advance should I book equipment?",
+    answer:
+      "We recommend booking at least 2–3 weeks in advance for standard events. For peak seasons or large-scale events, book as early as possible to ensure availability. We can often accommodate last-minute requests subject to stock.",
+  },
+  {
+    question: "Do you provide technical support during events?",
+    answer:
+      "Yes. Our trained technicians provide on-site setup, testing and live support throughout your event to ensure everything runs smoothly.",
+  },
+  {
+    question: "What is your delivery and setup policy?",
+    answer:
+      "We provide delivery and professional setup within Delhi NCR. Setup times depend on equipment and venue — we coordinate schedules to minimise disruption and complete testing before the event starts.",
+  },
+  {
+    question: "Can you customize packages for specific events?",
+    answer:
+      "Absolutely. We create tailored rental packages based on event type, audience size, venue constraints and budget. Contact us for a custom quote and site consultation.",
+  },
+  {
+    question: "What are your payment terms and methods?",
+    answer:
+      "We accept bank transfers, UPI and major cards. A deposit is typically required to confirm a booking, with the balance due according to the contract (usually before or on delivery).",
+  },
+  {
+    question: "What is your cancellation and refund policy?",
+    answer:
+      "Cancellation terms vary by booking size and notice period. Small-event cancellations generally incur a modest fee if made within 72 hours; larger events require earlier notice. Refunds for deposits follow the contract terms.",
+  },
+  {
+    question: "Do you offer insurance or damage waivers?",
+    answer:
+      "Clients are responsible for rented equipment during their event. We offer optional damage waivers and can advise on insurance options for high-value equipment — discuss this when booking.",
+  },
+  {
+    question: "Are the systems compatible with my existing equipment?",
+    answer:
+      "Our equipment is industry-standard and designed to interoperate with common systems. Share your setup details and we’ll confirm compatibility or provide adapters as needed.",
+  },
+  {
+    question: "How long does setup and teardown take?",
+    answer:
+      "Setup and teardown times depend on the scope; small setups may take 30–90 minutes, while large productions can take several hours. We include realistic timing estimates in each quote.",
+  },
+  {
+    question: "Do you handle permits and venue approvals?",
+    answer:
+      "We advise clients on permit requirements and can coordinate with venues for technical approvals. For major outdoor installations, we recommend starting the permit process early.",
+  },
+  {
+    question: "What safety measures do you follow on-site?",
+    answer:
+      "Safety is a priority: our technicians follow industry best practices, use certified rigging and cabling, and conduct pre-event safety checks. We also provide guidance on crowd and equipment safety.",
+  },
+]

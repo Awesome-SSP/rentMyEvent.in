@@ -8,9 +8,13 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://rentmyevent.in'),
   title: 'Rent My Event | Event Rental Equipment & Event Organizers in Delhi NCR',
   description: 'From LED walls and projectors to corporate and wedding full setups — Rent My Event provides cost-effective event equipment rentals and 360° event management services in Delhi NCR. Celebrate tension-free with professional planning and punctual delivery!',
   generator: 'Next.js',
+  alternates: {
+    canonical: '/',
+  },
   keywords: [
     'Karaoke machine on rent', 'Karaoke machine rental Delhi NCR', 'Rent karaoke machine', 'Karaoke machine rental Noida', 'Karaoke machine rental Faridabad', 'Karaoke machine rental Gurugram', 'Karaoke machine rental Delhi', 'Karaoke rental services', 'Rent karaoke machine for party', 'Karaoke machine hire', 'Karaoke setup on rent Delhi', 'Karaoke machine for home party', 'Portable karaoke system rental Delhi', 'Bluetooth karaoke speaker rental', 'Karaoke setup rental for birthday', 'Professional karaoke sound system rental', 'Karaoke system for weddings', 'Karaoke setup for corporate event', 'Karaoke machine booking online', 'Affordable karaoke rental in Delhi NCR', 'Karaoke setup with mic and screen on rent', 'Karaoke machine for small gatherings', 'Karaoke DJ setup rental Delhi', 'Karaoke machine near me', 'Best karaoke rental Delhi NCR', 'Karaoke machine rental Ghaziabad', 'Karaoke setup hire with LED screen', 'Home karaoke system rental Delhi', 'Party karaoke setup on rent',
 
@@ -72,7 +76,7 @@ export default function RootLayout({
         {/* dotLottie web component for animations */}
         <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js" defer></script>
 
-        {/* Structured Data Schema */}
+        {/* Structured Data: Organization, LocalBusiness, WebSite */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -84,7 +88,46 @@ export default function RootLayout({
               "https://www.facebook.com/rentmyevent",
               "https://www.instagram.com/rentmyevent"
             ],
-            "description": "Rent My Event offers event equipment rentals and full event planning services in Delhi NCR."
+            "description": "Rent My Event offers event equipment rentals and full event planning services in Delhi NCR.",
+            "contactPoint": [{
+              "@type": "ContactPoint",
+              "telephone": "+91-7065441547",
+              "contactType": "customer support",
+              "areaServed": "IN",
+              "availableLanguage": ["en", "hi"]
+            }]
+          })
+        }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Rent My Event",
+            "url": "https://rentmyevent.in",
+            "image": ["https://rentmyevent.in/logo192.png"],
+            "telephone": "+91-7065441547",
+            "priceRange": "₹₹",
+            "areaServed": ["Delhi", "Noida", "Gurugram", "Ghaziabad", "Faridabad"],
+            "servesCuisine": undefined,
+            "sameAs": [
+              "https://www.facebook.com/rentmyevent",
+              "https://www.instagram.com/rentmyevent"
+            ],
+            "description": "Event equipment rentals (LED walls, projectors, PA systems) and 360° event management in Delhi NCR.",
+            "knowsAbout": [
+              "audio visual rental", "sound system on rent", "projector rental", "LED wall rental",
+              "event management", "conference equipment rental"
+            ]
+          })
+        }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Rent My Event",
+            "url": "https://rentmyevent.in",
+            "inLanguage": ["en-IN"],
+            "publisher": { "@type": "Organization", "name": "Rent My Event" }
           })
         }} />
       </head>
