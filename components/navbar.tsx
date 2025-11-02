@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -11,16 +12,24 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/98 backdrop-blur-sm border-b border-gray-200/60 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center gap-4">
-            <img
-              src={encodeURI("/new logo.png")}
-              alt="Rent My Event"
-              className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-md object-contain"
-            />
-            <div className="hidden sm:block">
-              <h1 className="text-base font-semibold text-[#1a1a1a] tracking-tight">RENT MY EVENT</h1>
+          <div className="flex items-center gap-4 min-w-0">
+            <a href="/" className="block" aria-label="Rent My Event Home">
+              <Image
+                src="/new logo.png"
+                alt="Rent My Event"
+                width={240}
+                height={64}
+                priority
+                fetchPriority="high"
+                className="h-10 sm:h-12 md:h-12 w-auto object-contain"
+                sizes="(max-width: 640px) 160px, (max-width: 768px) 200px, 240px"
+              />
+            </a>
+            <div className="hidden sm:block truncate"></div>
+            {/* <div className="hidden sm:block truncate">
+              <h1 className="text-base font-semibold text-[#1a1a1a] tracking-tight leading-tight truncate">RENT MY EVENT</h1>
               <p className="text-xs text-gray-500 font-medium">Event Rental Solutions</p>
-            </div>
+            </div> */}
           </div>
 
           <div className="hidden md:flex items-center gap-8">

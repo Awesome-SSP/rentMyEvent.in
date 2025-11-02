@@ -27,9 +27,9 @@ export default function ContactToggle({ phone = "+917065441547", whatsapp = "+91
         try { mq?.addEventListener?.("change", onChange) } catch { mq?.addListener?.(onChange) }
         return () => { try { mq?.removeEventListener?.("change", onChange) } catch { mq?.removeListener?.(onChange) } }
     }, [])
-
+    const WHATSAPP_TEXT = encodeURIComponent("Hi, I'm interested in your event services.")
     const tel = `tel:${phone}`
-    const wa = `https://wa.me/${whatsapp.replace(/[^0-9]/g, "")}`
+    const wa = `https://wa.me/${whatsapp.replace(/\D/g, "")}?text=${WHATSAPP_TEXT}`
     const mail = `mailto:${email}`
 
     return (
