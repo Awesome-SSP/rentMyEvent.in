@@ -79,77 +79,229 @@ export default function Services() {
                 <PromoStrips />
                 <Navbar />
 
-                {/* Enhanced Hero Section */}
+                {/* Enhanced Hero Section with Advanced Animations */}
                 <section className="diagonal-bg-dark py-12 md:py-20 overflow-x-hidden relative">
+                    {/* Animated Background Elements */}
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-orange-50 opacity-50"></div>
+                    <div className="absolute inset-0">
+                        <div className="absolute top-10 left-10 w-20 h-20 bg-blue-200/20 rounded-full animate-pulse"></div>
+                        <div className="absolute top-20 right-16 w-32 h-32 bg-orange-200/20 rounded-full animate-bounce" style={{ animationDelay: '2s' }}></div>
+                        <div className="absolute bottom-20 left-20 w-16 h-16 bg-green-200/20 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
+                    </div>
+
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                         <div className="text-center">
-                            {/* Trust Badges */}
-                            <div className="flex justify-center items-center gap-4 mb-6 animate-fade-in-up">
-                                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
-                                    <Star className="w-4 h-4 text-yellow-500" />
+                            {/* Trust Badges with Staggered Animation */}
+                            <div className="flex justify-center items-center gap-4 mb-6">
+                                <div
+                                    className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm transform transition-all duration-500 hover:scale-110 hover:shadow-lg animate-fade-in-up opacity-0"
+                                    style={{ animation: 'fadeInUp 0.6s ease-out 0.2s both' }}
+                                >
+                                    <Star className="w-4 h-4 text-yellow-500 animate-spin" style={{ animationDuration: '3s' }} />
                                     <span className="text-sm font-medium text-gray-700">4.9/5 Rating</span>
                                 </div>
-                                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
-                                    <Award className="w-4 h-4 text-blue-500" />
+                                <div
+                                    className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm transform transition-all duration-500 hover:scale-110 hover:shadow-lg animate-fade-in-up opacity-0"
+                                    style={{ animation: 'fadeInUp 0.6s ease-out 0.4s both' }}
+                                >
+                                    <Award className="w-4 h-4 text-blue-500 animate-pulse" />
                                     <span className="text-sm font-medium text-gray-700">5000+ Events</span>
                                 </div>
-                                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
-                                    <BadgeCheck className="w-4 h-4 text-green-500" />
+                                <div
+                                    className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm transform transition-all duration-500 hover:scale-110 hover:shadow-lg animate-fade-in-up opacity-0"
+                                    style={{ animation: 'fadeInUp 0.6s ease-out 0.6s both' }}
+                                >
+                                    <BadgeCheck className="w-4 h-4 text-green-500 animate-bounce" />
                                     <span className="text-sm font-medium text-gray-700">Verified Business</span>
                                 </div>
                             </div>
 
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#1a1a1a] leading-tight animate-fade-in-up animate-delay-100">
-                                Delhi's #1 <span className="bg-gradient-to-r from-[#2459ad] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">Projector Rental</span>
-                                <br />& Event Service Provider
-                            </h1>
+                            {/* Main Heading with Typewriter Effect */}
+                            <div className="opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.8s both' }}>
+                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#1a1a1a] leading-tight">
+                                    <span className="inline-block transform transition-all duration-700 hover:scale-105">
+                                        Delhi's #1
+                                    </span>{' '}
+                                    <span
+                                        className="bg-gradient-to-r from-[#2459ad] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent inline-block animate-gradient bg-300% transform transition-all duration-700 hover:scale-110"
+                                        style={{
+                                            backgroundSize: '300% 100%',
+                                            animation: 'gradient 3s ease infinite, float 4s ease-in-out infinite'
+                                        }}
+                                    >
+                                        Projector Rental
+                                    </span>
+                                    <br />
+                                    <span className="inline-block transform transition-all duration-700 hover:scale-105" style={{ animationDelay: '1.2s' }}>
+                                        & Event Service Provider
+                                    </span>
+                                </h1>
+                            </div>
 
-                            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200 leading-relaxed">
-                                <span className="font-semibold text-[#2459ad]"> Professional HD & 4K Projectors </span> •
-                                <span className="font-semibold text-[#ff9700]"> Same-Day Delivery </span> •
-                                <span className="font-semibold text-[#2cc16f]"> Technical Support Included </span>
-                            </p>
+                            {/* Animated Description */}
+                            <div className="opacity-0" style={{ animation: 'slideInFromLeft 0.8s ease-out 1.2s both' }}>
+                                <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+                                    <span
+                                        className="font-semibold text-[#2459ad] inline-block transform transition-all duration-500 hover:scale-105 hover:text-[#1a4480]"
+                                        style={{ animation: 'glow 2s ease-in-out infinite alternate' }}
+                                    >
+                                        Professional HD & 4K Projectors
+                                    </span>{' '}•{' '}
+                                    <span
+                                        className="font-semibold text-[#ff9700] inline-block transform transition-all duration-500 hover:scale-105 hover:text-[#dc5f5f]"
+                                        style={{ animation: 'glow 2s ease-in-out infinite alternate', animationDelay: '0.5s' }}
+                                    >
+                                        Same-Day Delivery
+                                    </span>{' '}•{' '}
+                                    <span
+                                        className="font-semibold text-[#2cc16f] inline-block transform transition-all duration-500 hover:scale-105 hover:text-[#22c55e]"
+                                        style={{ animation: 'glow 2s ease-in-out infinite alternate', animationDelay: '1s' }}
+                                    >
+                                        Technical Support Included
+                                    </span>
+                                </p>
+                            </div>
 
-                            {/* Quick Stats */}
-                            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12 mb-8 animate-fade-in-up animate-delay-300">
-                                <div className="text-center">
-                                    <div className="text-2xl md:text-3xl font-bold text-[#2459ad]">10+</div>
-                                    <div className="text-sm text-gray-600">Years Experience</div>
-                                </div>
-                                <div className="text-center">
-                                    <div className="text-2xl md:text-3xl font-bold text-[#ff9700]">500+</div>
-                                    <div className="text-sm text-gray-600">Successful Events</div>
-                                </div>
-                                <div className="text-center">
-                                    <div className="text-2xl md:text-3xl font-bold text-[#2cc16f]">24/7</div>
-                                    <div className="text-sm text-gray-600">Support Available</div>
-                                </div>
-                                <div className="text-center">
-                                    <div className="text-2xl md:text-3xl font-bold text-[#dc5f5f]">Delhi NCR</div>
-                                    <div className="text-sm text-gray-600">Service Coverage</div>
+                            {/* Enhanced Stats with Counter Animation */}
+                            <div className="opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 1.4s both' }}>
+                                <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12 mb-8">
+                                    <div
+                                        className="text-center transform transition-all duration-500 hover:scale-110 hover:-translate-y-2 cursor-pointer group"
+                                        style={{ animation: 'bounceInDown 0.6s ease-out 1.6s both' }}
+                                    >
+                                        <div className="text-2xl md:text-3xl font-bold text-[#2459ad] group-hover:animate-pulse transition-all duration-300">
+                                            <span className="inline-block animate-pulse">10+</span>
+                                        </div>
+                                        <div className="text-sm text-gray-600 group-hover:text-[#2459ad] transition-colors duration-300">Years Experience</div>
+                                    </div>
+                                    <div
+                                        className="text-center transform transition-all duration-500 hover:scale-110 hover:-translate-y-2 cursor-pointer group"
+                                        style={{ animation: 'bounceInDown 0.6s ease-out 1.8s both' }}
+                                    >
+                                        <div className="text-2xl md:text-3xl font-bold text-[#ff9700] group-hover:animate-bounce transition-all duration-300">
+                                            <span className="inline-block">5000+</span>
+                                        </div>
+                                        <div className="text-sm text-gray-600 group-hover:text-[#ff9700] transition-colors duration-300">Successful Events</div>
+                                    </div>
+                                    <div
+                                        className="text-center transform transition-all duration-500 hover:scale-110 hover:-translate-y-2 cursor-pointer group"
+                                        style={{ animation: 'bounceInDown 0.6s ease-out 2.0s both' }}
+                                    >
+                                        <div className="text-2xl md:text-3xl font-bold text-[#2cc16f] group-hover:animate-spin transition-all duration-300">
+                                            <span className="inline-block">24/7</span>
+                                        </div>
+                                        <div className="text-sm text-gray-600 group-hover:text-[#2cc16f] transition-colors duration-300">Support Available</div>
+                                    </div>
+                                    <div
+                                        className="text-center transform transition-all duration-500 hover:scale-110 hover:-translate-y-2 cursor-pointer group"
+                                        style={{ animation: 'bounceInDown 0.6s ease-out 2.2s both' }}
+                                    >
+                                        <div className="text-2xl md:text-3xl font-bold text-[#dc5f5f] group-hover:animate-pulse transition-all duration-300">
+                                            <span className="inline-block">Delhi NCR</span>
+                                        </div>
+                                        <div className="text-sm text-gray-600 group-hover:text-[#dc5f5f] transition-colors duration-300">Service Coverage</div>
+                                    </div>
                                 </div>
                             </div>
 
-                            {/* Call-to-Action */}
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animate-delay-400">
-                                <a
-                                    href="tel:+917065441547"
-                                    className="group bg-gradient-to-r from-[#2459ad] to-[#1a4480] text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3 min-w-[250px] justify-center"
-                                >
-                                    <Phone className="w-5 h-5 group-hover:animate-pulse" />
-                                    Call +91 7065441547
-                                </a>
-                                <a
-                                    href="https://wa.me/917065441547?text=Hi! I need projector rental in Delhi NCR"
-                                    className="group bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3 min-w-[250px] justify-center"
-                                >
-                                    <span className="text-xl group-hover:animate-bounce">💬</span>
-                                    WhatsApp Now
-                                </a>
+                            {/* Enhanced CTA Buttons */}
+                            <div className="opacity-0" style={{ animation: 'slideInFromBottom 0.8s ease-out 2.4s both' }}>
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                                    <a
+                                        href="tel:+917065441547"
+                                        className="group bg-gradient-to-r from-[#2459ad] to-[#1a4480] text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-110 hover:rotate-1 transition-all duration-500 flex items-center gap-3 min-w-[250px] justify-center relative overflow-hidden"
+                                    >
+                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                                        <Phone className="w-5 h-5 group-hover:animate-pulse group-hover:rotate-12 transition-all duration-300" />
+                                        <span className="relative z-10"> Call +91 7065441547</span>
+                                    </a>
+                                    <a
+                                        href="https://wa.me/917065441547?text=Hi! I need projector rental in Delhi NCR"
+                                        className="group bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-110 hover:-rotate-1 transition-all duration-500 flex items-center gap-3 min-w-[250px] justify-center relative overflow-hidden"
+                                    >
+                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                                        <span className="text-xl group-hover:animate-bounce group-hover:rotate-12 transition-all duration-300 relative z-10">💬</span>
+                                        <span className="relative z-10">WhatsApp Now</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    {/* Custom CSS for Additional Animations */}
+                    <style jsx>{`
+                        @keyframes gradient {
+                            0%, 100% { background-position: 0% 50%; }
+                            50% { background-position: 100% 50%; }
+                        }
+                        
+                        @keyframes float {
+                            0%, 100% { transform: translateY(0px); }
+                            50% { transform: translateY(-10px); }
+                        }
+                        
+                        @keyframes glow {
+                            from { text-shadow: 0 0 5px currentColor; }
+                            to { text-shadow: 0 0 20px currentColor, 0 0 30px currentColor; }
+                        }
+                        
+                        @keyframes fadeInUp {
+                            from {
+                                opacity: 0;
+                                transform: translate3d(0, 40px, 0);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translate3d(0, 0, 0);
+                            }
+                        }
+                        
+                        @keyframes slideInFromLeft {
+                            from {
+                                opacity: 0;
+                                transform: translate3d(-50px, 0, 0);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translate3d(0, 0, 0);
+                            }
+                        }
+                        
+                        @keyframes slideInFromBottom {
+                            from {
+                                opacity: 0;
+                                transform: translate3d(0, 50px, 0);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translate3d(0, 0, 0);
+                            }
+                        }
+                        
+                        @keyframes bounceInDown {
+                            from, 60%, 75%, 90%, to {
+                                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                            }
+                            0% {
+                                opacity: 0;
+                                transform: translate3d(0, -30px, 0) scaleY(1.25);
+                            }
+                            60% {
+                                opacity: 1;
+                                transform: translate3d(0, 5px, 0) scaleY(.9);
+                            }
+                            75% {
+                                transform: translate3d(0, -2px, 0) scaleY(.95);
+                            }
+                            90% {
+                                transform: translate3d(0, 1px, 0) scaleY(.985);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translate3d(0, 0, 0);
+                            }
+                        }
+                    `}</style>
                 </section>
 
                 {/* Main Content with Sidebar Layout */}
@@ -269,7 +421,7 @@ export default function Services() {
                                                 className="group w-full bg-gradient-to-r from-[#2459ad] to-[#1a4480] text-white py-4 px-6 rounded-xl font-bold text-center hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 relative overflow-hidden"
                                             >
                                                 <Phone className="w-5 h-5 group-hover:animate-pulse" />
-                                                <span className="text-lg">📞 Call +91 7065441547</span>
+                                                <span className="text-lg"> Call +91 7065441547</span>
                                                 <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></div>
                                             </a>
                                             <a
@@ -419,7 +571,7 @@ export default function Services() {
                                                                 className="group flex-1 bg-gradient-to-r from-[#2459ad] to-[#1a4480] text-white px-6 py-3 rounded-xl font-bold text-center hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 relative overflow-hidden"
                                                             >
                                                                 <Phone className="w-5 h-5 group-hover:animate-pulse" />
-                                                                📞 Call +91 7065441547
+                                                                Call +91 7065441547
                                                                 <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></div>
                                                             </a>
                                                             <a
