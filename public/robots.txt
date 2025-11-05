@@ -1,0 +1,9 @@
+# Robots.txt for Rent My Event
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://rentmyevent.in/sitemap.xml
+
+# Disallow service worker from being crawled
+Disallow: /service-worker.js
