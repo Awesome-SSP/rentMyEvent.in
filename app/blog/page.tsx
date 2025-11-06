@@ -76,16 +76,57 @@ export default function Blog() {
                 <Navbar />
 
                 {/* Hero Section */}
-                <section className="diagonal-bg-dark py-16 md:py-24 overflow-x-hidden relative">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <section className="bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 py-20 md:py-32 overflow-hidden relative">
+                    {/* Animated Background Pattern */}
+                    <div className="absolute inset-0 opacity-10">
+                        <div className="absolute inset-0" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20.5H20z'/%3E%3C/g%3E%3C/svg%3E')" }}></div>
+                    </div>
+
+                    {/* Floating Elements */}
+                    <div className="absolute inset-0 pointer-events-none">
+                        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full animate-pulse"></div>
+                        <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full animate-bounce"></div>
+                        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+                    </div>
+
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                         <div className="text-center">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#1a1a1a] leading-tight animate-fade-in-up">
-                                Event Planning <span className="bg-gradient-to-r from-[#2cc16f] via-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">Insights & Tips</span>
+                            <div className="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-6 py-3 rounded-full font-bold text-lg mb-8 animate-bounce">
+                                📚 Expert Knowledge Hub
+                            </div>
+
+                            <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight">
+                                <span className="text-white">Event Planning</span>
+                                <br />
+                                <span className="bg-gradient-to-r from-cyan-400 via-blue-300 to-purple-300 bg-clip-text text-transparent animate-pulse">
+                                    Insights & Tips
+                                </span>
                             </h1>
-                            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
-                                Expert articles and guides to help you plan <span className="text-[#ff9700] font-semibold">amazing events</span>
+
+                            <p className="text-xl md:text-2xl text-blue-200 mb-12 max-w-4xl mx-auto leading-relaxed">
+                                <span className="font-semibold text-yellow-300">Expert articles and guides</span> to help you plan
+                                <span className="font-semibold text-pink-300"> amazing events</span> that create lasting memories
                             </p>
+
+                            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                                <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-4 border border-white/20">
+                                    <span className="text-cyan-300 font-bold text-lg">📖 Latest Articles</span>
+                                </div>
+                                <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-4 border border-white/20">
+                                    <span className="text-purple-300 font-bold text-lg">💡 Pro Tips</span>
+                                </div>
+                                <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-4 border border-white/20">
+                                    <span className="text-pink-300 font-bold text-lg">🎯 Best Practices</span>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+
+                    {/* Bottom Wave */}
+                    <div className="absolute bottom-0 left-0 right-0">
+                        <svg viewBox="0 0 1440 120" className="w-full h-20 fill-current text-gray-50">
+                            <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+                        </svg>
                     </div>
                 </section>
 
@@ -153,14 +194,14 @@ export default function Blog() {
                 {/* Newsletter Section */}
                 <section className="section-diag section-diag--b py-16 md:py-24">
                     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1a1a1a] animate-fade-in-down">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1a1a1a]">
                             Stay Updated with Our <span className="bg-gradient-to-r from-[#2cc16f] to-[#ff9700] bg-clip-text text-transparent">Latest Insights</span>
                         </h2>
-                        <p className="text-gray-600 mb-8 animate-fade-in-up animate-delay-200">
+                        <p className="text-gray-600 mb-8">
                             Subscribe to our newsletter to receive expert tips, industry trends, and exclusive event management insights.
                         </p>
 
-                        <form className="flex flex-col sm:flex-row gap-3 animate-fade-in-up animate-delay-300">
+                        <form className="flex flex-col sm:flex-row gap-3">
                             <input
                                 type="email"
                                 placeholder="Enter your email address"
@@ -179,15 +220,15 @@ export default function Blog() {
                 {/* CTA Section */}
                 <section className="diagonal-bg-dark py-16 md:py-24">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#1a1a1a] animate-fade-in-up">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#1a1a1a]">
                             Ready to Plan Your <span className="bg-gradient-to-r from-[#ff9700] to-[#dc5f5f] bg-clip-text text-transparent">Next Event</span>?
                         </h2>
-                        <p className="text-gray-600 mb-8 text-lg animate-fade-in-up animate-delay-200">
+                        <p className="text-gray-600 mb-8 text-lg">
                             Let our team of experts help you create an unforgettable experience.
                         </p>
                         <a
                             href="/contact"
-                            className="inline-block bg-gradient-to-r from-[#2cc16f] to-[#ff9700] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 animate-fade-in-up animate-delay-300"
+                            className="inline-block bg-gradient-to-r from-[#2cc16f] to-[#ff9700] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                         >
                             Get Started
                         </a>

@@ -17,11 +17,23 @@ export default function Services() {
     const services = [
         {
             icon: Monitor,
+            title: "Projector Rental Services",
+            description: "Premium HD, 4K & LED projectors with screen, sound system, and professional setup for corporate events, weddings, and presentations.",
+            features: ["HD & 4K Projectors", "Projector with Screen", "Short & Long Throw", "Complete Setup"],
+            price: "Starting from ₹999/day",
+            image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            links: [
+                { title: "Projector Rental Delhi NCR", url: "/services/projector" },
+                { title: "Projector Rental Noida", url: "/services/projector-noida" }
+            ]
+        },
+        {
+            icon: Monitor,
             title: "Audio-Visual Equipment",
-            description: "Professional projectors, LED screens, plasma TVs, and complete AV setups for any event size.",
-            features: ["HD & 4K Projectors", "LED Walls", "Plasma TVs", "Sound Systems"],
-            price: "Starting from ₹5,000/day",
-            image: "/brandimage/soundsystem.jpg"
+            description: "Professional LED screens, plasma TVs, sound systems, and complete AV setups for any event size.",
+            features: ["LED Walls", "Plasma TVs", "Sound Systems", "Conference Equipment"],
+            price: "Starting from ₹2,500/day",
+            image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
         },
         {
             icon: Calendar,
@@ -29,7 +41,7 @@ export default function Services() {
             description: "End-to-end event planning from concept to execution. Our experts handle all logistics.",
             features: ["Venue Coordination", "Guest Management", "Timeline Planning", "Vendor Coordination"],
             price: "Starting from ₹15,000/event",
-            image: "/brandimage/coordination.jpg"
+            image: "https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
         },
         {
             icon: Users,
@@ -93,24 +105,15 @@ export default function Services() {
                         <div className="text-center">
                             {/* Trust Badges with Staggered Animation */}
                             <div className="flex justify-center items-center gap-4 mb-6">
-                                <div
-                                    className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm transform transition-all duration-500 hover:scale-110 hover:shadow-lg animate-fade-in-up opacity-0"
-                                    style={{ animation: 'fadeInUp 0.6s ease-out 0.2s both' }}
-                                >
+                                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm transform transition-all duration-500 hover:scale-110 hover:shadow-lg">
                                     <Star className="w-4 h-4 text-yellow-500 animate-spin" style={{ animationDuration: '3s' }} />
                                     <span className="text-sm font-medium text-gray-700">4.9/5 Rating</span>
                                 </div>
-                                <div
-                                    className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm transform transition-all duration-500 hover:scale-110 hover:shadow-lg animate-fade-in-up opacity-0"
-                                    style={{ animation: 'fadeInUp 0.6s ease-out 0.4s both' }}
-                                >
+                                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm transform transition-all duration-500 hover:scale-110 hover:shadow-lg">
                                     <Award className="w-4 h-4 text-blue-500 animate-pulse" />
                                     <span className="text-sm font-medium text-gray-700">5000+ Events</span>
                                 </div>
-                                <div
-                                    className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm transform transition-all duration-500 hover:scale-110 hover:shadow-lg animate-fade-in-up opacity-0"
-                                    style={{ animation: 'fadeInUp 0.6s ease-out 0.6s both' }}
-                                >
+                                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm transform transition-all duration-500 hover:scale-110 hover:shadow-lg">
                                     <BadgeCheck className="w-4 h-4 text-green-500 animate-bounce" />
                                     <span className="text-sm font-medium text-gray-700">Verified Business</span>
                                 </div>
@@ -132,7 +135,7 @@ export default function Services() {
                                         Projector Rental
                                     </span>
                                     <br />
-                                    <span className="inline-block transform transition-all duration-700 hover:scale-105" style={{ animationDelay: '1.2s' }}>
+                                    <span className="inline-block transform transition-all duration-700 hover:scale-105">
                                         & Event Service Provider
                                     </span>
                                 </h1>
@@ -148,14 +151,12 @@ export default function Services() {
                                         Professional HD & 4K Projectors
                                     </span>{' '}•{' '}
                                     <span
-                                        className="font-semibold text-[#ff9700] inline-block transform transition-all duration-500 hover:scale-105 hover:text-[#dc5f5f]"
-                                        style={{ animation: 'glow 2s ease-in-out infinite alternate', animationDelay: '0.5s' }}
+                                        className="font-semibold text-[#ff9700] inline-block transform transition-all duration-500 hover:scale-105 hover:text-[#dc5f5f] animate-pulse"
                                     >
                                         Same-Day Delivery
                                     </span>{' '}•{' '}
                                     <span
-                                        className="font-semibold text-[#2cc16f] inline-block transform transition-all duration-500 hover:scale-105 hover:text-[#22c55e]"
-                                        style={{ animation: 'glow 2s ease-in-out infinite alternate', animationDelay: '1s' }}
+                                        className="font-semibold text-[#2cc16f] inline-block transform transition-all duration-500 hover:scale-105 hover:text-[#22c55e] animate-pulse"
                                     >
                                         Technical Support Included
                                     </span>
@@ -228,80 +229,7 @@ export default function Services() {
                         </div>
                     </div>
 
-                    {/* Custom CSS for Additional Animations */}
-                    <style jsx>{`
-                        @keyframes gradient {
-                            0%, 100% { background-position: 0% 50%; }
-                            50% { background-position: 100% 50%; }
-                        }
-                        
-                        @keyframes float {
-                            0%, 100% { transform: translateY(0px); }
-                            50% { transform: translateY(-10px); }
-                        }
-                        
-                        @keyframes glow {
-                            from { text-shadow: 0 0 5px currentColor; }
-                            to { text-shadow: 0 0 20px currentColor, 0 0 30px currentColor; }
-                        }
-                        
-                        @keyframes fadeInUp {
-                            from {
-                                opacity: 0;
-                                transform: translate3d(0, 40px, 0);
-                            }
-                            to {
-                                opacity: 1;
-                                transform: translate3d(0, 0, 0);
-                            }
-                        }
-                        
-                        @keyframes slideInFromLeft {
-                            from {
-                                opacity: 0;
-                                transform: translate3d(-50px, 0, 0);
-                            }
-                            to {
-                                opacity: 1;
-                                transform: translate3d(0, 0, 0);
-                            }
-                        }
-                        
-                        @keyframes slideInFromBottom {
-                            from {
-                                opacity: 0;
-                                transform: translate3d(0, 50px, 0);
-                            }
-                            to {
-                                opacity: 1;
-                                transform: translate3d(0, 0, 0);
-                            }
-                        }
-                        
-                        @keyframes bounceInDown {
-                            from, 60%, 75%, 90%, to {
-                                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-                            }
-                            0% {
-                                opacity: 0;
-                                transform: translate3d(0, -30px, 0) scaleY(1.25);
-                            }
-                            60% {
-                                opacity: 1;
-                                transform: translate3d(0, 5px, 0) scaleY(.9);
-                            }
-                            75% {
-                                transform: translate3d(0, -2px, 0) scaleY(.95);
-                            }
-                            90% {
-                                transform: translate3d(0, 1px, 0) scaleY(.985);
-                            }
-                            to {
-                                opacity: 1;
-                                transform: translate3d(0, 0, 0);
-                            }
-                        }
-                    `}</style>
+                    {/* Animations handled by Tailwind CSS classes */}
                 </section>
 
                 {/* Main Content with Sidebar Layout */}
@@ -503,8 +431,7 @@ export default function Services() {
                                         return (
                                             <div
                                                 key={idx}
-                                                className="bg-white rounded-2xl border border-gray-200/60 p-6 md:p-8 hover:shadow-xl transition-all duration-300 animate-fade-in-up"
-                                                style={{ animationDelay: `${idx * 0.1}s` }}
+                                                className="bg-white rounded-2xl border border-gray-200/60 p-6 md:p-8 hover:shadow-xl transition-all duration-300 animate-pulse"
                                             >
                                                 <div className="flex flex-col md:flex-row gap-6">
                                                     <div className="flex-1">
@@ -565,6 +492,34 @@ export default function Services() {
                                                             </div>
                                                         </div>
 
+                                                        {/* Service Specific Links */}
+                                                        {service.links && (
+                                                            <div className="mb-6">
+                                                                <h4 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                                                                    <Monitor className="w-4 h-4 text-blue-500" />
+                                                                    Specialized Services:
+                                                                </h4>
+                                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                                                    {service.links.map((link, linkIdx) => (
+                                                                        <a
+                                                                            key={linkIdx}
+                                                                            href={link.url}
+                                                                            className="group bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 border border-blue-200 rounded-lg p-3 transition-all duration-300 hover:shadow-md"
+                                                                        >
+                                                                            <div className="flex items-center justify-between">
+                                                                                <span className="text-sm font-medium text-blue-800 group-hover:text-blue-900">
+                                                                                    {link.title}
+                                                                                </span>
+                                                                                <div className="text-blue-600 group-hover:text-blue-700 group-hover:translate-x-1 transition-transform duration-300">
+                                                                                    →
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    ))}
+                                                                </div>
+                                                            </div>
+                                                        )}
+
                                                         <div className="flex flex-col sm:flex-row gap-4">
                                                             <a
                                                                 href="tel:+917065441547"
@@ -624,7 +579,7 @@ export default function Services() {
                                 </p>
                             </div>
 
-                            <div className="text-center p-6 bg-gradient-to-br from-[#ff9700]/5 to-[#dc5f5f]/5 rounded-2xl animate-fade-in-up animate-delay-200">
+                            <div className="text-center p-6 bg-gradient-to-br from-[#ff9700]/5 to-[#dc5f5f]/5 rounded-2xl">
                                 <div className="bg-gradient-to-r from-[#ff9700] to-[#dc5f5f] w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <Clock className="w-6 h-6 text-white" />
                                 </div>
@@ -634,7 +589,7 @@ export default function Services() {
                                 </p>
                             </div>
 
-                            <div className="text-center p-6 bg-gradient-to-br from-[#2cc16f]/5 to-[#ff9700]/5 rounded-2xl animate-fade-in-up animate-delay-300">
+                            <div className="text-center p-6 bg-gradient-to-br from-[#2cc16f]/5 to-[#ff9700]/5 rounded-2xl">
                                 <div className="bg-gradient-to-r from-[#2cc16f] to-[#ff9700] w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <Users className="w-6 h-6 text-white" />
                                 </div>
@@ -662,19 +617,19 @@ export default function Services() {
                                     Limited Time: Same-Day Delivery Available!
                                 </div>
 
-                                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up">
+                                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                                     Ready to Make Your Event
                                     <span className="block text-yellow-300 text-5xl md:text-6xl lg:text-7xl">UNFORGETTABLE?</span>
                                 </h2>
 
-                                <p className="text-xl mb-8 text-white/90 max-w-3xl mx-auto animate-fade-in-up animate-delay-200 leading-relaxed">
+                                <p className="text-xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
                                     🎯 <span className="font-bold">Delhi's #1 Projector Rental Service</span> •
                                     🚀 <span className="font-bold">500+ Successful Events</span> •
                                     ⭐ <span className="font-bold">4.9/5 Customer Rating</span>
                                 </p>
 
                                 {/* Main CTA */}
-                                <div className="flex flex-col lg:flex-row gap-6 justify-center items-center mb-12 animate-fade-in-up animate-delay-300">
+                                <div className="flex flex-col lg:flex-row gap-6 justify-center items-center mb-12">
                                     <a
                                         href="tel:+917065441547"
                                         className="group bg-white text-[#2459ad] px-10 py-5 rounded-2xl font-bold text-xl hover:bg-gray-50 transition-all duration-300 flex items-center gap-4 min-w-[280px] justify-center shadow-2xl transform hover:scale-110"
